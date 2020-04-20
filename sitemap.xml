@@ -3,11 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://dkermer.github.io/tutorials/categories/</loc>
+    <loc>https://dkermer.github.io/tutorials/</loc>
+    <lastmod>2020-04-20T17:56:15-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dkermer.github.io/tutorials/</loc>
+    <loc>https://dkermer.github.io/tutorials/posts/my-first-post/</loc>
+    <lastmod>2020-04-20T17:56:15-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dkermer.github.io/tutorials/posts/</loc>
+    <lastmod>2020-04-20T17:56:15-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dkermer.github.io/tutorials/categories/</loc>
   </url>
   
   <url>
