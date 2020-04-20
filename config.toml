@@ -1,0 +1,5 @@
+baseURL = "https://dkermer.github.io/tutorials"
+languageCode = "en-us"
+title = "Debby's Posts"
+theme = "ananke"
+publishDir = "docs"
