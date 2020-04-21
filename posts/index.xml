@@ -6,10 +6,47 @@
     <description>Recent content in Posts on Debby&#39;s Posts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Apr 2020 17:56:15 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 21 Apr 2020 12:52:41 -0400</lastBuildDate>
     
 	<atom:link href="https://dkermer.github.io/tutorials/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Stata Dummy Coding</title>
+      <link>https://dkermer.github.io/tutorials/posts/stata_dummy/</link>
+      <pubDate>Tue, 21 Apr 2020 12:52:41 -0400</pubDate>
+      
+      <guid>https://dkermer.github.io/tutorials/posts/stata_dummy/</guid>
+      <description>The rule is that you have to use i. or c. when you want to change the default way that the variables are handled. Note also that stata uses the term &amp;ldquo;Factor&amp;rdquo; to mean a categorical variable (other software does this too).
+For instance, Stata assumes the IV&amp;rsquo;s of an ANOVA are categorical. So, if you wanted to include continuous covariates, you would have to put c.var. Stata asusmes the IV&amp;rsquo;s of a Regression are continuous, which is why you typically have to put i.</description>
+    </item>
+    
+    <item>
+      <title>De-emphasize Terminal Output</title>
+      <link>https://dkermer.github.io/tutorials/posts/terminal_output/</link>
+      <pubDate>Mon, 20 Apr 2020 21:55:16 -0400</pubDate>
+      
+      <guid>https://dkermer.github.io/tutorials/posts/terminal_output/</guid>
+      <description>&lt;p&gt;To further put the focus on what the students must type themselves, you can change the color of the output to be more muted.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Display a Log of Shell Commands</title>
+      <link>https://dkermer.github.io/tutorials/posts/display_logs/</link>
+      <pubDate>Mon, 20 Apr 2020 21:34:54 -0400</pubDate>
+      
+      <guid>https://dkermer.github.io/tutorials/posts/display_logs/</guid>
+      <description>&lt;p&gt;When teaching shell scripting, learners may get behind. Extensive output can push prior command off the screen. So, it can be useful to show a clean log of recent commands.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Customizing the Bash Prompt</title>
+      <link>https://dkermer.github.io/tutorials/posts/bash_prompt/</link>
+      <pubDate>Mon, 20 Apr 2020 17:56:15 -0400</pubDate>
+      
+      <guid>https://dkermer.github.io/tutorials/posts/bash_prompt/</guid>
+      <description>&lt;p&gt;When teaching command line skills, it can be helpful to simplify the prompt to help the students focus on what you are typing.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>My First Post</title>

@@ -3,7 +3,52 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://dkermer.github.io/tutorials/</loc>
+    <loc>https://dkermer.github.io/tutorials/about/</loc>
+    <lastmod>2020-03-03T13:50:49+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dkermer.github.io/tutorials/posts/</loc>
+    <lastmod>2020-04-21T12:52:41-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dkermer.github.io/tutorials/posts/stata_dummy/</loc>
+    <lastmod>2020-04-21T12:52:41-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dkermer.github.io/tutorials/posts/terminal_output/</loc>
+    <lastmod>2020-04-20T21:55:16-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dkermer.github.io/tutorials/tags/bash/</loc>
+    <lastmod>2020-04-20T21:34:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dkermer.github.io/tutorials/tags/command-line/</loc>
+    <lastmod>2020-04-20T21:34:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dkermer.github.io/tutorials/posts/display_logs/</loc>
+    <lastmod>2020-04-20T21:34:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dkermer.github.io/tutorials/tags/</loc>
+    <lastmod>2020-04-20T21:34:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dkermer.github.io/tutorials/tags/teaching/</loc>
+    <lastmod>2020-04-20T21:34:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dkermer.github.io/tutorials/posts/bash_prompt/</loc>
     <lastmod>2020-04-20T17:56:15-04:00</lastmod>
   </url>
   
@@ -13,16 +58,12 @@
   </url>
   
   <url>
-    <loc>https://dkermer.github.io/tutorials/posts/</loc>
-    <lastmod>2020-04-20T17:56:15-04:00</lastmod>
+    <loc>https://dkermer.github.io/tutorials/</loc>
+    <lastmod>2020-03-03T13:50:49+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://dkermer.github.io/tutorials/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>https://dkermer.github.io/tutorials/tags/</loc>
   </url>
   
 </urlset>
