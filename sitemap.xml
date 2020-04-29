@@ -23,7 +23,17 @@
   </url>
   
   <url>
+    <loc>https://dkermer.github.io/tutorials/posts/levels/</loc>
+    <lastmod>2020-04-20T21:34:54-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://dkermer.github.io/tutorials/tags/bash/</loc>
+    <lastmod>2020-04-20T21:34:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dkermer.github.io/tutorials/posts/text_and_markup/</loc>
     <lastmod>2020-04-20T21:34:54-04:00</lastmod>
   </url>
   
@@ -33,7 +43,42 @@
   </url>
   
   <url>
+    <loc>https://dkermer.github.io/tutorials/tags/confusing-terms/</loc>
+    <lastmod>2020-04-20T21:34:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dkermer.github.io/tutorials/tags/data/</loc>
+    <lastmod>2020-04-20T21:34:54-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://dkermer.github.io/tutorials/posts/display_logs/</loc>
+    <lastmod>2020-04-20T21:34:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dkermer.github.io/tutorials/tags/fundamentals/</loc>
+    <lastmod>2020-04-20T21:34:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dkermer.github.io/tutorials/posts/level_of_measurement/</loc>
+    <lastmod>2020-04-20T21:34:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dkermer.github.io/tutorials/posts/template/</loc>
+    <lastmod>2020-04-20T21:34:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dkermer.github.io/tutorials/tags/one/</loc>
+    <lastmod>2020-04-20T21:34:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dkermer.github.io/tutorials/tags/statistics/</loc>
     <lastmod>2020-04-20T21:34:54-04:00</lastmod>
   </url>
   
@@ -48,6 +93,11 @@
   </url>
   
   <url>
+    <loc>https://dkermer.github.io/tutorials/tags/two/</loc>
+    <lastmod>2020-04-20T21:34:54-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://dkermer.github.io/tutorials/posts/bash_prompt/</loc>
     <lastmod>2020-04-20T17:56:15-04:00</lastmod>
   </url>
@@ -55,6 +105,11 @@
   <url>
     <loc>https://dkermer.github.io/tutorials/posts/my-first-post/</loc>
     <lastmod>2020-04-20T17:56:15-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dkermer.github.io/tutorials/posts/character_endoding/</loc>
+    <lastmod>2020-04-20T12:34:54-04:00</lastmod>
   </url>
   
   <url>

@@ -31,12 +31,51 @@ For instance, Stata assumes the IV&amp;rsquo;s of an ANOVA are categorical. So, 
     </item>
     
     <item>
+      <title></title>
+      <link>https://dkermer.github.io/tutorials/posts/levels/</link>
+      <pubDate>Mon, 20 Apr 2020 21:34:54 -0400</pubDate>
+      
+      <guid>https://dkermer.github.io/tutorials/posts/levels/</guid>
+      <description>&lt;p&gt;Description&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Character_Encoding</title>
+      <link>https://dkermer.github.io/tutorials/posts/text_and_markup/</link>
+      <pubDate>Mon, 20 Apr 2020 21:34:54 -0400</pubDate>
+      
+      <guid>https://dkermer.github.io/tutorials/posts/text_and_markup/</guid>
+      <description>&lt;p&gt;tldr:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
       <title>Display a Log of Shell Commands</title>
       <link>https://dkermer.github.io/tutorials/posts/display_logs/</link>
       <pubDate>Mon, 20 Apr 2020 21:34:54 -0400</pubDate>
       
       <guid>https://dkermer.github.io/tutorials/posts/display_logs/</guid>
       <description>&lt;p&gt;When teaching shell scripting, learners may get behind. Extensive output can push prior command off the screen. So, it can be useful to show a clean log of recent commands.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Level of Measurement</title>
+      <link>https://dkermer.github.io/tutorials/posts/level_of_measurement/</link>
+      <pubDate>Mon, 20 Apr 2020 21:34:54 -0400</pubDate>
+      
+      <guid>https://dkermer.github.io/tutorials/posts/level_of_measurement/</guid>
+      <description>&lt;p&gt;Measure Type or Measurment Level . Even though it seems weird to &amp;ldquo;measure&amp;rdquo; a person&amp;rsquo;s eye color, the whole process of collecting accurate data is referred to as Measurement. The type or level matters because calculations depend on the mathematical properties of the varables.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Levels</title>
+      <link>https://dkermer.github.io/tutorials/posts/template/</link>
+      <pubDate>Mon, 20 Apr 2020 21:34:54 -0400</pubDate>
+      
+      <guid>https://dkermer.github.io/tutorials/posts/template/</guid>
+      <description>&lt;p&gt;The word &amp;ldquo;level&amp;rdquo; is used often in statistics, but it has very different meanings.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -55,6 +94,22 @@ For instance, Stata assumes the IV&amp;rsquo;s of an ANOVA are categorical. So, 
       
       <guid>https://dkermer.github.io/tutorials/posts/my-first-post/</guid>
       <description>Hello this is my first post.</description>
+    </item>
+    
+    <item>
+      <title>Character Encoding</title>
+      <link>https://dkermer.github.io/tutorials/posts/character_endoding/</link>
+      <pubDate>Mon, 20 Apr 2020 12:34:54 -0400</pubDate>
+      
+      <guid>https://dkermer.github.io/tutorials/posts/character_endoding/</guid>
+      <description>&lt;p&gt;tldr:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Computers store everything as binary numbers.&lt;/li&gt;
+&lt;li&gt;Codes are what we use to represent one thing (e.g., a character&amp;rdquo;) as something else (e.g., a number)&lt;/li&gt;
+&lt;li&gt;All text characters in computers are coded as numbers. There are various coding schemes that turn numbers into those characters.&lt;/li&gt;
+&lt;li&gt;Computers need to know whether to interpret that number as a number, or as the character it represents (ex. 49 is the code for the character &amp;ldquo;1&amp;rdquo;).&lt;/li&gt;
+&lt;li&gt;Both files and variables within data files have types that indicate how to interpret the computer&amp;rsquo;s representation.&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
   </channel>

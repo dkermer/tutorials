@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Debby&#39;s Posts  | Character Encoding</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.69.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/tutorials/dist/css/app.1cb140d8ba31d5b2f1114537dd04802a.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="Character Encoding" />
+<meta property="og:description" content="tldr:
+
+Computers store everything as binary numbers.
+Codes are what we use to represent one thing (e.g., a character&rdquo;) as something else (e.g., a number)
+All text characters in computers are coded as numbers. There are various coding schemes that turn numbers into those characters.
+Computers need to know whether to interpret that number as a number, or as the character it represents (ex. 49 is the code for the character &ldquo;1&rdquo;).
+Both files and variables within data files have types that indicate how to interpret the computer&rsquo;s representation.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dkermer.github.io/tutorials/posts/character_endoding/" />
+<meta property="article:published_time" content="2020-04-20T12:34:54-04:00" />
+<meta property="article:modified_time" content="2020-04-20T12:34:54-04:00" />
+<meta itemprop="name" content="Character Encoding">
+<meta itemprop="description" content="tldr:
+
+Computers store everything as binary numbers.
+Codes are what we use to represent one thing (e.g., a character&rdquo;) as something else (e.g., a number)
+All text characters in computers are coded as numbers. There are various coding schemes that turn numbers into those characters.
+Computers need to know whether to interpret that number as a number, or as the character it represents (ex. 49 is the code for the character &ldquo;1&rdquo;).
+Both files and variables within data files have types that indicate how to interpret the computer&rsquo;s representation.
+">
+<meta itemprop="datePublished" content="2020-04-20T12:34:54-04:00" />
+<meta itemprop="dateModified" content="2020-04-20T12:34:54-04:00" />
+<meta itemprop="wordCount" content="3157">
+
+
+
+<meta itemprop="keywords" content="Fundamentals,Data," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Character Encoding"/>
+<meta name="twitter:description" content="tldr:
+
+Computers store everything as binary numbers.
+Codes are what we use to represent one thing (e.g., a character&rdquo;) as something else (e.g., a number)
+All text characters in computers are coded as numbers. There are various coding schemes that turn numbers into those characters.
+Computers need to know whether to interpret that number as a number, or as the character it represents (ex. 49 is the code for the character &ldquo;1&rdquo;).
+Both files and variables within data files have types that indicate how to interpret the computer&rsquo;s representation.
+"/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://dkermer.github.io/tutorials" class="f3 fw2 hover-white no-underline white-90 dib">
+      Debby&#39;s Posts
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/tutorials/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://dkermer.github.io/tutorials/posts/character_endoding/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://dkermer.github.io/tutorials/posts/character_endoding/&amp;text=Character%20Encoding" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://dkermer.github.io/tutorials/posts/character_endoding/&amp;title=Character%20Encoding" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+      <h1 class="f1 athelas mt3 mb1">Character Encoding</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-04-20T12:34:54-04:00">April 20, 2020</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>tldr:</p>
+<ul>
+<li>Computers store everything as binary numbers.</li>
+<li>Codes are what we use to represent one thing (e.g., a character&rdquo;) as something else (e.g., a number)</li>
+<li>All text characters in computers are coded as numbers. There are various coding schemes that turn numbers into those characters.</li>
+<li>Computers need to know whether to interpret that number as a number, or as the character it represents (ex. 49 is the code for the character &ldquo;1&rdquo;).</li>
+<li>Both files and variables within data files have types that indicate how to interpret the computer&rsquo;s representation.</li>
+</ul>
+<h1 id="background">Background</h1>
+<p>For a deeper and more pictoral introduction to the following topics, see Kahn Academy&rsquo;s <a href="https://www.khanacademy.org/computing/computer-science/computers-and-internet-code-org/how-computers--work/v/khan-academy-and-codeorg-binary-data">Data &amp; Binary</a> video which discusses why computers use binary, introduces the binary number system, and introduces how computers represent text, images, and sounds with numbers. Or, learn about the same topics (plus Hexadecimal) by reading <a href="https://www.bbc.co.uk/bitesize/topics/zd2xsbk">Binary and data representation</a> from BBC&rsquo;s Bitesize GCSE Lessons.</p>
+<h2 id="computers-and-binary">Computers and Binary</h2>
+<p>Computers store and represent information using electricity in transistors, which can have only two states: &ldquo;on&rdquo; or &ldquo;off&rdquo;.</p>
+<h3 id="binary">Binary</h3>
+<p>It is common to represent those two states in <strong>Binary</strong> as <code>1</code> and <code>0</code>.  By combining many 1&rsquo;s and 0&rsquo;s, the binary number system can represent other numbers. For instance <code>1101</code> equals 13, and <code>1100 1000</code> equals 200.  Brush up on how the binary number system works <a href="https://www.mathsisfun.com/binary-number-system.html">here</a>.</p>
+<p>Some terminology:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Bit"><strong>bit</strong></a>: Each <code>1</code> or<code> 0</code> is called a &ldquo;<strong>bit</strong>&quot;, from <!-- raw HTML omitted --><strong>bi</strong><!-- raw HTML omitted -->nary dig<!-- raw HTML omitted --><strong>it</strong><!-- raw HTML omitted -->.</li>
+<li><a href="https://en.wikipedia.org/wiki/Byte"><strong>byte</strong></a>: A group of <strong>8 bits</strong> together is called a &ldquo;<strong>byte</strong>&quot;, ex. <code>1100 1000</code></li>
+</ul>
+<p>Storing the number 200 (<code>1100 1000</code>) takes 1 byte, because it needs 8 bits (binary digits). A byte has 256 different possible value combinations.</p>
+<p>Of course, the bits need not be interpreted using the binary number system, as it is just one of many options. But, it is a clear, simple, and mathematically useful way of doing so.</p>
+<h3 id="hexadecimal">Hexadecimal</h3>
+<p>Writing in binary can get tediuous, so it is far more common to write in hexadecimal. <strong>Hexadecimal</strong> is a base-16 system, in which each character can have 16 values (0-9 + A-F). Thus, 2 hex characters can represent 1 byte (8 bits).  For example, the decimal number 200 is C8 in hexadecimal (also written 0xC8).  Brush up on Headecimal <a href="https://www.mathsisfun.com/hexadecimals.html">here</a>.</p>
+<blockquote>
+<p>11001000 (binary) = C8 (hexadecimal) = 200 (decimal)</p>
+</blockquote>
+<h3 id="codes-and-coding">Codes and Coding</h3>
+<p>Since computers can only store and process 1&rsquo;s and 0&rsquo;s, and by extension numbers, how does it do so many things? By coding.</p>
+<p>Consider <a href="https://en.wikipedia.org/wiki/Morse_code"><strong>Morse Code</strong></a>, developed over a century before computers. Messages were sent by using long or short burst of sound or other 2-option signals. When people agreed on which sequences representd each letter and number, they could communicate over long distances.</p>
+<p>Because people have agreed about how to represent text, images, and video using numbers (and thus ultimately binary), we can share all those things with others using computers. This post will only address how text is represented with codes. If you are interested in lerning more about the codes used to store and transmit images and/or audio, see the additional resources listed at the beginning.</p>
+<h2 id="text-encoding-schemes">Text Encoding Schemes</h2>
+<p>Like morse code, people have worked together to develop standards for how the bits and bytes should be decoded into text.</p>
+<h3 id="ascii">ASCII</h3>
+<p><strong>ASCII</strong> (pronouced &ldquo;ask-ee&rdquo;) was one of the first text coding schemes to get wide use, and it is important because current schemes are compatible (i.e., incorporate it). Each character was assigned a value from 0 to 127. That takes 7-bits to write in binary, and the final bit of the byte was used for error checking.</p>
+<p>The 128 <strong>codes</strong> in ASCII include only the most basic characters in American English. For example, 37 is &ldquo;%&quot;, 65  is &ldquo;A&rdquo;, and 97 is &ldquo;a&rdquo;. For the full list, see this <a href="http://web.alfredstate.edu/faculty/weimandn/miscellaneous/ascii/ascii_index.html">ASCII Conversion Chart</a>.  The numbers 0 through 32 are codes for non-printing &ldquo;<a href="https://en.wikipedia.org/wiki/Control_character">Control Characters</a>&quot;, including obsolete commands like a bell/beep, and a few important but non-visible &ldquo;characters&rdquo;, like the horizontal tab (9) and the space (32).</p>
+<p>Each <strong>number</strong> also has a code. For example, &ldquo;0&rdquo; is 48, &ldquo;1&rdquo; is 49, and so on. Those codes are not as arbitrary as they may seem. In binary, 49 (&ldquo;1&rdquo;) is <code>0011 0001</code>. The last 4 bits <code>0001</code> equal 1, and thus are the same as the number. The last 4 bits of &ldquo;A&rdquo; and &ldquo;a&rdquo; are both <code>0001</code> as well.</p>
+<p>That <strong>a number can be a character</strong> like any letter <em>and</em> encoded as a different number is a crucial concept. Software must be able to determine whether to interpret <code>0011 0001</code> as 49, or &ldquo;1&rdquo;, or something else entirely.  When discussing these issues, it is convention to put any encoded character representation in quotes, and leave the numeric representation bare.</p>
+<p>There were <strong>two problems with ASCII</strong>. The first was that error checking became unecessary as computers became more reliable, which meant that a whole bit was essentially unused. Secondly, since ASCII only included the base English letters, people who wrote in other langauges (or who wanted to properly write certain names), were out of luck.</p>
+<h3 id="extended-ascii">Extended ASCII</h3>
+<p>Incorporating the 8th bit, many people made their own <strong>their own coding schemes</strong>, called &ldquo;<strong>code pages</strong>&quot;, for the values 128 through 256. Most kept ASCII&rsquo;s codes and just added more, though some changed some of the first 128 as well. Since there are many different languages, there were many code pages developed. However, only one code page could be used in any given document. Thus, it was difficult, if not impossible, to write documents in multiple languages, or in many asian lanaguages which have more than 256 characters .</p>
+<p>Although these are no longer the standard, many existing documents had used them and references to them are widespread. Those 256-character code pages were given identifiers with prefixes such as ISO, OEM, and Windows. The most common English/Latin standards were <strong><a href="https://en.wikipedia.org/wiki/ISO/IEC_8859-1">ISO-8859-1</a></strong> and the equivalent <strong><a href="https://en.wikipedia.org/wiki/Windows-1252">Windows-1252</a></strong> (not the same, but close enough). The term ANSI (which stands for American National Standards Institute) is sometimes <a href="https://en.wikipedia.org/wiki/ANSI_character_set">incorrectly used</a> in place of either or both (given their similarity).</p>
+<h3 id="unicode">Unicode</h3>
+<p><strong>Unicode</strong> was developed to be a comprehensive solution to the problems with ASCII (&ldquo;uni&rdquo; = &ldquo;one&rdquo;, &ldquo;one code&rdquo;). The organization assigned a code to each character in all of the world&rsquo;s lanugages. For compatibility, the first 127/256 codes were kep to be the same as ASCII and ISO-8859-1. The first version of their standard was released in 1991 but Unicode only reached <a href="https://www.w3.org/International/questions/qa-who-uses-unicode">majority use</a> around 2008.</p>
+<p>Unicode values are written in Hexadecimal and start with U+. So, &ldquo;A&rdquo; is still represented by the number 65, but is written U+0041 (4*16+1=65). The character &ldquo;1&rdquo; is still 49, written U+0031. These can be represented in 1 byte,  just like before.</p>
+<p>Unicode added 2-byte codes (4 hex digits, 16 bits) which allows a total of 65,536 codes (0 to 65,535). The codes from 256 up include the characters for nearly all modern langauges as well as many symbols.  But, Unicode <a href="https://en.wikipedia.org/wiki/Plane_(Unicode)">did not stop there</a>&ndash;there are also 3-byte codes, which allow for archiaic languages like cuneiform, specialized symbols (ex. musical notes and playing cards) and many Emoji. For instance, U+1F0A1 is the ace of spades: <strong>🂡</strong>. If you know the code, you can type <a href="https://support.office.com/en-us/article/insert-ascii-or-unicode-latin-based-symbols-and-characters-d13f58d3-7bcb-44a7-a4d5-972ee12e50e0">any character into Microsoft Word</a>.</p>
+<p><strong>UTF-8</strong> is the most-used implementation of Unicode in the United States because it allows the 1-byte charaters to just take up 1 byte (8 bits). This means the file is identical to an ASCII or ISO-8859-1 file if only 1-byte characters are included. UTF-8 still supports all of Unicode, but takes an <em>extra</em> byte to indicate the presence of each 2 or 3 byte character. Another common standard, UTF-16, stores <em>both</em> 1- and 2-byte chracters in 2 bytes. UTF-16 makes files unnecessarily bigger when almost all characters are Latin/English (2 bytes per character instead of 1), but it will ultimately be a smaller file for other languages (2 bytes per character instead of 3). Plus, UTF-16 files can only be correctly decoded by software that supports Unicode. Instead of &ldquo;UTF&rdquo;, you may also see &ldquo;UCS &ldquo;(ex. UCS-2) which are also Unicode.</p>
+<h1 id="whay-does-this-matter-for-data-analysis">Whay does this Matter for Data Analysis?</h1>
+<h2 id="software">Software</h2>
+<p>As long as a software supports Unicode in some way, it can store and display text data from essentially any langauge. All Unicode/UTF schemes can represent <strong>any character in any language</strong> with <a href="http://www.unicode.org/standard/unsupported.html">quite limited exceptions</a> (ex. new lanaguges). It even supports <a href="http://unicode.org/faq/bidi.html">right-to-left languages</a>.</p>
+<p>Whether the software can display <strong>menus and messages</strong> in that language is language-specific. Those require understanding the meaning of the language and must be created individually. You will have to check the software documentation to see exactly what features it provides for each language.</p>
+<p>Uncode has also established a system of &ldquo;normalization&rdquo;, which identifies similar characters and can help standardize data by <strong>removing accented characters</strong> (ex. á to a). See the <a href="http://www.unicode.org/charts/normalization/">normalization charts</a> for each language. There are many tools to do this, and each statistical software also has this function. Stata has <a href="https://www.stata.com/manuals/m-5ustrnormalize.pdf">ustrnormalize</a>, SPSS has <a href="https://www.ibm.com/support/knowledgecenter/SSLVMB_23.0.0/spss/base/syn_transformation_expressions_string_functions.html">NORMALIZE</a>, SAS has <a href="https://documentation.sas.com/?docsetId=nlsref&amp;docsetTarget=p078j5y1bbc9xfn1scp11kw3nmnt.htm&amp;docsetVersion=9.4&amp;locale=en">BASECHAR</a>, R has the <a href="https://www.rdocumentation.org/packages/UnidecodeR/versions/0.02">UnidecodeR</a> package, and Python has the <a href="https://pypi.org/project/Unidecode/">Unidecode</a> package.</p>
+<h2 id="files">Files</h2>
+<p>The makers of a software decide whether the files it produces should be saved and interpreted according to ASCII/Unicode rules or not. If so, <code>11001000</code> will be &ldquo;A&rdquo; and so on. But, that same byte could represent  anything the programer desires. That leads us to the two types of files:</p>
+<ul>
+<li><strong>Text files</strong> are intended to be decoded into readable characters using one of the standardized text coding schemes</li>
+<li><strong>Binary files</strong> are not</li>
+</ul>
+<h3 id="text-file-extensions">Text File Extensions</h3>
+<p>Many (many) different types of files are <strong>Text</strong> and can be easily examined in a text editor. Examples include:</p>
+<ul>
+<li><strong>script files:</strong> .R, .py, .bat, .sps, .do, .sas</li>
+<li><strong>data files:</strong> .csv, .tab, .tsv, .por, .json</li>
+<li><strong>document files:</strong> .rtf, .ipynb, .md, .rmd, .xml, .html, .log, .tex</li>
+<li><strong>many others:</strong> .ris, .bib, .eml, .ics</li>
+</ul>
+<p>Many of these text files also include symbolic <a href="https://en.wikipedia.org/wiki/Markup_language">Markup</a> that gives instructions to the indended software on how to display. Many people are familiar with HTML, which is a type of Markup. When you open the file in a text editor instead, you can see and edit the instructions along with the content.</p>
+<h3 id="determining-file-type">Determining File Type</h3>
+<p>Operating systems are built to automatically open each file with the intended software, and do not indicate whether a file is Text or Binary. But, it is a useful characteristic to know. To find out, try opening the file in a text editor like Notepad (Windows), TextEdit (Mac), <a href="https://notepad-plus-plus.org/">Notepad++</a> (Windows), <a href="https://atom.io/">Atom</a>, or even Microsoft Word. When trying to open the file on a Windows computer, you may need to change the dialog box to show &ldquo;All Files&rdquo; by choosing that from the drop-down box in the lower right, as seen below.</p>
+<p><img src="image-20200427213716938.png" alt="Open File Dialog Box"></p>
+<p>Once opened in a text editor, it is usually easy to tell if you are seeing the contents of a binary file: there is a lot of gibberish on lines of widely varying size, sometimes interspersed with english instructional words. Although you might also see gibberish if the text editor wrongly decodes a document, this happens rarely and looks different. For reference, this is what a small section of a <strong>binary pdf file</strong> looks like when opened in Notepad++ (left) and Notepad (right).</p>
+<p>|<img src="image-20200424164857605.png" alt="Binary PDF File in Notepad++">|<img src="image-20200424165104280.png" alt="Binary PDF File in Window&rsquo;s Notepad"></p>
+<h3 id="long-term-preservation">Long-term Preservation</h3>
+<p>Text files are typically preferred for long term storage and preservation of data and documentation because the content can be read in a text editor even if the original software is unavailable. However, even though pdf files are binary, it is a <a href="https://www.loc.gov/preservation/digital/formats/fdd/fdd000318.shtml">good preservation format</a> because is an open standard and well-supported.</p>
+<p>Data files produced by statistical software are typically binary (ex. .sav, .dta, .sas7bdat). Although it is good to preserve the original file because it contains additional metadata, it is best to also save data in a text format. The most common are &ldquo;<a href="https://en.wikipedia.org/wiki/Delimiter-separated_values">delimited</a>&rdquo; files where the columns are separated by a symbol such as a comma, tab, or pipe &ldquo;|&rdquo;. For example, the file extension .csv refers to <strong>c</strong>omma-<strong>s</strong>eparated <strong>v</strong>alues. SPSS&rsquo;s portable .por file is also in text format as it was meant for data transfer. By default, R will write binary data files, but the functions have an option to use ASCII instead. Because these text formats do not store labels and other data information, be sure to make a codebook and store it with the file.</p>
+<h3 id="decoding-issues">Decoding Issues</h3>
+<p>When text is decoded improperly, the most common noticable error seems to be with single or double <strong>quote marks</strong>. Modern software often inserts &ldquo;<a href="https://support.office.com/en-us/article/smart-quotes-in-word-702fc92e-b723-4e3d-b2cc-71dedaf2f343">smart quotes</a>&rdquo; that have <a href="https://www.cl.cam.ac.uk/~mgk25/ucs/quotes.html">different opening and closing versions</a>. But these characters were not available until Unicode and are 2 bytes (total of 3 bites if encoded as UTF-8). So, they will appear as 2 or 3 weird characters if decoded by older software or any system not using Unicode.</p>
+<p>Unicode files support putting a special character, called a <strong><a href="https://en.wikipedia.org/wiki/Byte_order_mark">byte order mark (BOM)</a></strong>, at the beginning to indicate a file is Unicode and which flavor (some options, like endianness, are not addressed here). It is sometimes not used, in part becuase software that reads the file as ASCII would <a href="https://www.johndcook.com/blog/2019/09/07/excel-r-bom/">interpret it as a weird character</a>. If you see a weird character at the beginning and know it is from the BOM, consider whether your file has non-ASCII characters. If so, then make sure you specify the correct decoding (ex. &ldquo;UTF-8 BOM&rdquo;). If not, you can safely delete that weird character.</p>
+<p>UTF-8 is called <strong>variable-length</strong> because the characters may take up 1 byte, 3 bytes, or 4 bytes. Since characters are not the same as bytes, this could potentially make it more difficult for string decoding and processing. There is some speculation that it might take less time to decode a file as ASCII because of this.</p>
+<h2 id="variables">Variables</h2>
+<p>Just like each file is either Text or Binary, every variable in statistical software has a <strong>type</strong> (sometimes also called class or encoding). That includes whether the stored binary values in that variable are interpreted as numbers or treated as codes for their ASCII/Unicode text characters.</p>
+<p>Here are the terms each software gives to the types:</p>
+<table>
+<thead>
+<tr>
+<th>Software</th>
+<th>Number</th>
+<th>Text</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SPSS</td>
+<td>numeric</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Stata</td>
+<td>byte, int, long, float, double</td>
+<td>str / string</td>
+</tr>
+<tr>
+<td>SAS</td>
+<td>numeric</td>
+<td>character</td>
+</tr>
+<tr>
+<td>R</td>
+<td>int, num / numeric</td>
+<td>chr / character</td>
+</tr>
+<tr>
+<td><a href="https://pbpython.com/pandas_dtypes.html">Pandas</a></td>
+<td>int64, float64, bool</td>
+<td>object</td>
+</tr>
+</tbody>
+</table>
+<p>When there are multiple number types, they differ in the number of bytes used and whether it stores decimals or just integers. All other data types (ex. date or currency) are based on one of the the number types, with formatting or further interpretation. In Stata, for example, the &ldquo;byte&rdquo; type uses 1 byte (8 bits) and will only store integers between -127 and 100 (recall 8 bits has 256 combinations).  The long and float types each use 4 bytes (integers vs decimals respectively), and the double uses 8 bytes.</p>
+<p>If you try to store a very large number in a type that is too small, you will lose information. For instance, if you are creating a date-time variable, is crucial that you specify the type as double. By default, Stata uses the float type, which does not have enough bytes to store the time precicely.   Like other software, Stata helpfully has a compress command that will optimize variable storage. The command has no downside as it cannot cause data loss. Thus, it should be run after creating many new variables.</p>
+<p>The number (unencoded) representation is better for data where possible. As you have learned, the number 123 can be stored in 1 byte, whereas &ldquo;123&rdquo; would use 3 bytes (ASCII characters 49 50 51). Further, &quot; 123 &quot; would use 5 bytes (32 49 50 51 32) and not be considered at all equal to &ldquo;123&rdquo;. The extra spaces do not provide additional meaning, but spaces are still encoded characters. Software functions that will remove extra spacing and unseen characters are often called &ldquo;trim&rdquo; or clean&rdquo;.</p>
+<h3 id="numbers--text">Numbers + Text</h3>
+<p>All statistical software also has a way of combining the advantages of text and numbers for variables that have a defined set of values. This is particularly useful for <a href="http://homes.chass.utoronto.ca/~josephf/pol242/4LevelsofMeasurement.htm">Ordinal variables</a>: categorical variables that have a specific natural order. Each value (&ldquo;level&rdquo;) does have a non-numeric meaning, but numbers are important to control ordering. Software thus stores these variables as a number (or code) and then the coding scheme linking the numbers to specific text.</p>
+<p>SPSS, Stata, and SAS all allow numeric variables to have <strong>labels</strong> for each value. Those labels are displayed in output (either alone or alongside the number value). But, for data management and calculation purposes the variable is treated identically to other numberic variables. Thus, it is necessary to refer to the number value when grouping or recoding and regression dummy coding must be done specifically.</p>
+<p>R has a special data type called <strong>factor</strong>, which allows it to go beyond just numbers with labels. Such variables are treated appropriately as categorical for statistics and visualizations. For data management purposes, the value must be referred to using its textual label. Thus, the number value is relevant only for ordering purposes.  Pandas in Python has the <strong>category</strong> data type. It is treated much like the Text/object varaible type. It does not automatically structure the variable for analysis like R, such as dummy coding.</p>
+<p>Making text variables into numbers + text means that the text label needs only to be stored once and the stored number value is just 1 byte.  This is one of the best ways to reduce the amount of information (bytes) that the computer must process and store and thus increase speed. This is especially true if you have a many rows or long text labels or a computer with low memory (RAM).</p>
+<h3 id="codes-and-coding-1">Codes and Coding</h3>
+<p>The concept of <strong>Codes</strong> and <strong>Coding</strong> is a huge part of any data work. Just like representing the letter &ldquo;A&rdquo; with the number 65, it is common to represent groups with numbers as in the previous section. Those numbers also also referred to as codes.  Words like <strong>en</strong>code, <strong>de</strong>code, and <strong>re</strong>code all refer to this concept, both with files and variables. <strong>Encoding</strong> means to assign or replace something with a code. When we save a file, this is what happens&ndash;it turns what we have seen and written into bits. When we encode a variable, we assign each Text value a number and add the Text as labels. <strong>Decoding</strong> means to replace or substitute the code with it&rsquo;s meaning so that we can more easily understand it. When we open a file, it is decoded so that we can read it. When we decode a variable, we turn the labels to numbers back into Text value. This can be useful when combining files with different encoding. <strong>Recoding</strong> means to change the codes that were assigned. This is one of the common tasks with variables to combine or re-order groups. For files, though, changing the way that codes are interpreted is called converting.</p>
+<h1 id="more-reading">More Reading</h1>
+<ul>
+<li><a href="https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/">The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)</a></li>
+<li><a href="https://deliciousbrains.com/how-unicode-works/">How Unicode Works: What ever devloper needs to know about strings and 🦄</a></li>
+</ul><ul class="pa0">
+  
+   <li class="list">
+     <a href="/tutorials/tags/fundamentals" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Fundamentals</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tutorials/tags/data" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Data</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://dkermer.github.io/tutorials" >
+    &copy;  Debby's Posts 2020 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/tutorials/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
