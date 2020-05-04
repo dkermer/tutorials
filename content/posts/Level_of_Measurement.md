@@ -1,7 +1,7 @@
 ---
 title: "Level of Measurement"
 date: 2020-04-20T21:34:54-04:00
-draft: false
+draft: true
 tags: ["One", "Two"]
 ---
 
@@ -19,7 +19,7 @@ Both these words are often used to describe these types of values. In part, this
 
 ### Nominal
 
-Nominal refers to categorical variables that are not Ordinal. In other words, there is no natural order to the categories. ("**Nom**inal" = "**Nom** de Plume" = "Pen name"). Even if software assigns numbers to each category (becuase numbers take less processing power), the numbers have no specific meaning. They are simply a "code" representing the group. 
+Nominal refers to categorical variables that do not have any natural order ("**Nom**inal" = "**Nom** de Plume" = "Pen **n**ame"). Even if you code each category with a number (becuase numbers take less processing power), the numbers have no specific meaning. They are simply a "code" representing the group. 
 
 ### Ordinal
 
@@ -31,7 +31,9 @@ A Quantity -- "How many?" "How much?"
 
 ### Interval & Ratio
 
-Mathematically, Ratio variables allow for ratios to be meaningul because the value 0 means none. Thus, in a Ratio variable, it is meaningful that 10 is twice 5 and 4 is twice 2. With an Interval variable, the value 0 does not mean none, so one would never say thing like "10 is twice of 5". 
+Ratio variables are so named because ratios are meaningful. It is so because since the value 0 means none. Thus, in a Ratio variable, it is meaningful that 10 is twice 5 and 4 is twice 2. With an Interval variable, the value 0 does not mean none, so one would never say thing like "10 is twice of 5". 
+
+Interval variables are more easily thought of as Quantitive variables without a true zero. But, they got their name 
 
 For most statistical analysis, it is irrelevant whether a variable is interval or ratio. However, it can matter for many relevant decisions, such as data preparation and graphing.  For instance, the graphing axis for a Ratio variable should typically start at 0. For an interval variable this is not relevant. 
 
@@ -44,6 +46,10 @@ Some people use the word Continuous to refer to all types of quantitative variab
 ### Scale & Numeric
 
 Both these words are often used to refer to any quantitative variable (both Interval and Ratio). The statistical software SPSS, for example, uses the the word Scale. But, both words have additional meanings that can lead to confusion. Interval or Ratio can be answers to the question of what "scale" a variable is measured on. Numeric implies that any time numbers are used it is Quantiative. However, numbers are often used as codes (shorthand) for Qualitative variables, or have intrinsic cateagorical meaings, such as zip codes representing places. 
+
+### Counts
+
+Although coutns are a type of Discrete Scale variable, they merit a mention because their distribution is typically non-normal. 
 
 ## Both
 

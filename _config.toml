@@ -1,4 +1,4 @@
 baseURL = "https://dkermer.github.io/tutorials"
 languageCode = "en-us"
 title = "Debby's Posts"
-theme = "ananke"
+theme = "cupper-hugo-theme"

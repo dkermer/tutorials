@@ -26,17 +26,20 @@ To set it temporarily, just type the below into your terminal window. To automat
 
 *Examples*:
 
-* A simple $ and space:\
+* A simple $ and space:
+
 	`PS1='\$ '`
-	
-* The Default on Windows
-	
+
+* The Default on Windows: 
+
 	`PS1='\u@\h:\w\$'`
-	
-* A $ with a blue background and line numbers:\
+
+* A $ with a blue background and line numbers:
+
 	`PS1='\! \[\e[1;37m\]\[\e[44m\]\$\[\e[1;40m\]\[\e[1;37m\] '`
-	
-* A unix-style prompt:\
+
+* A unix-style prompt:
+
 	`PS1='\[\e[0;37m\]\[\e[44m\]user:\[\e[42m\]\w\[\e[40m\]\[\e[1;31m\]\$\[\e[1;37m\] '` 
 
 
