@@ -1,7 +1,11 @@
+
+
 {{ $headings := findRE "<h2.*?>(.|\n])+?</h2>" .Content }}
 {{ if ge (len $headings) 2 }}
   <nav class="toc" aria-labelledby="toc-heading">
     <h2 id="toc-heading">Table of contents</h2>
+	 {{ .TableOfContents }}
+	 <!--
     <ol>
       {{ range $headings }}
         <li>
@@ -15,5 +19,6 @@
         </li>
       {{ end }}
     </ol>
+	-->
   </nav>
 {{ end }}

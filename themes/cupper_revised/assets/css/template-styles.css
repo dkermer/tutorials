@@ -26,7 +26,7 @@ template {
   display: none !important;
 }
 * + * {
-    margin-top: 2.25rem;
+    margin-top: 1.05rem;  /*dak was 2.25*/
 }
 br,
 dt,
@@ -117,6 +117,7 @@ h3,
 h4 {
     font-family: Miriam Libre, serif;
     line-height: 1.125;
+	margin-top: 2.25rem; /*dak added */
 }
 h1 {
     font-size: 2rem;
@@ -172,7 +173,7 @@ code {
 /* Lists */
 main ul,
 main ol {
-    margin-left: 2.25rem;
+    margin-left: 1.25rem; /* dak altered */
 }
 main li + li {
     margin-top: 0.5rem;
@@ -425,8 +426,9 @@ caption {
 /* Tables of contents */
 .toc {
     font-size: 0.85rem;
-    border: 1px solid;
-    padding: 1.5rem;
+    border: 1px solid lightgray; /* dak altered */
+    padding: 0px 1.5rem 1.5rem;  /* dak altered */
+	line-height: 1; /* dak added */
 }
 .toc h2 {
     font-size: 1rem;
@@ -456,12 +458,17 @@ caption {
 .patterns-list h2 {
     font-size: 1.25rem;
     line-height: 1.6;
+	margin-top: 0rem; /* dak added */
 }
-.patterns-list li + li {
+.patterns-list > li + li {   /* dak altered */ 
     margin-top: 1rem;
     padding-top: 1rem;
     border-top: 2px solid;
 }
+.patterns-list .summary { /* dak added */
+    margin-top: .5rem;
+}
+
 .patterns-list a {
     border: 0;
 }
