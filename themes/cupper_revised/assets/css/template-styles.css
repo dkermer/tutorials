@@ -142,19 +142,23 @@ kbd {
     font-size: 0.66rem;
     padding: 0.1rem 0.33rem;
     border-radius: 0.25rem;
-    border: 2px solid;
-    box-shadow: 0.125rem 0.125rem 0 #111;
+    border: 1px solid;  /* dak */
+    box-shadow: 0.025rem 0.025rem 0 #505050; /* dak */
     vertical-align: 0.33em;
 }
 pre,
 .file-tree {
     overflow-x: auto;
-    padding: 1.5rem;
-    border: 1px solid;
+    padding: 1rem; /* dak */
+    border: 1px solid lightgray; /* dak */
+	background-color: #F5F5F5; /* dak */
 }
 code {
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     font-size: 0.85em;
+	/* border: .5px solid lightgray; /* dak added */
+	background-color: #F5f5f5; /* dak */
+	
 }
 .cmd {
     padding: 0.75rem;
@@ -202,7 +206,7 @@ dd li + li {
 
 /* Blockquotes */
 blockquote {
-  border-left: 0.5rem solid;
+  border-left: 0.25rem solid lightgray; /* dak */
   padding-left: 0.75rem;
 }
 blockquote .author {
@@ -255,13 +259,15 @@ label {
 /* Tables */
 table {
     text-align: left;
-    table-layout: fixed;
+    /* table-layout: fixed; /* removed dak */
     width: 100%;
     border-collapse: collapse;
+	border-color: gray; /* added dak */
 }
 th,
 td {
-    border: 2px solid;
+    border: .5px solid; /* dak */
+	border-color: inherit; /* dak */
     padding: 0.5rem;
     line-height: 1.25;
     margin: 0;

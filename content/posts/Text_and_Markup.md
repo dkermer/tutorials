@@ -1,249 +1,272 @@
 ---
-title: "What Beginning Researchers need to know about Text Files and Markup"
+title: "What Researchers need to know about Text Files and Markup"
 date: 2020-04-20T21:34:54-04:00
-draft: true
+draft: false
 tags: ["Fundamentals", "Data"]
 ---
 
-
+This series is meant for non-programmer researchers who are beginning to use text-based tools and syntax. 
 
 tldr:
 
 - Digital Researchers need to understand the different types of files they work with. 
 - Many people make use of Markdown languages without understanding that they are just a part of the Markup ecosystem. 
-- The escape character <kbd>\\</kbd> switches a langage interpreter between interpreting characters as text and as a special character. 
+- The escape character <kbd>\\</kbd> switches a language interpreter between interpreting characters as text and as a special character. 
 - Many researchers do not have a programming background and may not be familiar with some concepts. 
 
 <!--more-->
 
-In general, there are three main types of text files, based on how the text is interpreted.  There is no specific taxonomy and some people use their own scheme. 
+In general, there are three main types of text files, based on how the text is interpreted.  There is no specific taxonomy, this distinction is simply what I think is useful for researchers. 
 
-- **Plain Text** - No interpretation, inteded to be read exactly as created, though some people utilize symbols to facilitate reading, it is not intended to be interpreted. Typically ASCII-compatible. 
-- **Scripts** - This contains the code for a programming language. 
-- **Markup** - Extra characters utilize a standard scheme that is interpreted by software as structure, annotation, or display instructions. Some people distinguish between three types of markup: presentational, proceedural, and descriptive. For researchers, there are really just two that matter:
-  - **Documents** - Provides instructions regarding the display of text.  
-  - **Data** -  Provides structure to the data elements, either text or numeric. 
+- **Script** - This contains the code for a programming language. 
+- **Document** - For the display of text.  
+- **Data** -  Structured text or numeric data. 
 
-### Text Files and Version Control 
+## Markup
 
-One of the advantages of text files is that they work really well with version control systems. Although an entire binary file can be saved into a version control system, with text files it can save room by only saving the differences between files, and it will show your changes each time.
+ Data Document and data file Text files become even more useful when combined with Markup, which  is characters that provides instructions that display things in a formatted or specialized way. Markup uses human-readable characters to specify that formatting or structure. Some are complex and some are simpler.  But complexity usually allows for much more control over the output. 
 
-### Introduction to HTML, XML, and XHTML
+Markup is extra characters utilize a standard scheme that is interpreted by software as structure, annotation, or display instructions. Some people distinguish between three types of markup: presentational, procedural, and descriptive. For researchers, there are really just two that matter:
 
-This family of markup languages are used both for documents (HTML) and data (XML). It is easy to identify them by format since they all use **tags** surrounded by <>'s. 
+### Version Control
 
-```
-<img> </img>
-```
+[Version control](http://crlionline.net/node/198) systems like Git, Mercurial, and Subversion, are much more useful when using Text Files than Binary files. Although it will store both types files, it can only show line-by-line changes for text files. Thus, using a Markup file will all you to use all the benefits of a version control system. Comparing Microsoft Word documents can only be done inside Word. 
 
-For instance, to get the little key icons, I tpe `<kbd>Ctrl</kbd>`  makes  <kbd>Ctrl</kbd>
+### Converting
 
-**H**TML (**H**yper**t**ext **M**arkup **L**anguage) was built to control the display of documents on the internet (hypertext by definition is text that links to other information) and has a defined set of tags for that purpose.. **X**ML (e**X**tensible **M**arkup **L**anguage) is extensible, which means that it can use any set of tags. There are several types used for different reasons. **XH**TML (e**X**tensible **H**yper**t**ext **M**arkup **L**anguage) is like HTML but based on XML instead of SGML, an older and more complex markup language that HTML also came from. See more about these formats in the following sections. 
+[Pandoc](https://pandoc.org/) is a software tool that specializes in converting between different markup formats. It is used by R Markdown, Zotero, and many text editors. It is commonly used to create PDF files from any of those formats by using some extensions built to work with TeX, which has to be installed separately. 
 
-## Script Files
+R Markdown/Knitr uses elements of TeX to produce the nicely formatted pdf documents (thus, either MiKTeX or TinyTeX must be installed on Windows computers). 
 
-***Every*** programming script, **including those for statistical software**, is saved in text format. Thus, files of type .sps, .do, .sas, .R, .py, and .sql, can all be opened and written in any [text editor](https://www.computerhope.com/jargon/e/editor.htm).  Although one of the actions may be to print text, the purpose is not to control the display, but to create or process it. 
+### WYSIWYG
 
-Programming languages are divided into **interpreted** and **compiled** languages. All statistical software use interpreted languages. Compiled languages like C++ are turned into binary files in order to run. This makes it work much faster because it has already been translated directly into computer instructions and does not need to be interpreted "at runtime" (while it is also following the instructions).  
-
-The advantage of opening the text script file in particular editors are **syntax highlighting **, which refers to the coloring that highlights different aspects of the code, and **code completion**, which helps you remember and type variable and function names. Many text editors used by programmers support highlighting for many languages and allow users to create their own. This has been done for SPSS, Stata, and SAS in programs like Notepad++ and others. 
-
-
-
-## Markup - Documents
-
-Text files become more useful when combined with a Markup Language that allows for instructions that display things in a formatted or specialized way. Markup uses human-readable characters to specify that formatting. Some are complex and some are simpler.  But complexity usually allows for much more control over the output. 
-
-### Topics
-
-#### WYSIWYG
-
-Many people today cannot remember a time when computers could only display plain text. To control the look of the document, users would add tags or control codes--essentially markup--to indicate how the document would look once printed.  When computer displays improved and software took advantage of it, visible markup was unnedeed: make words bold on the screen, get words in bold when printed.
+Many people today cannot remember  when computers could only display plain text. To control the look of the document, users would add tags or control codes--essentially markup--to indicate how the document would look once printed.  When computer displays improved and software took advantage of it, visible markup was unneeded. Writers could make words bold on the screen,  and get words in bold when printed. These **Rich Text** or WYSIWYG editors do not show or save a markup file unless and until needed.   
 
 >  "**W**hat **Y**ou **S**ee **I**s **W**hat **Y**ou **G**et" -> WYSIWYG ("wizzy-wig") 
 
-Back before programs like Microsoft Word was introduced, word processors could not do much more than text editors today. They did all text formatting had to be added by a type of markup that would appear on the scrre.  When graphical document editors were introduced that would actually display bold text in bold, it was a big deal. 
+Wanting to see the controlling markup has never gone obsolete; many writers prefer to more precisely see and control the formatting instructions. Markdown editors have more recently been described as "What You See Is What You *Mean*". 
 
-- Rich Text:	  
-- Markdown:   "What You See Is What You Mean" 
+## Scripts
 
-refers to "Rich Text" document editors that do not use Markup. You make the text on the screen look how you want (with formatting and spacing) and it will save and print *exactly* how it appears on the screen (there is a continuum of how exactly, of course, but it is that idea). 
+***Every*** programming script, **including those for statistical software**, is saved in text format. Thus, files of type .sps, .do, .sas, .R, .py, and .sql, can all be opened and written in any [text editor](https://www.computerhope.com/jargon/e/editor.htm).  
 
-Referring to markdown in particular, though it applies to other Markup as well, some people have tried to illustrate the distinction with: 
+Programming languages are divided into **interpreted** and **compiled** languages. All statistical software uses interpreted languages. Compiled languages like C++ must be converted into binary files in order to run. This can vastly increase speed because the instructions have already been translated directly into computer language and do not need to be interpreted "at runtime" (while it is also following the instructions).  
 
-There are some WYSIWYG-like markdown editors, but the use of markup cannot be ignored. **Rich Text Editors** show the actual formatting, and will convert it to underlying binary or HTML code only as needed. 
+The advantage of opening a text script file in specific editors are **syntax highlighting **, which refers to the coloring that highlights different aspects of the code, and **code completion**, which helps you remember and type variable and function names. Many text editors used by programmers support highlighting for many languages and allow users to create their own. Notepad++, for instance, can support all the languages by installing some user-contributed files. 
 
-#### Converting
+Every software language has a **structure** and it is crucial to understand it. Being able to look at someone else's syntax and pick out the important words. For traditional software it is usually the first word or few words. For the programming langauges (R & Python), it is important to identify the functions (before parentheses)
 
-- pandoc
-- Writage - add-in for Microsoft Word to save as Markdown
+Just like when learning a language, knowing the words is not good enough--indeed, that is what dictionaries can do. It is important to understand the grammar, how the words fit together. For example, as a consultant, it is useful for me to be able to say "Use the collapse command" or "add the detail option" 
 
-### Types
+### Statistical Software
 
-#### HTML
+Programming is focused on writing functions and loops and 
 
-HTML is a specific implmeentation of XML for making webpages. Because it is used to make web pages, many more people are familiar with HTML 
+Programmers learn to print "Hello, World!", perform math, identify types and classes, and create functions. . Variables have a different mening, 
 
-Similarly, HTML files are text, have markup that web browsers use to construct formatted text, tables, and links.  The [.docx format](https://www.toptal.com/xml/an-informal-introduction-to-docx) is also a type of text, though it is complex, spread across multiple files and zipped. Utlilzing xml. Microsoft Word's newest .docx extension is actually a text format (zipped XML), though it has much more extranneous information than RTF files so it is much harder to access the content. Plain text or Markup ill be the best in the long run. 
+Most people who use R do not need to program. They need to import data, calculate statistics, draw graphs, 
 
-Tags are <tag>stuff</tag>
+Data Scientists start with graphing. 
 
-Pre-defined tags especially for displaying documents on the internet. You cannot add your own tag. 
+Indeed, is is convention in R to avoid loops in favor of mapping or apply functions. I have seen many programmers of other languages loop through each row in a dataset, which is compltely unheard of for data-focused researchers. 
+
+Coding is usiing written text to give a software instructions. 
+
+The statistical softwares SPSS, Stata, and SAS each allow for more traditional programming, but the vast majority of what users will do is simpler type of coding. Moreover, the language for these software is intentionally simplified and targeted towards particular types of researchers doing the types of things they need to do. Because the langauges are focusing on for conducting statistical analysis, and are often confusing to those who try to .   but have their own logic that is easier for non-progg
+
+https://towardsdatascience.com/10-not-so-intuitive-things-about-programming-with-r-a4d9d120c42c
+
+https://blog.revolutionanalytics.com/2015/06/why-has-r-been-so-successful.html
+
+https://www.computerworld.com/article/2497319/business-intelligence-beginner-s-guide-to-r-syntax-quirks-you-ll-want-to-know.html
+
+https://codeandculture.wordpress.com/2010/08/06/some-ways-stata-is-an-unusual-language/
+
+R has more similarities with traditional programming lagnaguges
+
+People disagree over what defines a programming language. Statistical langauges do have traditional programming features like loops and functions, but the structure differs substantially. However, most users do not need those tools and instead are able to use the simplified tools.  The syntax for statistics-focused languages, though including 
+
+
+
+shares some features of other genreal purposes langauges, but has both similarities and differences from other general purpose languages (including Python).  
+
+An experienced computer programmer would find  Regardless, each software does indeed have a syntax, with a structure and vocabulary, as well as loops and the ability to create your own functions.  programming languages.  the syntax for software like SPSS, Stata, and SAS are have many similarities. There is a structure, a vocabulary, and a way  Indeed, Stata makes it easy for users to extend it by [creating new commands](https://www.stata.com/features/community-contributed-commands/). 
+
+## Documents
+
+### HTML, XML, and XHTML
+
+This family of markup languages are used both for documents and data (XML only). It is easy to identify them by format since they all use **tags** that are surrounded by <>'s. For instance, to get the key image <kbd>Ctrl</kbd>, I type `<kbd>Ctrl</kbd>` (the *tag* is "kbd").  Another example is `<tag>stuff</tag>` and `<br />`, which is for a line break. 
 
 ```
 This is some <strong>bold</strong> text. 
 ```
 
-#### RTF / Rich Text Format
+HTML (**H**yper**t**ext **M**arkup **L**anguage) was built to control the display of documents on the internet (hypertext by definition is text that links to other information) and has a defined set of tags (words) for that purpose. XML (e**X**tensible **M**arkup **L**anguage) is extensible, which means that it can use any set of tags. XHTML (e**X**tensible **H**yper**t**ext **M**arkup **L**anguage) is HTML based on XML instead of SGML, an older and more complex markup language that HTML also came from. See more about XML formats in the following section. 
 
-[Rich Text format](https://en.wikipedia.org/wiki/Rich_Text_Format) (RTF), was the standard text-based alternative to Microsoft Word's binary document format for many years and is thus supported by many document editing programs. Most people these days will use a simpler options like Markdown, but RTF is still used by many programs. For example, some statistical output will save to RTF instead of Word format (some actually save in RTF but say it is Word to avoid confusion!). For your purposes, they can be treated as the same. 
+HTML uses pre-defined tags especially for displaying documents on the internet and was created in 1990. You cannot add your own tag names. Learn more about [HTML](https://www.w3schools.com/html/). 
 
-Here is an example of RTF from Wikipedia: 
+### RTF / Rich Text Format
+
+[Rich Text format](https://en.wikipedia.org/wiki/Rich_Text_Format) (RTF), was developed by Microsoft in 1987 as an text-based alternative to Microsoft binary document format to facilitate portability to other software. Indeed, it is supported by most all document editors. Markdown is now more popular due to its [relative] simplicity, but you may only have rtf as a choice (ex. Stata's estout). SPSS even puts a .doc extension on their rtf exported output (accurately labeled "Word/RTF"). Either works.  
 
 ```
-{\rtf1\ansi{\fonttbl\f0\fswiss Helvetica;}\f0\pard
+{\pard
 This is some {\b bold} text.
 }
 ```
 
-which simply displays this: 
+### TeX / LaTeX
 
-> This is some **bold** text.
-
-#### TeX / LaTeX 
-
-LaTeX ("lah-tech", though some say "lay-tex") is the oldest and most-used academic markup scheme, having been released in 1984. It provided a more user-friendly way of using TeX, which actually implements the styling which was intended to allow writing papers with complex mathematical expressions. LaTeX helps to set up the document. 
-
-R Markdown/Knitr uses some parts of LaTeX to produce the nicely formatted pdf documents (thus, either MiKTeX or TinyTeX must be installed on Windows computers). 
+LaTeX ("lah-tech") is the oldest document markup scheme still in wide use, having been around since 1984. It provides a more comprehensive and user-friendly way of using TeX, which actually implements the markup. Researchers in the sciences use it to write papers with complex mathematical expressions. It can also make books and slides. 
 
 ```
-\documentclass{article}
-\begin{document}
 This is some \textbf{bold} text. 
-\end{document}
 ```
 
-It is similar to RTF in that there are many \\'s and {}'s, but notice that the brackets here are after the 
+LaTeX syntax is similar to RTF in that there are many \\'s and {}'s, but notice that the brackets here are after the command name, not before. 
 
-#### Markdown
+Learn more about [LaTeX](https://www.andy-roberts.net/writing/latex). 
 
-Markdown is a general term for minimal-markup document structures. For example, putting astrisks around a word to add emphasis. Just like ASCII, there is a [basic implementation](https://www.markdownguide.org/cheat-sheet/) that all the others use. The different  markdowns are called "[flavors](https://github.com/commonmark/commonmark-spec/wiki/markdown-flavors)", and include RMarkdown and GitHub Flavored Markdown (GFM) .
+### Markdown
 
-
-
-There are tons and tons of different styles that people have made. For instance, in a Markdown text document (a specific style of Markup), surrounding a word with asterisks will make it display in italics. 
+Markdown was created in 2004 and has quickly gained users because it is "lightweight" (requires few markup characters) and easy to read as is. For example, you just put asterisks around a word to add emphasis. Markdown is most directly [compared to HTML](https://www.markdownguide.org/basic-syntax/) because many people who use it are ultimately creating websites. 
 
 ```
 This is some **bold** text. 
 ```
 
-[Comparison of Markdown and HTML](https://www.markdownguide.org/basic-syntax/)
+Like ASCII, the [original implementation](https://www.markdownguide.org/cheat-sheet/) has been is incorporated into many different "[flavors](https://github.com/commonmark/commonmark-spec/wiki/markdown-flavors)" with fancier features. Popular flavors include GitHub Flavored Markdown (GFM) and RMarkdown. Because the base Markdown is the same for all, most Markdown applications should suffice. Windows users can even save Microsoft Word documents in Markdown with an [add-on](http://www.writage.com/). 
 
-## Markup - Data
+## Data
 
-### Issues
+### Tabular
 
-**Basic descriptive statistics** will quickly reveal if a text data file is not interpreted correctly. Values will end up in the wrong column and/or cases maybe split across rows. If you see errors, look at the entire row of data (specifically, columns to the left) to identify where the problem started. 
-
-### Types
-
-#### Delimited
-
-To delimit something means to mark the boundaries of something. In delimited data files, the column boundaries are marked (e.g., sepearated) with a character.  Any character can be used, but the most common **delimiters** are: 
-
-| Delimiter | Character                                         | Extension        | Notes                                                        |
-| --------- | ------------------------------------------------- | ---------------- | ------------------------------------------------------------ |
-| Comma     | <kbd>,</kbd>                                      | .csv             | Most computers will automatically open in Excel              |
-| Tab       | <kbd>Tab</kbd><br /> <kbd>\\</kbd>+<kbd>t</kbd>   | .tab, .tsv, .txt | Less common in text, so fewer conflicts. But, can be difficult to identify. |
-| Pipe      | <kbd>\|</kbd><br /><kbd>Shift</kbd>+<kbd>\\</kbd> | .dat<br />.txt   | Rarely used in text and looks like a column break. But, must be specified, and thus much harder for others to use. |
-
-Specifying the **text qualifier** (usually double quotes) may also be necessary. It is needed if the data itself contains line breaks (\n) or the delimiter, so the data in that field will be surrounded by the text qualifier. If the data has both commas and quotes, then software should *escape* (put a backslash before) any quotes in the data for you (but not always) . 
+Tabular data is organized into rows and columns, as in spreadsheets (ex. Excel) or statistical software (e.g., "data table").  Each row represents a "thing" (e.g., person, place, action). Columns typically have a header row that identifies the characteristics of that thing that are stored in each column (aka variable names). There are two ways that tabular data can be stored in text files. 
 
 #### Fixed Format
 
-Fixed format files look like big blocks of numbers and **do not have variable names** in the first row. Back when hard drive space was precious, it was common for data to be stored that way because there was no need for delimiters which were non-data characters that took up room. Instead, each column was allocated a specific number of characters and thus could be identified by position. The label ASCII does not itself specify fixed format (delimited data can also be encoded as ASCII), but is often listed as such because it is an older file. To read this type of file, it is necessary to have a separate "setup file" for a statistical software to know which data to put in which column. 
+Fixed format (*aka* Fixed width or Fixed length) files actually have no markup. Indeed, they mostly look like big blocks of numbers (or other characters) and *do not have variable names* in the first row. Instead, each variable was allocated a specific number of characters and can be identified by position. Back when hard drive space was precious, it was commonly used for data because delimiters were extra non-data characters and thus unneeded. 
 
-#### JSON
+The label ASCII does not itself specify fixed format (delimited data can also be encoded as ASCII), but is often listed as such. Similarly, a "flat file" refers to a single data table stored in a file in contrast to a multi-table database, but is sometimes used synonymously. 
 
-When data **is not tabular**, JSON can be used. They are much more versitille as they allow for nested columns. The data can also be in any order and does not need to include missing values.  JSON is preferred because the markup is simpler (fewer characters), leading to smaller and easier-to-read flies. For strictly tabular data, though, a delimited file would be smaller as the variable/field names do not need to be repeated for each record/row. 
+To read this type of file, it is necessary to have a separate [setup file](https://www.icpsr.umich.edu/web/ICPSR/cms/1976) for a statistical software to know which data goes with which variable. 
 
-Jupyter Notebok files (.ipynb) are stored in JSON with [specified elements](https://nbformat.readthedocs.io/en/latest/format_description.html). 
+#### Delimited
+
+To delimit means to mark the boundaries of something. In delimited data files, the columns are separated with a character.  Any character can be used, but the most common **delimiters** in order of use are: 
+
+| Delimiter                                              | Extension        | Notes                                                        |
+| ------------------------------------------------------ | ---------------- | ------------------------------------------------------------ |
+| Comma <kbd>,</kbd>                                     | .csv             | Most common format; computers automatically open this in Excel. |
+| Tab  <kbd>Tab</kbd><br /> <kbd>\\</kbd>+<kbd>t</kbd>   | .tab, .tsv, .txt | Less common in text, so fewer conflicts. But, since tabs are not visible, can confuse some. |
+| Pipe <kbd>\|</kbd><br /><kbd>Shift</kbd>+<kbd>\\</kbd> | .dat, <br />.txt | Rarely used in text and looks like a column break. But, lack of common use means it is less recognized and supported. |
+
+Specifying a **text qualifier** (usually double quotes) may also be necessary. That will surround the text in each cell and is necessary if the data itself contains line breaks (\n) or the delimiter. If the data has quotes, then software will typically *escape* (see below) them for you.
+
+**Basic descriptive statistics** will typically quickly reveal if a delimited file was not read correctly. Values will end up in the wrong column and/or cases may be split across rows, leading to additional values in the wrong column. If you see errors, attempt to identify where the problems start (row and column) and look for special characters. Or, re-save the original file with a different delimiter.  
+
+### Non-Tabular
+
+When data **is not tabular**, JSON or XML can be used.  These formats are more versatile as they allow for nested columns, which can be visualized as a tree structure.  The data can also be in any order and does not need to include missing values. Instead, it specifies the field name for each record. Thus, a delimited file would be smaller for tabular data as the variable/field names do not need to be repeated for each record/row. 
 
 #### XML
 
-e**X**tensiible **M**arkup **L**anguage A general type of markup. There are many standards for using it like, TEI is another. For text as data. See [TEI](https://tei-c.org/) . For [Qualitative Data Analysis (old)](http://www.qualitative-research.net/index.php/fqs/article/view/852/1850). 
+e**X**tensiible **M**arkup **L**anguage grew out of HTML/SGML (see previous) as a general type of markup for any data structure. Like with HTML, people can specify a specific set of tag words that fill their needs. Indeed, many other recognizable formats utilize the XML structure, like RSS (for web feeds), and SVG (for vector images). Schemes refer to the set of tags that can be used. Here is a list of [schemes for biographical data](http://projects.oucs.ox.ac.uk/teiweb/Activities/PERS/persw02.xml?splitLevel=-1). The words are called **tags**. XML is for string data and need to be parsed. XML can also provide display instructions.  Does not distinguish between strings and numbers (no quoted values)
 
+TEI came first. Research-specific formats also exists, like that from the [Text Encoding Initiative](https://tei-c.org/release/doc/tei-p5-doc/en/html/SG.html) (TEI) used in digital humanities and many other. RDF is also in XML. 
 
+#### JSON
 
-
+**J**ava**S**cript **O**bject **N**otation ("jay-sawn") integrates well with it's namesake programming language JavaScript, because it matches its internal representation of data.  However, it can be used with any language. Like Markdown, it is considered "lightweight" (few markup characters), leading to smaller files than XML.  It was named 2001 (but originated the web programming language JavaScript at least 5 years earlier.  Jupyter Notebook files (.ipynb), which integrate text with Python or R, are [stored in JSON](https://nbformat.readthedocs.io/en/latest/format_description.html). The words are called **keys**, key/value, or name/value. Values can be strings (in quotes) or numbers/logical/null (not in quotes). 
 
 ## Escapes
 
-See also https://www.spss-tutorials.com/escape-sequence/
+In all these types of text files, some characters have special meaning. In Markdown for example, using asterisks puts a word in *italics*. So, how would one display an actual asterisk?
 
-### Escape Character
+- Use the **escape character**:   \*     \\*
+- Use an **escape sequence**:    &#42;	  \&#42;
+- Specify it is a **raw string**:      `*`     \`*\`
 
-In each kind of markup, some characters have special meaning. For example, in Markdown, which I am writing in, surrounding a word with asterisks (*) is the way to make it in *italics*. But, sometimes you actualy want the processor to treat them as regular text. To switch back and forth between special and text, you "escape" the character
+> Note: I used the escape character \ on each line to show what I typed. But also, the * must be next to a word (no space) and have another in the same paragraph to be interpreted as italics.  
 
-If you look back at RTF and LaTeX, you will notice that all the markup starts with the backslash. 
+#### Escape Character
 
-However, if I want the interpreter to treat the asterisks as regular characters and not as instructions, I need to: 
+The escape character tells the interpreter that the next character should not be treated as special. It is the backslash `\` in all major languages and markups. So, if you are told to "escape" a character, put a backslash `\` right before it. The *back*slash looks like it is leaning *back* toward the beginning of the sentence.  
 
-**escape** them putting a backslash in front of the character:  \\\*escape\\* 
+#### Escape Sequences
+
+The backslash is better thought of like a switch. As above, if you put it before a character that is special, it will treat it normally. But the backslash is also often used to indicate that the following character or characters *are* special. In both RTF and LaTeX all the markup starts with the backslash. It is also used in programming languages to represent control characters. For example,  you "write" a tab with `\t` and a line break with `\n` (for Windows, `\r\n`). 
+
+To write characters that would otherwise be special, **HTML** and **XML** instead use escape sequences that start with an `&` and end with `;`. It is common to use the letter representation, such as `&lt;` instead of `<` and `&amp;` instead of `&`. But, you can also use the ASCII decimal or hex code (ex. `&#38;` or `&#x26;` for `&`). 
+
+**URLs** use escape sequences that start with an `%` and include their ASCII hex code. For example, the space is `%20` and the `&` is `%26`. 
+
+**Excel** instead has the [CHAR function](https://support.office.com/en-us/article/char-function-bbd249c8-b36e-4a91-8017-1c133f9b837a) which allows you to reference the decimal code for an ASCII (or extended ASCII) character.  
+
+### Raw Strings
+
+Some programs have a way to indicate that you want a particular set of characters "as is", often called a *raw* string. In Markdown, you can format text as code by surrounding it in backticks `` `. In Python and R (v4.0+), you put an "r"   in front of a specially quoted string.
+
+> Python:    r"""I can \use "special" characters"""
+>
+> R (4.0+):    r"(I can \use very "special" characters)"
 
 Programming languages usually have a way to indicate that you wish to write a **raw string**, one in which all characters are interpreted as plain text. Markup allows for code blocks, which are also treated as a raw string. 
 
-The escape character is actually like a switch, and can turn regular characters into special ones for certain interpreters. In programming languages, when giving instructions to print some text, you can add a tab with \t and a line break with \n.
+### Common Issues
 
-These sequences, plus many other escape sequences are used in **regular expressions**, which are a way to be very specific when searching for text. 
+**Quotes** are often a special character because all labels, messages, and string-type values must be surrounded by quotes. However, most languages will accept either single or double-quoted strings. Thus, issues can often be solved by using the other quote style (ex. "I don't know" or 'Is it "weird"?'). If that is not sufficient, use the standard backslash escape or a raw string in R or Python, double the quotes in [SPSS](https://www.spss-tutorials.com/escape-sequence/), [SAS](https://documentation.sas.com/?docsetId=lrcon&docsetTarget=p0cq7f0icfjr8vn19vyunwmmsl7m.htm&docsetVersion=9.4&locale=en#p0iwb32yddph1gn1w4q7vdbjbbcn), or [Excel](https://exceljet.net/formula/double-quotes-inside-a-formula), or use compound quotes in [Stata](https://www.stata.com/meeting/5uk/program/quotes1.html). Excel also uses a single quote to escape the [equal sign](https://www.computerhope.com/issues/ch001219.htm).
 
-The backslash is the traditional escape character and is essentially universal. One of  the  annoyances about using Windows compters is that it uses the backslash in **file path names**. So, it is important to use Mac-style forward slashes in file paths with markup or other programming languages. 
+**File Paths in Windows** (the location of the file on the computer) are often a source of problems with languages like R. Windows computers separate folders with a `\`. However, the interpreter sees `\` as the start of an escape sequence and tries to interpret the next character accordingly. To specify `\`, you can escape it like `\\` .  Alternatively, modern versions of Windows will also accept the Mac/Linux style of file paths with the forward slash `/`. 
 
-To tell the interpreter that the next character has a special meaning. To "escape" from parsing the characters as text, or parsing the characters as code. It's easier to think of it as a "switch" that tells the interpreter to flip between interpreting characters as text to interpreting them as a special character. It goes both ways. For instance, 
+Windows and Macs also differ in how they represent the **End Of Line** (EOL), whether with `\n` (aka LF) or `\r\n` (aka CRLF). Without going into detail, software and version control programs usually take care of this, but you will see messages and options relating to this. 
 
-
-
-[Escaping (especially in SPSS and Python) ](https://www.spss-tutorials.com/escape-sequence/)
-
-### Escape Sequences
-
-The backslash is the universal "escape" character, through there is a few times when quotes are "escaped" with additional quotes (Excel, SPSS). If you are given the instruction to "escape" a character, it means to put a backward slash `\` right before it. 
-
-#### Modifier Keys
-
-It's the same idea as when we hold down the <kbd>Ctrl</kbd>, <kbd>Shift</kbd> or <kbd>Alt</kbd> keys while pressing a letter key. Instead of typing the letter, the computer performs some action.  <kbd>Ctrl</kbd>+<kbd>C</kbd> means to copy the text, not to type the letter "c". Those are called Modifier keys, but it's the same idea.
-
-### Quotes
-
-In syntax, escapes may be needed to include quote marks inside a quoted string. Excel does the same when you must double your double-quotes to have them print
+Characters that often have **special meaning** inlude: 
 
 ```
-="What do you mean by ""Escape""?"
+alone  :  \ | / + * . # ^ $ & ?  
+paired :  "" '' ( )  [ ]  { }  < >
 ```
 
-#### Windows File Paths
+### Backslash Examples
 
-You may have seen that langauges such as R do not understand file paths written in the Windows style. That is because it sees each \ as an escape so it tries to interpret the next letter as having a special meaning.  If you actually want to specify the character `\`, you must escape it `\\` .  However, modern versions of Windows will also accept the Mac/Linux style of file paths using `/`. 
+Here is an example of the backslash in **Markdown**:
 
+​	`**escape**` = **escape**
 
+​	`\**escape\**` = \**escape\**
 
-### Escape Sequence Example
+​	`\*\*escape\*\*` = \*\*escape\*\*
 
-Here is an example of using a programming language to print a message:  
+​	`\\escape\\` = \\escape\\
+
+Here is an example of the backslash in **programming**:  
 
 ```
 print "Hello!\nThis is an \"Expert\" Question:\tWhat does \\n mean?"
 ```
 
-This produces: 
+Once interpreted by a programming language, this would print: 
 
 > Hello!
 >
 > This is an "Expert" Question:	What does \n mean? 
 
-- Notice how the entire message (after the word print) is enclosed in quotes. 
-- `\n` is the Line Feed control character, which is typically called a "new line"
+Learn more about [Escaping (especially in SPSS and Python)](https://www.spss-tutorials.com/escape-sequence/).
 
-- `\t` is a tab, not a "t" 
+## Related Topics
 
-- `\"` means to interpret `"` as text instead of the default (end of the message)
+### Modifier Keys
+
+Escape characters are similar to the keyboard combinations when we hold down <kbd>Ctrl</kbd>, <kbd>Shift</kbd> or <kbd>Alt</kbd>, called **modifier keys**, while pressing a letter key. <kbd>Ctrl</kbd>+<kbd>C</kbd> means to copy the text, not to type the letter "c". Those are called Modifier keys, but it's the same idea. Learn more about these Keyboard shortcuts for [Windows](https://www.gcflearnfree.org/techsavvy/keyboard-shortcuts/1/) and [Mac](https://support.apple.com/en-us/HT201236) computers. 
+
+### Regular Expressions
+
+The backslashed escape sequences mentioned above, plus many others are used in **regular expressions**, which are a way to be very specific when searching for text. There are many additional "escape sequences" to refer to spaces and digits and other groups of characters. Learn more about [Regular Expressions](https://infoguides.gmu.edu/data-work/regex). 
+
+### Microsoft "x" File Formats
+
+Microsoft's modern "x" formats ([.docx](https://www.toptal.com/xml/an-informal-introduction-to-docx), xlsx, etc) are actually zipped XML files.  Consequently, this format is more acceptable for long-term preservation than the previous binary version. If you do not have a standalone unzipper, just change the extension to .zip so you can try it. There will be about a dozen files in different directories, but one is called "document.xml", and you can open it in a text editor (see the image below for an example). Keep in mind that a zip file is binary. So, depending on the context, .docx may be considered both a binary file and a markup text file. 
+
+<img src="image-20200504145301410.png" alt="Image of .docx Content in XML" style="zoom: 50%;" />

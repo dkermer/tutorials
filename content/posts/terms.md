@@ -12,4 +12,4 @@ In order to discuss data, it is necessary to have and use the right words for wh
 
 - Vector: A series of values that are the same type. Equivalent to a variable, but not necessarily in a data frame. 
 
-  
+
