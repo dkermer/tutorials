@@ -220,6 +220,8 @@ Programming languages usually have a way to indicate that you wish to write a **
 
 **File Paths in Windows** (the location of the file on the computer) are often a source of problems with languages like R. Windows computers separate folders with a `\`. However, the interpreter sees `\` as the start of an escape sequence and tries to interpret the next character accordingly. To specify `\`, you can escape it like `\\` .  Alternatively, modern versions of Windows will also accept the Mac/Linux style of file paths with the forward slash `/`. 
 
+**Internet URLs** currently can only use ASCII characters. In addition, spaces and special characters can cause problems with interpretation. To address these issues, [URLs convert characters](https://www.w3schools.com/tags/ref_urlencode.ASP) to a percent sign and up to a 2 character hex code. For example, many people have noticed `%20` in a URL: recall that the decimal code for the space is 32, which is `0x20` in hex. 
+
 Windows and Macs also differ in how they represent the **End Of Line** (EOL), whether with `\n` (aka LF) or `\r\n` (aka CRLF). Without going into detail, software and version control programs usually take care of this, but you will see messages and options relating to this. 
 
 Characters that often have **special meaning** inlude: 
