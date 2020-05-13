@@ -12,21 +12,21 @@
     
     
     <item>
-      <title></title>
+      <title>Confusing Terms: Levels</title>
       <link>https://dkermer.github.io/tutorials/posts/levels/</link>
       <pubDate>Mon, 20 Apr 2020 21:34:54 -0400</pubDate>
       
       <guid>https://dkermer.github.io/tutorials/posts/levels/</guid>
-      <description>&lt;p&gt;Description&lt;/p&gt;</description>
+      <description>&lt;p&gt;The word &amp;ldquo;Level&amp;rdquo; is used under many different circumstances in statistics. This is an attempt to list and distinguish them.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Level of Measurement</title>
-      <link>https://dkermer.github.io/tutorials/posts/level_of_measurement/</link>
+      <title>Testing Coffee</title>
+      <link>https://dkermer.github.io/tutorials/posts/test/</link>
       <pubDate>Mon, 20 Apr 2020 21:34:54 -0400</pubDate>
       
-      <guid>https://dkermer.github.io/tutorials/posts/level_of_measurement/</guid>
-      <description>&lt;p&gt;Measure Type or Measurment Level . Even though it seems weird to &amp;ldquo;measure&amp;rdquo; a person&amp;rsquo;s eye color, the whole process of collecting accurate data is referred to as Measurement. The type or level matters because calculations depend on the mathematical properties of the varables.&lt;/p&gt;</description>
+      <guid>https://dkermer.github.io/tutorials/posts/test/</guid>
+      <description>&lt;p&gt;Description&lt;/p&gt;</description>
     </item>
     
   </channel>

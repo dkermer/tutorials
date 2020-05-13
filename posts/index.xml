@@ -6,19 +6,20 @@
     <description>Recent content in Posts on Debby&#39;s Posts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 21 Apr 2020 12:52:41 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 21 Apr 2020 18:59:41 -0400</lastBuildDate>
     
 	<atom:link href="https://dkermer.github.io/tutorials/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Stata Dummy Coding</title>
-      <link>https://dkermer.github.io/tutorials/posts/stata_dummy/</link>
-      <pubDate>Tue, 21 Apr 2020 12:52:41 -0400</pubDate>
+      <title>Probability vs Statistics</title>
+      <link>https://dkermer.github.io/tutorials/posts/prob_vs_stats/</link>
+      <pubDate>Tue, 21 Apr 2020 18:59:41 -0400</pubDate>
       
-      <guid>https://dkermer.github.io/tutorials/posts/stata_dummy/</guid>
-      <description>The rule is that you have to use i. or c. when you want to change the default way that the variables are handled. Note also that stata uses the term &amp;ldquo;Factor&amp;rdquo; to mean a categorical variable (other software does this too).
-For instance, Stata assumes the IV&amp;rsquo;s of an ANOVA are categorical. So, if you wanted to include continuous covariates, you would have to put c.var. Stata asusmes the IV&amp;rsquo;s of a Regression are continuous, which is why you typically have to put i.</description>
+      <guid>https://dkermer.github.io/tutorials/posts/prob_vs_stats/</guid>
+      <description>&lt;p&gt;This is the best description I&amp;rsquo;ve ever seen about the difference between Probability and Statistics:&lt;/p&gt;
+&lt;p&gt;​	&lt;strong&gt;Probability:&lt;/strong&gt; Given the information in &lt;strong&gt;the pail&lt;/strong&gt;, what is in &lt;strong&gt;your hand&lt;/strong&gt;?&lt;/p&gt;
+&lt;p&gt;​	&lt;strong&gt;Statistics:&lt;/strong&gt;    Given the information in &lt;strong&gt;your hand&lt;/strong&gt;, what is in &lt;strong&gt;the pail&lt;/strong&gt;?&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -31,24 +32,12 @@ For instance, Stata assumes the IV&amp;rsquo;s of an ANOVA are categorical. So, 
     </item>
     
     <item>
-      <title></title>
+      <title>Confusing Terms: Levels</title>
       <link>https://dkermer.github.io/tutorials/posts/levels/</link>
       <pubDate>Mon, 20 Apr 2020 21:34:54 -0400</pubDate>
       
       <guid>https://dkermer.github.io/tutorials/posts/levels/</guid>
-      <description>&lt;p&gt;Description&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Character_Encoding</title>
-      <link>https://dkermer.github.io/tutorials/posts/text_and_markup/</link>
-      <pubDate>Mon, 20 Apr 2020 21:34:54 -0400</pubDate>
-      
-      <guid>https://dkermer.github.io/tutorials/posts/text_and_markup/</guid>
-      <description>&lt;p&gt;tldr:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
+      <description>&lt;p&gt;The word &amp;ldquo;Level&amp;rdquo; is used under many different circumstances in statistics. This is an attempt to list and distinguish them.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -61,21 +50,28 @@ For instance, Stata assumes the IV&amp;rsquo;s of an ANOVA are categorical. So, 
     </item>
     
     <item>
-      <title>Level of Measurement</title>
-      <link>https://dkermer.github.io/tutorials/posts/level_of_measurement/</link>
+      <title>Testing Coffee</title>
+      <link>https://dkermer.github.io/tutorials/posts/test/</link>
       <pubDate>Mon, 20 Apr 2020 21:34:54 -0400</pubDate>
       
-      <guid>https://dkermer.github.io/tutorials/posts/level_of_measurement/</guid>
-      <description>&lt;p&gt;Measure Type or Measurment Level . Even though it seems weird to &amp;ldquo;measure&amp;rdquo; a person&amp;rsquo;s eye color, the whole process of collecting accurate data is referred to as Measurement. The type or level matters because calculations depend on the mathematical properties of the varables.&lt;/p&gt;</description>
+      <guid>https://dkermer.github.io/tutorials/posts/test/</guid>
+      <description>&lt;p&gt;Description&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Levels</title>
-      <link>https://dkermer.github.io/tutorials/posts/template/</link>
+      <title>What Researchers need to know about Text Files and Markup</title>
+      <link>https://dkermer.github.io/tutorials/posts/text_and_markup/</link>
       <pubDate>Mon, 20 Apr 2020 21:34:54 -0400</pubDate>
       
-      <guid>https://dkermer.github.io/tutorials/posts/template/</guid>
-      <description>&lt;p&gt;The word &amp;ldquo;level&amp;rdquo; is used often in statistics, but it has very different meanings.&lt;/p&gt;</description>
+      <guid>https://dkermer.github.io/tutorials/posts/text_and_markup/</guid>
+      <description>&lt;p&gt;This series is meant for non-programmer researchers who are beginning to use text-based tools and syntax.&lt;/p&gt;
+&lt;p&gt;tldr:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Digital Researchers need to understand the different types of files they work with.&lt;/li&gt;
+&lt;li&gt;Many people make use of Markdown languages without understanding that they are just a part of the Markup ecosystem.&lt;/li&gt;
+&lt;li&gt;The escape character &lt;kbd&gt;\&lt;/kbd&gt; switches a language interpreter between interpreting characters as text and as a special character.&lt;/li&gt;
+&lt;li&gt;Many researchers do not have a programming background and may not be familiar with some concepts.&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -88,15 +84,6 @@ For instance, Stata assumes the IV&amp;rsquo;s of an ANOVA are categorical. So, 
     </item>
     
     <item>
-      <title>My First Post</title>
-      <link>https://dkermer.github.io/tutorials/posts/my-first-post/</link>
-      <pubDate>Mon, 20 Apr 2020 17:56:15 -0400</pubDate>
-      
-      <guid>https://dkermer.github.io/tutorials/posts/my-first-post/</guid>
-      <description>Hello this is my first post.</description>
-    </item>
-    
-    <item>
       <title>Character Encoding</title>
       <link>https://dkermer.github.io/tutorials/posts/character_endoding/</link>
       <pubDate>Mon, 20 Apr 2020 12:34:54 -0400</pubDate>
@@ -104,12 +91,23 @@ For instance, Stata assumes the IV&amp;rsquo;s of an ANOVA are categorical. So, 
       <guid>https://dkermer.github.io/tutorials/posts/character_endoding/</guid>
       <description>&lt;p&gt;tldr:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Computers store everything as binary numbers.&lt;/li&gt;
-&lt;li&gt;Codes are what we use to represent one thing (e.g., a character&amp;rdquo;) as something else (e.g., a number)&lt;/li&gt;
-&lt;li&gt;All text characters in computers are coded as numbers. There are various coding schemes that turn numbers into those characters.&lt;/li&gt;
-&lt;li&gt;Computers need to know whether to interpret that number as a number, or as the character it represents (ex. 49 is the code for the character &amp;ldquo;1&amp;rdquo;).&lt;/li&gt;
-&lt;li&gt;Both files and variables within data files have types that indicate how to interpret the computer&amp;rsquo;s representation.&lt;/li&gt;
+&lt;li&gt;Computers process and store everything as &lt;strong&gt;binary&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Codes&lt;/strong&gt; are used to represent one thing (e.g., a character) as something else (e.g., a number)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ASCII&lt;/strong&gt; and &lt;strong&gt;Unicode&lt;/strong&gt; (UTF-8) are two common ways of coding text as numbers. Unicode includes ASCII as well as nearly all other languages known to exist.&lt;/li&gt;
+&lt;li&gt;Both files and variables within data files have &lt;strong&gt;types&lt;/strong&gt; that specify how to interpret the binary.&lt;/li&gt;
 &lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://dkermer.github.io/tutorials/posts/untitled/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dkermer.github.io/tutorials/posts/untitled/</guid>
+      <description>SPSS and SAS Interestingly, these two have similar syntax structure. There is a procedure
+Stata command varlist qualifiers, options
+R R is a completely function-based language. The end of the line is interpreted.
+Python Line breaks are assumed to be the end of the command unless they occur within parentheses. For loops, subsequent lines must be indented.</description>
     </item>
     
   </channel>
