@@ -77,7 +77,7 @@ Even if you never come across a file that was encoded with one of these code pag
 
 Unicode values are written in *hexadecimal* and start with U+. So, "A" is still represented by the number 65, but is written U+0041 (4*16+1=65).  In many software, characters can be written with \x (ASCII) as `\x41` or  \u (Unicode) as `\u0041`. Unicode allows for [over a million codes](https://www.johndcook.com/blog/2019/09/02/number-of-possible-unicode-characters/): up to U+10FFFF, which takes 21 bits  (in software with an uppercase U and 8 digits, `\U0010FFFF`). Unlike in previous schemes, 1 byte is not necessarily 1 character. 
 
-The primary codes are written using 4 hex digits, which allows for 65,536 characters. These include the characters for nearly all *modern* languages as well as many symbols. Six hex digits allows for archaic languages like cuneiform, [Emoji](https://www.nytimes.com/2017/10/18/magazine/how-the-appetite-for-emojis-complicates-the-effort-to-standardize-the-worlds-alphabets.html), and specialized symbols (ex. musical notes and playing cards: U+1F0A1= **🂡** ). If you know its code, you can directly type [any character into Microsoft Word](https://support.office.com/en-us/article/insert-ascii-or-unicode-latin-based-symbols-and-characters-d13f58d3-7bcb-44a7-a4d5-972ee12e50e0).
+The codes in the Basic Multilingual plane (BMP) are written using 4 hex digits, which allows for 65,536 characters. These allow for nearly all *modern* languages as well as many symbols. Six hex digits includes the supplemental planes, which allows for archaic languages like cuneiform, [Emoji](https://www.nytimes.com/2017/10/18/magazine/how-the-appetite-for-emojis-complicates-the-effort-to-standardize-the-worlds-alphabets.html), and specialized symbols (ex. musical notes and playing cards: U+1F0A1= **🂡** ). If you know its code, you can directly type [any character into Microsoft Word](https://support.office.com/en-us/article/insert-ascii-or-unicode-latin-based-symbols-and-characters-d13f58d3-7bcb-44a7-a4d5-972ee12e50e0).
 
 #### Unicode Implementations
 
@@ -93,7 +93,7 @@ Computers do have finite storage and processing limits, even if quite large. Con
 
 ### Non-English Languages
 
-All Unicode/UTF schemes can store and display **any character in any language** with [quite limited exceptions](http://www.unicode.org/standard/unsupported.html) (ex. new languages). It even supports [right-to-left languages](http://unicode.org/faq/bidi.html). Thus, if a software supports Unicode, it can work with your data. Note that a given font may not include all characters. Plus, the software may not display menus and messages in your language. The latter requires understanding the meaning of the language and must be created individually. 
+All Unicode/UTF schemes can store and display **any character in any language** with [quite limited exceptions](http://www.unicode.org/standard/unsupported.html) (ex. new languages). The Unicode scheme even supports [right-to-left languages](http://unicode.org/faq/bidi.html) and bidirectional text, but not all programs will necessarily display it correctly (e.g., in the correct order). Thus, if a software supports Unicode, it can work with all data in at least right-to-left scripts. Note that a given font may not include all characters. Plus, the software may not display menus and messages in your language. The latter requires understanding the meaning of the language and must be created individually. 
 
 #### Byte ≠ Character
 

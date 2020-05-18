@@ -16,45 +16,51 @@ tldr:
 
 <!--more-->
 
-In general, there are three main types of text files, based on how the text is interpreted.  There is no specific taxonomy, this distinction is simply what I think is useful for researchers. 
+Many people who use digital research methods in academia do not have a computer science or programming background. But, to understand how to work with data and to take advantage of tools for collaboration and replicability, a certain base level of knowledge is useful. This article is my attempt to explain the minimum knowledge researchers should have about text files and the various types of markup. Although some content is specific to tabular data and statistical software, much is also relevant to those in the digital humanities.  
+
+## Text Files
+
+In general, there are three main types of text files (those which can be read by a [text editor](https://www.computerhope.com/jargon/e/editor.htm)), based on how the text is interpreted.  This taxonomy is simply what I think is useful for researchers. 
 
 - **Script** - This contains the code for a programming language. 
-- **Document** - For the display of text.  
-- **Data** -  Structured text or numeric data. 
+- **Document** - For the display of textual documents for reading.  
+- **Data** -  For structured text or numeric data. 
 
-## Markup
+==Data Document and data file Text files become even more useful when combined with Markup, which refers to characters that provide instructions for interpreting or displaying content in a particular way. Markup uses human-readable characters to specify that formatting or structure. Some rules and sequences are more complex and some are simpler. At the same time, complexity may allow for much more control over the output.== 
 
- Data Document and data file Text files become even more useful when combined with Markup, which  is characters that provides instructions that display things in a formatted or specialized way. Markup uses human-readable characters to specify that formatting or structure. Some are complex and some are simpler.  But complexity usually allows for much more control over the output. 
+==Markup itself is often classified into [three types](https://en.wikipedia.org/wiki/Markup_language): presentational, procedural, and descriptive.== 
 
-Markup is extra characters utilize a standard scheme that is interpreted by software as structure, annotation, or display instructions. Some people distinguish between three types of markup: presentational, procedural, and descriptive. For researchers, there are really just two that matter:
+==Markup is extra characters utilize a standard scheme that is interpreted by software as structure, annotation, or display instructions.== 
 
 ### Version Control
 
-[Version control](http://crlionline.net/node/198) systems like Git, Mercurial, and Subversion, are much more useful when using Text Files than Binary files. Although it will store both types files, it can only show line-by-line changes for text files. Thus, using a Markup file will all you to use all the benefits of a version control system. Comparing Microsoft Word documents can only be done inside Word. 
-
-### Converting
-
-[Pandoc](https://pandoc.org/) is a software tool that specializes in converting between different markup formats. It is used by R Markdown, Zotero, and many text editors. It is commonly used to create PDF files from any of those formats by using some extensions built to work with TeX, which has to be installed separately. 
-
-R Markdown/Knitr uses elements of TeX to produce the nicely formatted pdf documents (thus, either MiKTeX or TinyTeX must be installed on Windows computers). 
+[Version control](http://crlionline.net/node/198) systems like Git, Mercurial, and Subversion, are much more useful for Text Files versus Binary files. Although most will store both types files, one of the most useful features of such systems is the ability to show line-by-line changes between one version and the next. Files with markup allow for both rich or structured text and for text files. Thus, using a Markup file will all you to use all the benefits of a version control system. To show differences in binary files like microsoft word requires [converting it to a text format first](https://git-scm.com/book/en/v2/Customizing-Git-Git-Attributes). 
 
 ### WYSIWYG
 
-Many people today cannot remember  when computers could only display plain text. To control the look of the document, users would add tags or control codes--essentially markup--to indicate how the document would look once printed.  When computer displays improved and software took advantage of it, visible markup was unneeded. Writers could make words bold on the screen,  and get words in bold when printed. These **Rich Text** or WYSIWYG editors do not show or save a markup file unless and until needed.   
+Many people cannot remember the time when computers could only display plain text. To control the look of the document, users would add tags or control codes--essentially markup--to indicate how the document would look once printed.  When computer displays improved and software took advantage of it, visible markup was unneeded. Writers could make and *see* words bold on the screen, and *get* words in bold when printed--in other words "[What You See Is What You Get](https://bits.blogs.nytimes.com/2007/10/18/the-real-history-of-wysiwyg/)". These were thus called **Rich Text** or WYSIWYG editors and would typically save files in a binary format. 
 
 >  "**W**hat **Y**ou **S**ee **I**s **W**hat **Y**ou **G**et" -> WYSIWYG ("wizzy-wig") 
 
-Wanting to see the controlling markup has never gone obsolete; many writers prefer to more precisely see and control the formatting instructions. Markdown editors have more recently been described as "What You See Is What You *Mean*". 
+The desire to see controlling markup has never become obsolete; many writers prefer to more precisely see and control such formatting instructions. Some poeple have described the constrast with Markup being "[What You See Is What You *Mean*](https://en.wikipedia.org/wiki/WYSIWYM)". 
 
 ## Scripts
 
-***Every*** programming script, **including those for statistical software**, is saved in text format. Thus, files of type .sps, .do, .sas, .R, .py, and .sql, can all be opened and written in any [text editor](https://www.computerhope.com/jargon/e/editor.htm).  
+*Every* programming script, **including those for statistical software**, is saved in text format. Thus, files of type .sps, .do, .sas, .R, .py, and .sql, can all be opened and written in any [text editor](https://www.computerhope.com/jargon/e/editor.htm).  
 
-Programming languages are divided into **interpreted** and **compiled** languages. All statistical software uses interpreted languages. Compiled languages like C++ must be converted into binary files in order to run. This can vastly increase speed because the instructions have already been translated directly into computer language and do not need to be interpreted "at runtime" (while it is also following the instructions).  
+Programming languages are divided into **interpreted** and **compiled** languages. All statistical software uses interpreted languages. Compiled languages like C++ must be converted into binary files in order to run. This can vastly increase speed because the instructions have already been translated directly into computer language and thus do not need to be translated "at runtime" (while it is also following the instructions).  
 
-The advantage of opening a text script file in specific editors are **syntax highlighting **, which refers to the coloring that highlights different aspects of the code, and **code completion**, which helps you remember and type variable and function names. Many text editors used by programmers support highlighting for many languages and allow users to create their own. Notepad++, for instance, can support all the languages by installing some user-contributed files. 
+### Editors and IDEs
+
+The advantage of opening a text script file in specific editors is **syntax highlighting **, which refers to the coloring that highlights different aspects of the code, and **code completion**, which helps you remember and type variable and function names. Many text editors used by programmers support highlighting for many languages and allow users to create their own. Notepad++, for instance, can support all the languages by installing some user-contributed files. 
 
 Every software language has a **structure** and it is crucial to understand it. Being able to look at someone else's syntax and pick out the important words. For traditional software it is usually the first word or few words. For the programming langauges (R & Python), it is important to identify the functions (before parentheses)
+
+### Functions vs Comands
+
+Function-based vs command-based langauges
+
+There is disagreement over whether the syntax most people use with their statistical software are programming languges. 
 
 Just like when learning a language, knowing the words is not good enough--indeed, that is what dictionaries can do. It is important to understand the grammar, how the words fit together. For example, as a consultant, it is useful for me to be able to say "Use the collapse command" or "add the detail option" 
 
@@ -86,7 +92,7 @@ R has more similarities with traditional programming lagnaguges
 
 People disagree over what defines a programming language. Statistical langauges do have traditional programming features like loops and functions, but the structure differs substantially. However, most users do not need those tools and instead are able to use the simplified tools.  The syntax for statistics-focused languages, though including 
 
-
+Some would call Stata a scripting language vs a programing langauge. vs R and Python being functional languages. 
 
 shares some features of other genreal purposes langauges, but has both similarities and differences from other general purpose languages (including Python).  
 
@@ -96,19 +102,19 @@ An experienced computer programmer would find  Regardless, each software does in
 
 ### HTML, XML, and XHTML
 
-This family of markup languages are used both for documents and data (XML only). It is easy to identify them by format since they all use **tags** that are surrounded by <>'s. For instance, to get the key image <kbd>Ctrl</kbd>, I type `<kbd>Ctrl</kbd>` (the *tag* is "kbd").  Another example is `<tag>stuff</tag>` and `<br />`, which is for a line break. 
+This family of markup languages are used both for documents and data (XML only). They are easy to identify from the **tags** surrounded by <>'s. For instance, to get the key image <kbd>Ctrl</kbd>, I type `<kbd>Ctrl</kbd>` (the *tag* is "kbd").  Another example is: 
 
 ```
 This is some <strong>bold</strong> text. 
 ```
 
-HTML (**H**yper**t**ext **M**arkup **L**anguage) was built to control the display of documents on the internet (hypertext by definition is text that links to other information) and has a defined set of tags (words) for that purpose. XML (e**X**tensible **M**arkup **L**anguage) is extensible, which means that it can use any set of tags. XHTML (e**X**tensible **H**yper**t**ext **M**arkup **L**anguage) is HTML based on XML instead of SGML, an older and more complex markup language that HTML also came from. See more about XML formats in the following section. 
+HTML (**H**yper**t**ext **M**arkup **L**anguage) was built to control the display of documents on the internet (hypertext by definition is text that links to other information) and has a defined set of tags (words) for that purpose. XML (e**X**tensible **M**arkup **L**anguage) is extensible, which means that it can use any set of tags. XHTML (e**X**tensible **H**yper**t**ext **M**arkup **L**anguage) is HTML based on XML instead of SGML, an older and more complex markup language that HTML also came from. See more about XML formats under Data. 
 
 HTML uses pre-defined tags especially for displaying documents on the internet and was created in 1990. You cannot add your own tag names. Learn more about [HTML](https://www.w3schools.com/html/). 
 
 ### RTF / Rich Text Format
 
-[Rich Text format](https://en.wikipedia.org/wiki/Rich_Text_Format) (RTF), was developed by Microsoft in 1987 as an text-based alternative to Microsoft binary document format to facilitate portability to other software. Indeed, it is supported by most all document editors. Markdown is now more popular due to its [relative] simplicity, but you may only have rtf as a choice (ex. Stata's estout). SPSS even puts a .doc extension on their rtf exported output (accurately labeled "Word/RTF"). Either works.  
+[Rich Text format](https://en.wikipedia.org/wiki/Rich_Text_Format) (RTF), was developed by Microsoft in 1987 as an text-based alternative for Microsoft's binary document format which would facilitate portability to other software. Indeed, it is supported by most all document editors. Markdown is now more popular due to its [relative] simplicity, but rtf may be the only choice (ex. Stata's estout). SPSS puts a .doc extension on their rtf exported output (accurately labeled "Word/RTF"). Either works.  
 
 ```
 {\pard
@@ -118,7 +124,7 @@ This is some {\b bold} text.
 
 ### TeX / LaTeX
 
-LaTeX ("lah-tech") is the oldest document markup scheme still in wide use, having been around since 1984. It provides a more comprehensive and user-friendly way of using TeX, which actually implements the markup. Researchers in the sciences use it to write papers with complex mathematical expressions. It can also make books and slides. 
+LaTeX (["lah-tech" or "lay-tech"](https://www.latex-project.org/about/)) is the oldest document markup scheme still in wide use, having been around since 1984. It provides a more comprehensive and user-friendly way of using TeX, which actually implements the markup. Researchers in the sciences use it to write papers with complex mathematical expressions. It can also make books and slides. 
 
 ```
 This is some \textbf{bold} text. 
@@ -130,13 +136,13 @@ Learn more about [LaTeX](https://www.andy-roberts.net/writing/latex).
 
 ### Markdown
 
-Markdown was created in 2004 and has quickly gained users because it is "lightweight" (requires few markup characters) and easy to read as is. For example, you just put asterisks around a word to add emphasis. Markdown is most directly [compared to HTML](https://www.markdownguide.org/basic-syntax/) because many people who use it are ultimately creating websites. 
+Markdown was created in 2004 and has quickly gained users because it is "lightweight" (requires few markup characters) and easy to read as-is. For example, you put asterisks around a word to add emphasis. Markdown is most directly [compared to HTML](https://www.markdownguide.org/basic-syntax/) because many people who use it are ultimately creating websites. 
 
 ```
 This is some **bold** text. 
 ```
 
-Like ASCII, the [original implementation](https://www.markdownguide.org/cheat-sheet/) has been is incorporated into many different "[flavors](https://github.com/commonmark/commonmark-spec/wiki/markdown-flavors)" with fancier features. Popular flavors include GitHub Flavored Markdown (GFM) and RMarkdown. Because the base Markdown is the same for all, most Markdown applications should suffice. Windows users can even save Microsoft Word documents in Markdown with an [add-on](http://www.writage.com/). 
+Like ASCII, the [original implementation](https://www.markdownguide.org/cheat-sheet/) has been incorporated into many different "[flavors](https://github.com/commonmark/commonmark-spec/wiki/markdown-flavors)" with fancier features. Popular flavors include GitHub Flavored Markdown (GFM) and RMarkdown. Because the base Markdown is the same for all, most Markdown applications should suffice. Windows users can even save Microsoft Word documents in Markdown with an [add-on](http://www.writage.com/). 
 
 ## Data
 
@@ -258,6 +264,14 @@ Once interpreted by a programming language, this would print:
 Learn more about [Escaping (especially in SPSS and Python)](https://www.spss-tutorials.com/escape-sequence/).
 
 ## Related Topics
+
+### Conversion Between Formats
+
+Text files with Markup also fascilites conversion between formats. Public versus proprietary. 
+
+[Pandoc](https://pandoc.org/) is a software tool that specializes in converting between different markup formats. It is used by R Markdown, Zotero, and many text editors. It is commonly used to create PDF files from any of those formats by using some extensions built to work with TeX, which has to be installed separately. 
+
+R Markdown/Knitr uses elements of TeX to produce the nicely formatted pdf documents (thus, either MiKTeX or TinyTeX must be installed on Windows computers). 
 
 ### Modifier Keys
 
