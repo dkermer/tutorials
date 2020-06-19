@@ -11,3 +11,20 @@ To **separate the folder names** on a Mac or Unix-based system use a /, to separ
 **Line breaks** (e.g. ,when you press the “Enter” Key) on Mac/Unix computers are represented with a single “line feed” character, often written “\n”. On a PC, you must use two characters, often written “\r\n”. If a file with Mac/Unix line endings is opened on a Windows computer, all the lines might run together. There are actually lots of problems that can be caused by this difference. Some text editors, like Notepad++, will display either properly. It also has a function to convert the line endings from one to the other. 
 
 Macs use Bash as the command line, PC's use DOS (.bat) or PowerShell (.ps)
+
+
+
+
+
+Characters that often have **special meaning** include: 
+
+```
+alone  :  \ | / + * . # ^ $ & ?  
+paired :  "" '' ( )  [ ]  { }  < >
+```
+
+### 
+
+
+
+Windows users can save Microsoft Word documents in Markdown with an [add-on](http://www.writage.com/). There are also many online markdown editors, such as [Dillinger](https://dillinger.io/). 

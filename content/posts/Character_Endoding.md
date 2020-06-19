@@ -127,6 +127,8 @@ Unicode files may also have a **[byte order mark (BOM)](https://en.wikipedia.org
 
 See also the "[Big List of Naughty Strings](https://github.com/minimaxir/big-list-of-naughty-strings)" which includes many Unicode characters that have been known to cause problems with software. 
 
+**Internet URLs** currently can only use ASCII characters. In addition, spaces and special characters can cause problems with interpretation. To address these issues, [URLs convert characters](https://www.w3schools.com/tags/ref_urlencode.ASP) to a percent sign and up to a 2 character hex code. For example, many people have noticed `%20` in a URL: recall that the decimal code for the space is 32, which is `0x20` in hex. 
+
 ### File Types
 
 The makers of a software decide whether the files it produces should be saved and interpreted according to ASCII/Unicode rules or not. If so, `11001000` will be "A" and so on. But, that same byte could represent anything the programmer desires. That leads to the two types of files: 
@@ -195,11 +197,11 @@ Converting text variables into numbers + text means that the text label needs on
 
 The concept of **Codes** and **Coding** is a huge part of any data work. Just like representing the letter "A" with the number 65, it is common to represent groups of observations with numbers (as in the previous section). Those numbers also also referred to as codes.  Words like **en**code, **de**code, and **re**code all refer to this, both with files and variables.
 
-|What|Definition|For Files|For Variables|
-| ------ | ----------------------------- | --------------------------- | ---------------------------------------------------------- |
-| Encode | replace text with a code | save; turns what we see into bits | assign each text value a number and add the text as labels |
-| Decode | replace a code with it's meaning | open; allow us to read it | turn the labels to numbers back into a text value |
-| Recode | change the assigned codes | called "convert" | combine or re-order groups |
+| What   | Definition                       | For Files                         | For Variables                                              |
+| ------ | -------------------------------- | --------------------------------- | ---------------------------------------------------------- |
+| Encode | replace text with a code         | save; turns what we see into bits | assign each text value a number and add the text as labels |
+| Decode | replace a code with it's meaning | open; allow us to read it         | turn the labels to numbers back into a text value          |
+| Recode | change the assigned codes        | called "convert"                  | combine or re-order groups                                 |
 
 ## Conclusion
 
