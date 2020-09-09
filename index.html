@@ -6,12 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <meta name="generator" content="Hugo 0.74.3" />
-  <link rel="canonical" href="https://dkermer.github.io/tutorials/">
+  <link rel="canonical" href="https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/1_character_encoding/">
 
-  
-    
-      <meta name="description" content="Musings on research methods, statistics, software and programming. .">
-    
   
 
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -36,9 +32,7 @@
 
   
   
-    
-  
-  <title>Debby&#39;s Posts</title>
+  <title>Character Encoding | Debby&#39;s Posts</title>
 </head>
 
   <body>
@@ -161,7 +155,7 @@
       
       
       
-      <a href="/tutorials/" aria-current="page">
+      <a href="/tutorials/" >
         <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
           <use xlink:href="#bookmark"></use>
         </svg>
@@ -174,7 +168,7 @@
       
       
       
-      <a href="/tutorials/posts/" >
+      <a href="/tutorials/posts/" aria-current="page">
         <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
           <use xlink:href="#bookmark"></use>
         </svg>
@@ -229,8 +223,290 @@
         <div>
           
   <main id="main">
-    <h1>Debby&#39;s Posts</h1>
-    
+    <h1>Character Encoding</h1>
+    <p>tldr:</p>
+<ul>
+<li>Computers process and store everything as <strong>binary</strong>.</li>
+<li><strong>Codes</strong> are used to represent one thing (e.g., a character) as something else (e.g., a number)</li>
+<li><strong>ASCII</strong> and <strong>Unicode</strong> (ex. UTF-8) are two common ways of coding characters as numbers. Unicode includes ASCII as well as nearly all other languages known to exist.</li>
+</ul>
+<p>Many people who use digital research methods in academia do not have a computer science or programming background. But, to understand how to work with data, a certain base level of knowledge is useful. This article is my attempt to explain the minimum knowledge researchers should have about character encodings. Although some content is specific to software for statistical analysis, much is also relevant to those in the digital humanities.</p>
+<p>Research is now more dependent on computers than ever. Knowing some basic computer concepts will help understand the logic of some software elements that confuse many new researchers.</p>
+<h2 id="bits-and-bytes">Bits and Bytes</h2>
+<p><em>For a deeper and more pictorial introduction to the following topics, see Kahn Academy&rsquo;s <a href="https://www.khanacademy.org/computing/computer-science/computers-and-internet-code-org/how-computers--work/v/khan-academy-and-codeorg-binary-data">Data &amp; Binary</a> video which discusses why computers use binary, describes the binary number system, and introduces how computers represent text, images, and sounds with numbers. Or, learn about the same topics (plus Hexadecimal) by reading <a href="https://www.bbc.co.uk/bitesize/topics/zd2xsbk">Binary and data representation</a> from BBC&rsquo;s Bitesize GCSE Lessons.</em></p>
+<h3 id="binary">Binary</h3>
+<p>Computers store and represent information using electricity in transistors, which can have only two states: <strong>on</strong> and <strong>off</strong>. It is common to represent those two states in <strong>Binary</strong> as <code>1</code> and <code>0</code>. These binary digits (<code>1</code>'s and <code>0</code>'s) are referred to as <strong>bits</strong>, which is short for <strong>b</strong>inary dig<strong>it</strong>.</p>
+<blockquote>
+<p>Terminology:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Bit"><strong>bit</strong></a>: Each <code>1</code> or<code> 0</code> is called a &ldquo;<strong>bit</strong>&rdquo;, from <u><strong>bi</strong></u>nary dig<u><strong>it</strong></u>.</li>
+<li><a href="https://en.wikipedia.org/wiki/Byte"><strong>byte</strong></a>: A group of <strong>8 bits</strong> together is called a &ldquo;<strong>byte</strong>&rdquo; , ex. <code>1100 1000</code></li>
+</ul>
+</blockquote>
+<p>Even though each bit (binary digit) can have only two values, combining multiple bits can allow us to represent more complex ideas. The <a href="https://www.mathsisfun.com/binary-number-system.html"><strong>binary number system</strong></a> shows one way to do this. In this animated image, you can see how 5 bits are assigned place values, which allows 32 different combinations to be interpreted as the numbers from 0 to 31.</p>
+<p><img src="C:%5CUsers%5Cdkermer%5CDownloads%5CBinary_counter.gif" alt="Counting in Binary"></p>
+<p><a href="https://commons.wikimedia.org/w/index.php?curid=38752676">Image by Ephert, Wikipedia, CC BY-SA 4.0</a></p>
+<p>In binary, for example, <code>1101</code> is 13, and <code>1100 1000</code> is 200.  It is common to group binary digits in groups of 4 for ease of reading. A group of 8 bits, or two groups, is also called a <strong>byte</strong>. Representing 200 (<code>1100 1000</code>) takes 1 byte, as it needs 8 bits (binary digits).</p>
+<aside aria-label="note" class="note">
+  <div>
+    <svg class="sign" aria-hidden="true" viewBox="0 0 41.667306 41.66729" focusable="false">
+      <use xlink:href="#info"></use>
+    </svg>
+<p>The actual definition of byte depended on the given computer processor and how many bits it treated as a unit. Although that can (and did) vary, a byte is 8 bits for all modern non-CS purposes. -</p>
+  </div>
+</aside>
+<h3 id="hexadecimal">Hexadecimal</h3>
+<p><a href="https://www.mathsisfun.com/hexadecimals.html"><strong>Hexadecimal</strong></a> or &ldquo;Hex&rdquo; is a base-16 system, meaning that each character can have 16 values (represented with<code>0</code>-<code>9</code> + <code>A</code>-<code>F</code>). Writing binary can get tedious, so it is more common to write in hexadecimal.  Just 2 hex characters can represent 1 byte (8 bits).  For example, the decimal number 200 is <code>C8</code> in hexadecimal. Because some hex values use only 0-9 and can be mistaken as decimal, values are often prefixed with <code>0x</code>, like <code>0xC8</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Number System</th>
+<th>Base</th>
+<th>Possible Values</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Binary</td>
+<td>2</td>
+<td>0 1    &ldquo;bit&rdquo;</td>
+<td><code>1100 1000</code></td>
+</tr>
+<tr>
+<td>Decimal</td>
+<td>10</td>
+<td>0 1 2 3 4 5 6 7 8 9    &ldquo;digit&rdquo;</td>
+<td>200</td>
+</tr>
+<tr>
+<td>Hexadecimal</td>
+<td>16</td>
+<td>0 1 2 3 4 5 6 7 8 9 A B C D E F</td>
+<td><code>C8 </code> <em>or</em> <code>0xC8</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="amounts">Amounts</h3>
+<p>Terms you have no doubt seen that use the words bit or byte refer directly to these concepts. A <a href="https://www.digitaltrends.com/computing/32-bit-vs-64-bit-operating-systems/">64-bit operating system</a> can work with 64 bits at a time, 2^64^, vs a 32-bit operating system, which can only work with 2<sup>32</sup>. Because the difference is exponential, a 64-bit system has far more than just double the capability of a 32-bit system, it is over 4 billion times greater.</p>
+<p>When exploring disk storage and processing capacities, you have probably also seen words like <strong>Kilobyte</strong> (KB), <strong>Megabyte</strong> (MB), <strong>Gigabyte</strong> (GB), etc. They do indeed refer to actual number of bits that can be stored or processed at once. See more <a href="http://www.wu.ece.ufl.edu/links/dataRate/DataMeasurementChart.html">common technologies in bits and bytes</a>.</p>
+<p>For the larger measures, computers and hard disk manufacturers are not referring to the same thing, however. Hard disk manufacturers use the traditional metric system, in which a <em>kilo</em>byte is 1,000 bytes.  But, because computers use the binary system, the operating system considers a kilobyte to be 1,024 bytes (2^10^, 10 bits). Thus, a &ldquo;1 TB&rdquo; hard drive shows as only 931 GB.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th>To the Computer</th>
+<th>To Disk Manufacturers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 byte</td>
+<td>=</td>
+<td>8 bits</td>
+<td>8 bits</td>
+</tr>
+<tr>
+<td>1 kilobyte (KB)</td>
+<td>=</td>
+<td>1,024 bytes</td>
+<td>1,000 bytes</td>
+</tr>
+<tr>
+<td>1 megabyte (MB)</td>
+<td>=</td>
+<td>1,024 KB</td>
+<td>1,000 KB</td>
+</tr>
+<tr>
+<td>1 gigabyte (GB)</td>
+<td>=</td>
+<td>1,024 MB</td>
+<td>1,000 MB</td>
+</tr>
+<tr>
+<td>1 terabyte (TB)</td>
+<td>=</td>
+<td>1,024 GB</td>
+<td>1,000 GB</td>
+</tr>
+<tr>
+<td>1 petabyte (PB)</td>
+<td>=</td>
+<td>1,024 TB</td>
+<td>1,000 TB</td>
+</tr>
+</tbody>
+</table>
+<aside aria-label="note" class="note">
+  <div>
+    <svg class="sign" aria-hidden="true" viewBox="0 0 41.667306 41.66729" focusable="false">
+      <use xlink:href="#info"></use>
+    </svg>
+<p>A little bit of history: The image most commonly used to represent saving (💾) is a representation of a <a href="%5Bhttps://en.wikipedia.org/wiki/Floppy_disk#%E2%80%8B3_1%E2%81%842-inch_floppy_disk%5D(https://en.wikipedia.org/wiki/Floppy_disk#3_1%E2%81%842-inch_floppy_disk)">3 ½ inch floppy disk</a>, which was introduced in the early 1980s. Earlier versions were actually <a href="https://en.wikipedia.org/wiki/Floppy_disk">floppy</a> (🖬), but that one was not. The original version could store around 400 Kilobytes (KB);  Later versions could hold about 1.5 Megabytes (MB). These days, USB drives given away as swag often hold at least 4 gigabytes (GB), almost 3,000 times more.</p>
+  </div>
+</aside>
+<p>Since a computer&rsquo;s processing and storage capabilities are tied to bits and bytes, understanding what affects data size can be particularly important with large data files to improve speed and efficiency.</p>
+<h2 id="text-encoding-schemes">Text Encoding Schemes</h2>
+<h3 id="codes-and-coding">Codes and Coding</h3>
+<p>If computers can only store and process <code>1</code>'s and <code>0</code>'s, and by extension larger numbers, how does it do so many things?</p>
+<p>Consider <a href="https://en.wikipedia.org/wiki/Morse_code"><strong>Morse Code</strong></a>, developed over a century before computers. Messages were often sent by using groups of long or short burst of sound or dots and dashes, also just two options. When people agreed on which sequences represented each letter and number (the &ldquo;code&rdquo;), they could communicate over long distances.</p>
+<p>There are standard ways to represent text, images, and video using numbers, called <strong>encodings</strong>. Because everybody uses the same coding scheme, programs can store, retrieve, and process all those things.</p>
+<p>This article will only address how bits and bytes represent text. See the resources at the beginning of this section to learn more about other data types.</p>
+<h3 id="ascii">ASCII</h3>
+<p><strong>ASCII</strong> (pronounced &ldquo;ask-ee&rdquo;) was one of the first text coding schemes to get wide use, It was published in 1963 by what is now the American National Standards Institute (ANSI), and was last updated in 1986.  It assigned a meaning to values from 0 to 127 were each assigned a meaning. In binary, those values take 7-bits, and the final bit of the byte was used for error checking. These 128 codes are important because they are still used today.</p>
+<p>ASCII included all the <strong>characters</strong> you would have found on a standard US (English) keyboard <a href="https://books.google.com/books?id=AouyCwAAQBAJ&amp;pg=PA46&amp;lpg=PA46&amp;dq=when+was+the+keyboard+layout+symbols+ascii&amp;source=bl&amp;ots=vSlo79JIyZ&amp;sig=ACfU3U3LIgxxAJePTbxpQd-q3qoLeom-ew&amp;hl=en&amp;sa=X&amp;ved=2ahUKEwjx7uXRg8PqAhWooXIEHci5DpAQ6AEwGHoECAsQAQ#v=onepage&amp;q=when%20was%20the%20keyboard%20layout%20symbols%20ascii&amp;f=false" title="pg 46">in the 1950s</a> with just a few additional symbols. Modern US keyboards exactly match the characters included. See the table below for examples of the codes for various characters, including 37 as &ldquo;%&rdquo;, 65  as &ldquo;A&rdquo;, and 97 as &ldquo;a&rdquo;.  The bytes representing 0 through 32 are codes for non-printing &ldquo;<a href="https://en.wikipedia.org/wiki/Control_character">Control Characters</a>&rdquo;, including obsolete commands like a bell/beep, but also the horizontal tab (9) and the space (32).</p>
+<p>Examples of ASCII. For the full list, see an <a href="http://web.alfredstate.edu/faculty/weimandn/miscellaneous/ascii/ascii_index.html">ASCII Conversion Chart</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Character</th>
+<th>Binary</th>
+<th>Decimal</th>
+<th>Hex</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><kbd>Space</kbd></td>
+<td><code>0010 0000</code></td>
+<td>32</td>
+<td><code>20</code></td>
+</tr>
+<tr>
+<td>%</td>
+<td><code>0010 0101</code></td>
+<td>37</td>
+<td><code>25</code></td>
+</tr>
+<tr>
+<td>0</td>
+<td><code>0011 0000</code></td>
+<td>48</td>
+<td><code>30</code></td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>0011 0001</code></td>
+<td>49</td>
+<td><code>31</code></td>
+</tr>
+<tr>
+<td>a</td>
+<td><code>0100 0001</code></td>
+<td>65</td>
+<td><code>41</code></td>
+</tr>
+<tr>
+<td>A</td>
+<td><code>0110 0001</code></td>
+<td>97</td>
+<td><code>61</code></td>
+</tr>
+<tr>
+<td>~</td>
+<td><code>0111 1110</code></td>
+<td>176</td>
+<td><code>7E</code></td>
+</tr>
+</tbody>
+</table>
+<p>As the table shows, <strong>numbers</strong> also have a code. For example, 48 is &ldquo;0&rdquo;, 49 is &ldquo;1&rdquo;, and so on. Those codes are not completely arbitrary. In binary, 49 is <code>0011 0001</code>. The last 4 bits (<code>0001</code>) is 1, and thus matches the number. The last 4 bits of &ldquo;A&rdquo; and &ldquo;a&rdquo; are both <code>0001</code> as well.</p>
+<p>It is important to understand that <strong>a number can be a character</strong> like any letter <em>and</em> thusly encoded as a <em>different</em> number. Software must be able to determine whether to interpret <code>0011 0001</code> as 49 or &ldquo;1&rdquo;, or something else entirely.  It is convention to put the <em>encoded</em> character representation in quotes, and leave the direct numeric representation bare.</p>
+<p>A <strong>character</strong> thus refers to each letter, number, space, punctuation mark or symbol represented by these codes. Multiple characters together are called a <strong>string</strong>. Look for one of these terms to help identify when you need to surround your data with quote marks so that your data is interpreted correctly as codes.</p>
+<h3 id="extended-ascii">Extended ASCII</h3>
+<p>As computers became more reliable, error checking became unnecessary and people realized they could give meaning to the 8th bit. By assigning characters to the numbers 128 to 255 they could represent additional characters and languages. Most of these <a href="https://en.wikipedia.org/wiki/Code_page#Windows_.28ANSI.29_code_pages"><strong>code pages</strong></a> just added on to ASCII. But, even with another 128 characters, it was difficult, if not impossible, to write documents in many Asian languages, much less documents in multiple languages.</p>
+<p>Even if you never come across a file that was encoded with one of these code pages, you will likely see references to them. The most common English/Latin standards were <strong><a href="https://en.wikipedia.org/wiki/ISO/IEC_8859-1">ISO-8859-1</a></strong> (aka &ldquo;Latin-1&rdquo;) and the equivalent <strong><a href="https://en.wikipedia.org/wiki/Windows-1252">Windows-1252</a></strong> (not identical, but close enough). The term <a href="https://en.wikipedia.org/wiki/Code_page#Windows_.28ANSI.29_code_pages">ANSI</a> may take on different meanings&ndash;just know that it represents a code page typically used by Windows. The prefixes <a href="http://www.iana.org/assignments/character-sets/character-sets.xhtml">ISO, OEM, or Windows</a> are used to indicate code pages.</p>
+<h2 id="unicode">Unicode</h2>
+<p><a href="https://www.unicode.org/standard/WhatIsUnicode.html"><strong>Unicode</strong></a> was developed in 1991 to avoid the need for so many code pages (&ldquo;uni&rdquo; = &ldquo;one&rdquo;, &ldquo;one code&rdquo;). <a href="http://unicode.org/main.html">The consortium</a> has assigned a code to each character in <a href="https://www.nytimes.com/2017/10/18/magazine/how-the-appetite-for-emojis-complicates-the-effort-to-standardize-the-worlds-alphabets.html">nearly</a> <a href="https://www.unicode.org/charts/">all of the world&rsquo;s languages</a>. For compatibility, the first 127/256 codes were kept the same as ASCII and ISO-8859-1, so both of those standards are compatible.</p>
+<p>Unicode values are referred to using <em>hexadecimal</em> and written with U+####. So, &ldquo;A&rdquo; is still represented by the decimal number 65, but is written <code>U+0041</code>. Unicode allows for <a href="https://www.johndcook.com/blog/2019/09/02/number-of-possible-unicode-characters/">over a million codes</a>, up to U+10FFFF.</p>
+<p>The codes written using 4 hex digits, up to 65,536 characters, are called the the Basic Multilingual plane (BMP). This includes nearly all <em>modern</em> languages, and more symbols. Six hex digits includes the supplemental planes, which allows for archaic languages like cuneiform, <a href="https://www.nytimes.com/2017/10/18/magazine/how-the-appetite-for-emojis-complicates-the-effort-to-standardize-the-worlds-alphabets.html">Emoji</a>, and specialized symbols (ex. musical notes and playing cards: U+1F0A1= <strong>🂡</strong> ).</p>
+<p>If you know its code, you can directly type <a href="https://support.office.com/en-us/article/insert-ascii-or-unicode-latin-based-symbols-and-characters-d13f58d3-7bcb-44a7-a4d5-972ee12e50e0">any character into Microsoft Word</a>. For example, ± has the code <code>U+00B1</code>. To insert it, type <kbd>b</kbd> <kbd>1</kbd> then press <kbd>Alt</kbd>+<kbd>x</kbd>.</p>
+<table>
+<thead>
+<tr>
+<th>Unicode Values</th>
+<th>Description</th>
+<th>Contents</th>
+<th>Bytes in UTF-8</th>
+<th>Bytes in UTF-16</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>U+0000 - U+007F</td>
+<td>ASCII</td>
+<td>Everything on a standard English keyboard</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>U+0080 - U+07FF</td>
+<td>Basic Multilingual Plane (BMP)</td>
+<td><a href="https://en.wikipedia.org/wiki/Plane_(Unicode)#Basic_Multilingual_Plane">Latin languages</a>, Greek, Cyrillic and some Aramaic</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>U+0800 - U+FFFF</td>
+<td>BMP <em>continued&hellip;</em></td>
+<td>Remaining <em>modern</em> languages</td>
+<td>3</td>
+<td>2</td>
+</tr>
+<tr>
+<td>U+010000 - U+10FFFF</td>
+<td>Supplemental <a href="https://en.wikipedia.org/wiki/Plane_(Unicode)">Planes</a></td>
+<td>Archaic languages, <a href="https://www.nytimes.com/2017/10/18/magazine/how-the-appetite-for-emojis-complicates-the-effort-to-standardize-the-worlds-alphabets.html">Emoji</a></td>
+<td>4</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<h3 id="implementations">Implementations</h3>
+<p>Unicode is the general term for this coding scheme but there are multiple ways it can be implemented, labeled with UTF and UCS. <strong>UTF-8</strong> is by far the most-used because it allows ASCII characters to just take up 1 byte (8 bits). This means the file is <em>identical</em> to an ASCII-encoded file if only those characters are used. Because all of HTML (web page language)  and most punctuation uses just ASCII characters, <a href="https://www.w3.org/International/questions/qa-choosing-encodings">UTF-8 is the standard</a> on the internet.</p>
+<p><strong>UTF-8</strong> still supports all of Unicode, but just takes additional bytes to do so (see Table). It uses 2 bytes to represent the codes U+0080 to U+07FF, <a href="https://en.wikipedia.org/wiki/Comparison_of_Unicode_encodings">3 bytes</a> to represent the remaining codes up to U+FFFF, and 4 bytes past that. <strong>UTF-16</strong>, however, stores all characters up to U+FFFF in 2 bytes. The extra bits in UTF-8 are needed to indicate how many bytes are used for the character.</p>
+<p>Even with the same encoding, characters that look the same may be stored differently. For example, ê could be stored as <code>U+00EA</code> (<em>composed</em>) or as the combination of e  <code>U+0065</code> and  ̂  <code>U+0302</code> (<em>decomposed</em>). Further, Unicode groups characters by language and not-infrequently gives different codes to <a href="https://en.wikipedia.org/wiki/Duplicate_characters_in_Unicode">seemingly-identical characters</a>. The standard includes <a href="http://www.unicode.org/charts/normalization/">normalization charts</a> for each language. Most statistical software has a function to utilize this: Stata has <a href="https://www.stata.com/manuals/m-5ustrnormalize.pdf">ustrnormalize</a>, SPSS has <a href="https://www.ibm.com/support/knowledgecenter/SSLVMB_23.0.0/spss/base/syn_transformation_expressions_string_functions.html">NORMALIZE</a>, R has the <a href="https://cran.r-project.org/web/packages/stringi/index.html">stringi</a> package, and Python has the <a href="https://docs.python.org/3/library/unicodedata.html">Unicodedata</a> package.</p>
+<p>You can see the actual bytes of a file using a Hex Editor, like <a href="https://sourceforge.net/projects/wxhexeditor/">wxHexEditor</a>. This screenshot shows the contents of a simple text file with &ldquo;Hello World!&rdquo;</p>
+<p><img src="hex_editor-1599611556477.png" alt=""></p>
+<h3 id="speed">Speed</h3>
+<p>Computers can work faster when you can&hellip;</p>
+<p>&hellip; use <strong>fewer bytes</strong> vs more bytes. Compared to UTF-8, UTF-16 would store ASCII characters in 2 bytes instead of 1 (more bytes), but those from U+0080 to U+FFFF in 2 bytes instead of 3 (fewer bytes).</p>
+<p>&hellip; use <strong>fixed width</strong> vs <a href="https://en.wikipedia.org/wiki/Variable-width_encoding">variable width</a> encodings. Variable width requires the computer to confirm the number of bytes being used for each character, which may take a little extra time. UTF-16 is essentially fixed width, with most characters taking 2 bytes. ASCII format is also fixed width, with all characters being 1 byte. UTF-8 is variable width because it may use 1, 2, or 3 bytes to represent characters.</p>
+<p>&hellip; assume a <strong>character is one byte</strong>. Standard string functions in SAS and Stata (ex. to extract characters) make this assumptions. Separate functions were built for Unicode characters and will not make that assumption, such as <a href="https://documentation.sas.com/?docsetId=nlsref&amp;docsetTarget=p1pca7vwjjwucin178l8qddjn0gi.htm&amp;docsetVersion=9.4&amp;locale=en0">SAS</a>&rsquo;s &ldquo;K&rdquo; functions, and <a href="https://www.stata.com/features/overview/unicode/">Stata</a>&rsquo;s &ldquo;u&rdquo; functions. In Python, there is also distinction between regular <a href="https://docs.python.org/3/howto/unicode.html">unicode strings</a> (&lsquo;A&rsquo;) and byte strings (b&rsquo;A&rsquo;).</p>
+<h3 id="non-english-languages">Non-English Languages</h3>
+<p>Most modern software supports Unicode, which means it can store and display any character in any language with <a href="http://www.unicode.org/standard/unsupported.html">quite limited exceptions</a> (ex. new languages). Unicode even supports <a href="http://unicode.org/faq/bidi.html">right-to-left languages</a> and bidirectional text, but not all programs interpret that characteristic and may display such characters in the wrong order. Also, any given font may not include all possible characters or symbols.</p>
+<p>The consortium compiles information about how different <a href="https://unicodebook.readthedocs.io/programming_languages.html">programming languages use Unicode</a>. If you will be working often with non-English text, you should read the documentation to learn more about details not covered here.</p>
+<h2 id="encoding-and-decoding">Encoding and Decoding</h2>
+<h3 id="file-formats">File Formats</h3>
+<p>Although every computer file is made up of bits, there is not an inherent way to know how those bits should be interpreted. A program that interpret the bits as ASCII codes could be given any file and will decode the bits accordingly. But, if a file&rsquo;s bits are not intended to be interpreted that way, it will not be interpretable.</p>
+<p>The <strong>file extension</strong> is a common way to communicate how the bits should be interpreted, and further indicate which software program the file is meant to be opened with. The extension is the part of the file name that is after the [final] period, such as <code>.pdf</code> and <code>.docx</code>. It is usually, but not always, 3 or 4 characters.  It is needed for Windows computers, so most people will include one, and Macs also utilize that information. You may need to <a href="https://www.howtogeek.com/205086/beginner-how-to-make-windows-show-file-extensions/">change a setting for your computer</a> to display these, which you should because they convey important information. Changing the file extension alone does not change how the file is encoded, and should be avoided.</p>
+<p>The <strong>Media type</strong> or <strong>MIME type</strong> is another way computers share information about file encoding.  Common types include <code>text/csv</code> and <code>image/png</code>. The part before the slash only has 10 recognized types, each of which can have any number of <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">more specific subtypes</a>. This information is not stored in a file itself, but rather is stored with other file information (<em>metadata</em>) by the <a href="https://www.howtogeek.com/192628/mime-types-explained-why-linux-and-mac-os-x-dont-need-file-extensions/">operating system</a> and is reported when a file is being shared on the internet. In practice, it is common to determine the type from the file extension, or by scanning the file contents for patterns.</p>
+<blockquote>
+<p>MIME stands for <strong>M</strong>ultipurpose <strong>I</strong>nternet <strong>M</strong>ail <strong>E</strong>xtensions, reflecting that it was created to help computers interpret and identify emails and their attachments.</p>
+</blockquote>
+<p>The <strong>content of the file</strong> also provides clues about what it might contain. Even files that are overall not intended to be decoded as text will include bits representing coded text at the beginning for identification purposes. For example, if you open a .png image file in a program that interprets the bits as ASCII codes, you will clearly see &ldquo;PNG&rdquo; at the top (in hex <code>50 4E 47</code>), even though the rest is un-interpretable. Most other formats are also well-defined, allowing identification even if there is no other information (ex. <a href="http://jhove.openpreservation.org">JHOVE</a>).</p>
+<h3 id="newlines-and-line-endings">Newlines and Line Endings</h3>
+<p>There are two ASCII codes relating to ending a line of text, which are collectively called <strong>E</strong>nd <strong>o</strong>f <strong>L</strong>ine (&ldquo;EOL&rdquo;) codes: the <strong>C</strong>arriage <strong>R</strong>eturn (ASCII 13 or <code>0x0D</code>) and the <strong>L</strong>ine <strong>F</strong>eed (ASCII 10 or <code>0x0A</code>). These are what you get when you use <kbd>Enter</kbd> or <kbd>Return</kbd> (which can also produce different characters!). The fact that there are two goes back to the typewriter. <a href="https://blog.codinghorror.com/the-great-newline-schism/">Even worse</a>, which is saved in your file also depends on your operating system. Windows actually uses both CR and LF, whereas Unix computers use LF. Macs also use LF since OSX, but before that used just CR!</p>
+<p>Modern software typically compensates for the difference in line endings (finally including Windows&rsquo; Notepad since 2018). For example, the version control software <a href="https://docs.github.com/en/github/using-git/configuring-git-to-handle-line-endings">Git will automatically convert</a> them to Unix/OSX style and display messages related to this encoding issue. Although uncommon, this can be a source of errors with programming languages that rely on line endings like Stata and Python, or when reading data.</p>
+<h3 id="errors">Errors</h3>
+<p>Although most software uses Unicode now, there is still some software that does not support it.  When text originally encoded as Unicode is decoded as ASCII or another format, you may see unusual characters that are pictorial ( �), coded (<code>\x99</code>), or garbled  (â€œ). Some common situations that result in these kinds of errors include:</p>
+<ul>
+<li><a href="https://support.office.com/en-us/article/smart-quotes-in-word-702fc92e-b723-4e3d-b2cc-71dedaf2f343"><strong>smart quotes</strong></a> with <a href="https://www.cl.cam.ac.uk/~mgk25/ucs/quotes.html">different opening and closing versions</a> are not in ASCII ( “ vs &quot; )
+“Hi”  =  â€œHiâ€</li>
+<li><strong><a href="https://en.wikipedia.org/wiki/Byte_order_mark">byte order mark (BOM)</a></strong> at the beginning specifying the format (some details, like endianness, are not addressed here). It is not always used, in part because it may be <a href="https://www.johndcook.com/blog/2019/09/07/excel-r-bom/">interpreted as a weird character</a></li>
+<li>&ldquo;<a href="https://github.com/minimaxir/big-list-of-naughty-strings">Big List of Naughty Strings</a>&rdquo; which includes characters that have been known to cause problems with software.</li>
+</ul>
+<p>Errors in decoding will at least produce obvious errors. But, because these make the data uninterpretable by humans, it is important to use the correct scheme to encode and decode your data.</p>
+<h2 id="further-reading">Further Reading</h2>
+<ul>
+<li><a href="https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/">The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)</a></li>
+<li><a href="https://deliciousbrains.com/how-unicode-works/">How Unicode Works: What ever devloper needs to know about strings and 🦄</a></li>
+<li><a href="https://kunststube.net/encoding/">What Every Programmer Absolute, Positively Needs to Know About Encodings and Character Sets to Work With Text</a></li>
+<li><a href="https://danielmiessler.com/study/encoding/">An Encoding Primer</a></li>
+<li><a href="https://www.smashingmagazine.com/2012/06/all-about-unicode-utf8-character-sets/">Unicode, UTF8 &amp; Character Sets: The Ultimate Guide</a></li>
+</ul>
   </main>
 
           <footer role="contentinfo">
