@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <meta name="generator" content="Hugo 0.74.3" />
-  <link rel="canonical" href="https://dkermer.github.io/tutorials/posts/prob_vs_stats/">
+  <link rel="canonical" href="https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/text_and_markup/">
 
   
 
@@ -32,7 +32,7 @@
 
   
   
-  <title>Probability vs Statistics | Debby&#39;s Posts</title>
+  <title>What Researchers need to know about Text Files and Markup | Debby&#39;s Posts</title>
 </head>
 
   <body>
@@ -223,12 +223,244 @@
         <div>
           
   <main id="main">
-    <h1>Probability vs Statistics</h1>
-    <p>This is the best description I&rsquo;ve ever seen about the difference between Probability and Statistics:</p>
-<p>​	<strong>Probability:</strong> Given the information in <strong>the pail</strong>, what is in <strong>your hand</strong>?</p>
-<p>​	<strong>Statistics:</strong>    Given the information in <strong>your hand</strong>, what is in <strong>the pail</strong>?</p>
-<p><img src="image-20200422183046586.png" alt="image-20200422183046586"></p>
-<p>Adapted from James Orlin, Network Optimization, Spring 2003. (Massachusetts Institute of Technology: MIT OpenCouseWare), <a href="http://ocw.mit.edu">http://ocw.mit.edu</a> (Accessed 2016-07-13). License: Creative Commons BY-NC-SA. <a href="http://dspace.mit.edu/bitstream/handle/1721.1/74617/15-082j-spring-2003/contents/chp_probability_stat.jpg">http://dspace.mit.edu/bitstream/handle/1721.1/74617/15-082j-spring-2003/contents/chp_probability_stat.jpg</a></p>
+    <h1>What Researchers need to know about Text Files and Markup</h1>
+    <p>This series is meant for non-programmer researchers who are beginning to use text-based tools and syntax.</p>
+<p>tldr:</p>
+<ul>
+<li>Digital Researchers need to understand the different types of files they work with.</li>
+<li>Many people make use of Markdown languages without understanding that they are just a part of the Markup ecosystem.</li>
+<li>The escape character <kbd>\</kbd> switches a language interpreter between interpreting characters as text and as a special character.</li>
+<li>Many researchers do not have a programming background and may not be familiar with some concepts.</li>
+</ul>
+<p>Many people who use digital research methods in academia do not have a computer science or programming background. But, to understand how to work with data and to take advantage of tools for collaboration and replicability, a certain base level of knowledge is useful. This article is my attempt to explain the minimum knowledge researchers should have about text files and the various types of markup. Although some content is specific to tabular data and statistical software, much is also relevant to those in the digital humanities.</p>
+<h1 id="types-of-text-files">Types of Text Files</h1>
+<p>In general, there are three main types of text files based on how the content is interpreted. There is no standard breakdown, but this is a useful way of classifying files that researchers encounter.</p>
+<ul>
+<li><strong>Scripts</strong> - For computer instructions or code.</li>
+<li><strong>Documents</strong> - For the display of textual documents for reading.</li>
+<li><strong>Data</strong> -  For structured text or numeric data.</li>
+</ul>
+<p>Document and data files typically contain <strong><a href="https://en.wikipedia.org/wiki/Markup_language">markup</a></strong>&ndash;characters or sequences of characters that provide information above and beyond the document text or data.  Software can recognize and interpret standardized annotations to control the display or processing of a text file. But, individuals can also add their own markup to notate sections you want to keep working on or data that you still need to find.</p>
+<h2 id="script-files">Script Files</h2>
+<p>In addition to the classic programming languages like C++, Python, and Java, statistical software also have a textual language that can has the ability to save code in a script.  also have  <em>Every</em> computer script, <strong>including those for statistical software</strong>, is saved in text format. Thus, files of type .sps, .do, .sas, .R, .py, and .sql, can all be opened and written in any <a href="https://www.computerhope.com/jargon/e/editor.htm">text editor</a>.</p>
+<p>Programming languages are divided into <strong>interpreted</strong> and <strong>compiled</strong> languages. All statistical software uses interpreted languages. Compiled languages like C++ must be converted (&ldquo;compiled&rdquo;) into binary files in order to run. This can vastly increase speed because the instructions have already been translated into computer code when it is run.</p>
+<ul>
+<li>Compiled: must be converted (&ldquo;compiled&rdquo;) into binary files in order to run</li>
+<li>Interpreted: does not need to be compiled</li>
+<li>Interactive shell: allows a command line</li>
+<li><strong>G</strong>raphical <strong>U</strong>ser <strong>I</strong>nterface (GUI, &ldquo;goo-ee&rdquo;)</li>
+<li><strong>C</strong>ommand-<strong>L</strong>ine <strong>I</strong>nterface (CLI) - Like text chatting vs email</li>
+<li><strong>I</strong>ntegrated <strong>D</strong>evelopment <strong>E</strong>nvironment (IDE)</li>
+</ul>
+<p>Although most of the code is the same in a script and interactively, there are usually some functionality that is only supported in a Script. For instance, Stata allows you to specify multi-line commands with /// only in a script file, not in the command box.</p>
+<p>Stata, R, and Python also support &ldquo;interactive &ldquo;programming. That supports one statement or command at a time and shows the output along with the input. A script file, however, contains just the inputted statements and more directly allows the seqeuence of commands to be re-run and the ouput reproduced. If researchers do not save the commands in a script file (e.g., only in output files), then it is far more difficult to redo the processing and analyses.</p>
+<h3 id="editors-and-ides">Editors and IDEs</h3>
+<p>A text editor is the name for any software that can decode and display text files. Some are very simple, and others have many features that can make it easier to write in certain languages. An <strong>I</strong>ntegrated <strong>D</strong>evelopment <strong>E</strong>nvironment, on the other hand, combines a text editor with other tools a language requires like compiling, debugging, and code running. It is typically optimized for a specific language and allows you to run code and manage entire projects. But, some are able to support multiple lagnuages.</p>
+<p>Advanced text editors, IDEs, and built-in script editors allow for features like syntax highlighting and code completion.</p>
+<ul>
+<li>
+<p>**Syntax highlighting **refers to the coloring that highlights different aspects of the code. Many text editors used by programmers support highlighting for many languages and allow users to create their own. Notepad++, for instance, can support all the languages by installing some user-contributed files.</p>
+</li>
+<li>
+<p><strong>Code completion</strong> helps you remember and type names related to your data or words commonly used in the language.</p>
+</li>
+</ul>
+<h3 id="statistical-syntax">Statistical Syntax</h3>
+<ul>
+<li>Syntax - The structure of the language (e.g., grammar)</li>
+<li>Code - The words in the language (e.g., vocabulary)
+<ul>
+<li>Code: instructions for a computer (<a href="https://www.merriam-webster.com/dictionary/code">Miriam-Webster</a>)</li>
+<li>Coding: to create or edit computer code (<a href="https://www.merriam-webster.com/dictionary/code">Miriam-Webster</a>)</li>
+<li>Syntax: The way in which linguistic elements are put together to form phrases (<a href="https://www.merriam-webster.com/dictionary/syntax">Miriam-Webster</a>)</li>
+</ul>
+</li>
+<li>Script - A file holding instructions written using a specific language</li>
+<li>Source [Code] - A file with human-readable instructions</li>
+<li>Program - A script performing a function that does not involve any application other than the language&rsquo;s interpreter.</li>
+</ul>
+<p>Because you cannot have a language without both grammar and vocabulary, it is common to use the terms syntax and code interchangably.</p>
+<ul>
+<li>
+<p>Coding: Writing code</p>
+</li>
+<li>
+<p>Programming: Writing a complete set of instructions for a computer</p>
+</li>
+<li>
+<p>Scripting:  Creating a file with code, instead of performing the same tasks interactively (e.g., automating a process)</p>
+</li>
+<li>
+<p>Data Table</p>
+<ul>
+<li>SPSS and Stata work with the opened/target data file, so it is not necessary to specify this.</li>
+</ul>
+</li>
+<li>
+<p>Specific Variables</p>
+</li>
+<li>
+<p>Command / Function</p>
+</li>
+<li>
+<p>Options / Arguments</p>
+</li>
+</ul>
+<p>To truly achieve replicability, you want to do scripting. But, coding is the first step</p>
+<ol>
+<li>Point-and-Click</li>
+<li>Saving the code</li>
+<li>Coding</li>
+<li>Scripting</li>
+<li>Programming</li>
+</ol>
+<ul>
+<li>Execute</li>
+<li>Run:</li>
+<li>Do: Stata&rsquo;s term for run but still show everything in the results window</li>
+</ul>
+<p>In reality, these are often used interchabably as well.</p>
+<p>Every software language has a <strong>structure</strong>, like a grammar, which is crucial to understand. Being able to look at someone else&rsquo;s syntax and pick out the important words. For traditional software it is usually the first word or few words. For the programming languages (R &amp; Python), it is important to identify the functions (before parentheses)</p>
+<p>The table below shows the syntax in the most used quantitative research software that will produce a Contingency Table comparing the variables <code>q1</code> and <code>q2</code>, with only n (# of observations), row %, and the results of a χ2 test of independence. Lines in italics apply to multiple tasks.</p>
+<table>
+<thead>
+<tr>
+<th>Software</th>
+<th>Syntax Example</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SPSS</td>
+<td>CROSSTABS  <br />     /TABLES= q1 BY q2    <br />     /STATISTICS=CHISQ     <br />     /CELLS=COUNT ROW.</td>
+<td>Primarily a point-and-click software <br />with syntax not designed to be typed. <br />Much shorter if defaults are used.</td>
+</tr>
+<tr>
+<td>Stata</td>
+<td>tabulate q1 q2, obs row chi2</td>
+<td>Well-liked due to inherent brevity <br />and other features that reduce typing.</td>
+</tr>
+<tr>
+<td>SAS</td>
+<td><em>PROC FREQ data=data;</em>      <br />   table  q1*q2  <br />        / NOCOL NOPERCENT CHISQ;<br /><em>RUN;</em></td>
+<td>Ignoring elements that facilitate multiple <br />statements, it is also quite brief. Tends to <br />include more output by default than others, <br />which required extra syntax to suppress.</td>
+</tr>
+<tr>
+<td>R</td>
+<td>*library( summarytools )*<br />ctable(  data$q1, data$q2, chisq=TRUE  )</td>
+<td>Function-based language that relies<br />heavily on supplemental packages <br />(ex. summarytools) designed for your specific task.</td>
+</tr>
+<tr>
+<td>Python/<br />Pandas</td>
+<td><em>import pandas as pd<br />from scipy.stats import chi2_contingency</em><br />table = pd.crosstab( data.q1, data.q2 )<br />pd.crosstab( data.q1, data.q2, normalize='index&rsquo; )<br />c, p, dof, exp = chi2_contingency(table)</td>
+<td>Python was not designed for this task <br />and no package yet <br />exists to do so. Indeed, the <br />summarytools R package is currently <br />being converted to Python, but as <br />of this writing does not <br />include the ctable function.</td>
+</tr>
+</tbody>
+</table>
+<p>Whether SPSS, STATA, and SAS are or have a &ldquo;programming language&rdquo; is a source of debate. However, they are at least &ldquo;languages&rdquo;, with vocabularies (words <em>aka</em> commands or functions) and grammar (word order <em>aka</em> syntax). They each have the basic programming abilities to define non-data &ldquo;variables&rdquo;, create functions and iterate over a list. But, the language is focused on doing data importing, preparation, analysis, and graphing.</p>
+<table>
+<thead>
+<tr>
+<th align="right"></th>
+<th>Storage</th>
+<th>Function</th>
+<th>File</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">SPSS</td>
+<td><code>!macro</code></td>
+<td><code>!macro</code></td>
+<td>.sps</td>
+<td>syntax</td>
+</tr>
+<tr>
+<td align="right">STATA</td>
+<td>``local_macro'<code> &lt;br /&gt;</code>$global_macro<code>|</code>program`                     | .do  | do file |</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="right">SAS</td>
+<td><code>&amp;macro_variable</code></td>
+<td><code>!macro_program</code></td>
+<td>.sas</td>
+<td>program</td>
+</tr>
+<tr>
+<td align="right">R</td>
+<td><code>object</code></td>
+<td><code>function()</code></td>
+<td>.R</td>
+<td>script</td>
+</tr>
+<tr>
+<td align="right">Python</td>
+<td><code>variable</code></td>
+<td><code>function()</code><br /><code>.method()</code></td>
+<td>.py</td>
+<td>script</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Code   File</th>
+<th>Code Prompt</th>
+<th>Command End</th>
+<th>Case Sensitive</th>
+<th>Code Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SPSS</strong></td>
+<td>Syntax File</td>
+<td>n/a</td>
+<td>.</td>
+<td>No</td>
+<td>*</td>
+</tr>
+<tr>
+<td>**Stata  **</td>
+<td>Do file</td>
+<td>.</td>
+<td>[line  break]</td>
+<td>Yes</td>
+<td>*</td>
+</tr>
+<tr>
+<td><strong>SAS</strong></td>
+<td>Program</td>
+<td>[line #]</td>
+<td>;</td>
+<td>No</td>
+<td>*</td>
+</tr>
+<tr>
+<td><strong>R</strong></td>
+<td>R Script</td>
+<td>&gt; <em>or</em> +</td>
+<td>[interpreted]</td>
+<td>Yes</td>
+<td>#</td>
+</tr>
+<tr>
+<td><strong>Python</strong></td>
+<td>Python Script</td>
+<td>&gt; or :</td>
+<td>[line break]</td>
+<td>Yes</td>
+<td>#</td>
+</tr>
+</tbody>
+</table>
   </main>
 
           <footer role="contentinfo">

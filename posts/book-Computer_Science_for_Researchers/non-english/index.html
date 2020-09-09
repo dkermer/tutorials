@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <meta name="generator" content="Hugo 0.74.3" />
-  <link rel="canonical" href="https://dkermer.github.io/tutorials/posts/prob_vs_stats/">
+  <link rel="canonical" href="https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/non-english/">
 
   
 
@@ -32,7 +32,7 @@
 
   
   
-  <title>Probability vs Statistics | Debby&#39;s Posts</title>
+  <title> | Debby&#39;s Posts</title>
 </head>
 
   <body>
@@ -223,12 +223,16 @@
         <div>
           
   <main id="main">
-    <h1>Probability vs Statistics</h1>
-    <p>This is the best description I&rsquo;ve ever seen about the difference between Probability and Statistics:</p>
-<p>​	<strong>Probability:</strong> Given the information in <strong>the pail</strong>, what is in <strong>your hand</strong>?</p>
-<p>​	<strong>Statistics:</strong>    Given the information in <strong>your hand</strong>, what is in <strong>the pail</strong>?</p>
-<p><img src="image-20200422183046586.png" alt="image-20200422183046586"></p>
-<p>Adapted from James Orlin, Network Optimization, Spring 2003. (Massachusetts Institute of Technology: MIT OpenCouseWare), <a href="http://ocw.mit.edu">http://ocw.mit.edu</a> (Accessed 2016-07-13). License: Creative Commons BY-NC-SA. <a href="http://dspace.mit.edu/bitstream/handle/1721.1/74617/15-082j-spring-2003/contents/chp_probability_stat.jpg">http://dspace.mit.edu/bitstream/handle/1721.1/74617/15-082j-spring-2003/contents/chp_probability_stat.jpg</a></p>
+    <h1></h1>
+    <p>Working with Non-English Languages</p>
+<h4 id="normalization">Normalization</h4>
+<p>A <strong><a href="(https://en.wikipedia.org/wiki/Diacritic)">diacritic</a></strong> or <strong>diacritical mark</strong> is an accent or other sign added above or below a <strong>base character</strong> to change it&rsquo;s pronunciation:  e +  ́ = é . In Unicode, these can be represented as a single character (<em>composed</em>) or as multiple characters (<em>decomposed</em>). Further, the Unicode system groups characters by language and not-infrequently gives different codes to <a href="https://en.wikipedia.org/wiki/Duplicate_characters_in_Unicode">seemingly-identical characters</a>.</p>
+<p>Unicode makes the important distinction between characters that are <strong>canonically equivalent</strong> (look the same) and <strong>compatible</strong> (mean the same). The standard includes <a href="http://www.unicode.org/charts/normalization/">normalization charts</a> for each language. Most statistical software has a function to utilize this: Stata has <a href="https://www.stata.com/manuals/m-5ustrnormalize.pdf">ustrnormalize</a>, SPSS has <a href="https://www.ibm.com/support/knowledgecenter/SSLVMB_23.0.0/spss/base/syn_transformation_expressions_string_functions.html">NORMALIZE</a>, R has the <a href="https://cran.r-project.org/web/packages/stringi/index.html">stringi</a> package, and Python has the <a href="https://docs.python.org/3/library/unicodedata.html">Unicodedata</a> package.</p>
+<h4 id="simplification">Simplification</h4>
+<p>To further standardize text, some may wish to remove accents, or use other methods of <a href="https://en.wikipedia.org/wiki/Romanization">romanization</a> (using only Latin characters). Importantly, these techniques can <a href="https://www.w3.org/International/wiki/Case_folding">remove important differences between words</a>. General translation or replacement functions can accomplish this by specifying your own list of replacements. However, others have created tools to do this for most languages.</p>
+<p><strong>Removing accents</strong> and reducing all characters to their base (á to a) is very common. Indeed, <a href="https://alistapart.com/article/accent-folding-for-auto-complete/">people often assume</a> that searching for <em>resume</em> will give results that include <em>résumé</em>.  To do this, convert from Unicode encoding to ASCII encoding or using string substitution with regular expressions as illustrated in <a href="https://www.statalist.org/forums/forum/general-stata-discussion/general/1487336-remove-accents-on-a-string-variable-in-stata">this post using Stata</a>. SAS also has a <a href="https://documentation.sas.com/?docsetId=nlsref&amp;docsetTarget=p078j5y1bbc9xfn1scp11kw3nmnt.htm&amp;docsetVersion=9.4&amp;locale=en">BASECHAR</a> function</p>
+<p><strong>Romanization</strong>, which includes <strong><a href="https://en.wikipedia.org/wiki/Transliteration">transliteration</a></strong>, means to represent the approximate sound of characters using the Roman alphabet (i.e., Latin). For example, Beijing is a particular <a href="https://en.wikipedia.org/wiki/Pinyin">Pinyin</a> transliteration of the Chinese characters 北京. R has the <a href="https://cran.r-project.org/web/packages/stringi/index.html">stringi</a>, <a href="https://cran.r-project.org/web/packages/pinyin/index.html">pinyin</a>, and <a href="https://www.rdocumentation.org/packages/UnidecodeR/versions/0.02">UnidecodeR</a> packages, Python has the <a href="https://pypi.org/project/polyglot/">polyglot</a> and <a href="https://pypi.org/project/Unidecode/">Unidecode</a> packages, but you can also <a href="https://programminghistorian.org/en/lessons/transliterating">create your own transformation</a>.</p>
+
   </main>
 
           <footer role="contentinfo">

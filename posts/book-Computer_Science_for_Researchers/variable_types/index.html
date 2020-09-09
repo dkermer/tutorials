@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <meta name="generator" content="Hugo 0.74.3" />
-  <link rel="canonical" href="https://dkermer.github.io/tutorials/posts/prob_vs_stats/">
+  <link rel="canonical" href="https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/variable_types/">
 
   
 
@@ -32,7 +32,7 @@
 
   
   
-  <title>Probability vs Statistics | Debby&#39;s Posts</title>
+  <title> | Debby&#39;s Posts</title>
 </head>
 
   <body>
@@ -223,12 +223,184 @@
         <div>
           
   <main id="main">
-    <h1>Probability vs Statistics</h1>
-    <p>This is the best description I&rsquo;ve ever seen about the difference between Probability and Statistics:</p>
-<p>​	<strong>Probability:</strong> Given the information in <strong>the pail</strong>, what is in <strong>your hand</strong>?</p>
-<p>​	<strong>Statistics:</strong>    Given the information in <strong>your hand</strong>, what is in <strong>the pail</strong>?</p>
-<p><img src="image-20200422183046586.png" alt="image-20200422183046586"></p>
-<p>Adapted from James Orlin, Network Optimization, Spring 2003. (Massachusetts Institute of Technology: MIT OpenCouseWare), <a href="http://ocw.mit.edu">http://ocw.mit.edu</a> (Accessed 2016-07-13). License: Creative Commons BY-NC-SA. <a href="http://dspace.mit.edu/bitstream/handle/1721.1/74617/15-082j-spring-2003/contents/chp_probability_stat.jpg">http://dspace.mit.edu/bitstream/handle/1721.1/74617/15-082j-spring-2003/contents/chp_probability_stat.jpg</a></p>
+    <h1></h1>
+    <h3 id="variable-types">Variable Types</h3>
+<p>Just as each file is either Text or Binary, every variable in statistical software has a <strong>type</strong> (<em>aka</em> class or encoding), which specifies whether the stored binary values for that variable are interpreted as numbers or treated as codes for their ASCII/Unicode text characters.</p>
+<p>Here are the terms each software gives to the types:</p>
+<table>
+<thead>
+<tr>
+<th>Software</th>
+<th>Number Variables</th>
+<th>Text Variables</th>
+<th>Number + Text</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SPSS</td>
+<td>numeric</td>
+<td>string</td>
+<td>numeric + label attribute</td>
+</tr>
+<tr>
+<td>Stata</td>
+<td>byte, int, long, float, double</td>
+<td>str / string</td>
+<td>byte + value label</td>
+</tr>
+<tr>
+<td>SAS</td>
+<td>numeric</td>
+<td>character</td>
+<td>numeric + label format</td>
+</tr>
+<tr>
+<td>R</td>
+<td>int, num / numeric</td>
+<td>chr / character</td>
+<td>factor</td>
+</tr>
+<tr>
+<td><a href="https://pbpython.com/pandas_dtypes.html">Pandas</a></td>
+<td>int64, float64, bool</td>
+<td>object</td>
+<td>category</td>
+</tr>
+</tbody>
+</table>
+<p>For software that has <strong>multiple number types</strong>, they differ in the number of bytes used and whether it stores decimals or just integers. In Stata, for example, the &ldquo;byte&rdquo; type uses 1 byte and will only store integers between -127 and 100 (recall 8 bits/1 byte has 256 combinations).  The long and float types each use 4 bytes (integers vs decimals respectively), and the double uses 8 bytes (necessary for date-time variables). All other data types in statistical software (ex. date or currency) are based on one of the the number types, with formatting or further interpretation.</p>
+<table>
+<thead>
+<tr>
+<th>Stata Type</th>
+<th>Size</th>
+<th>Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>byte</td>
+<td>1 byte</td>
+<td>-127 to 100</td>
+</tr>
+<tr>
+<td>long</td>
+<td>4 bytes</td>
+<td>integers</td>
+</tr>
+<tr>
+<td>float</td>
+<td>4 bytes</td>
+<td>decimals</td>
+</tr>
+<tr>
+<td>double</td>
+<td>8 bytes</td>
+<td>large numbers, including datetime</td>
+</tr>
+</tbody>
+</table>
+<p>The number representation is <strong>better for data</strong> where possible. As you have seen, the number 123 can be stored in 1 byte, whereas &ldquo;123&rdquo; would use 3 bytes (ASCII characters 49 50 51).</p>
+<p>Recall that the <strong>space</strong> is also a character. Thus, &quot; 123 &quot; would use 5 bytes (32 49 50 51 32) and would not be considered equal to &ldquo;123&rdquo;. To remove extra spacing and unseen characters, look for software functions named <strong>Trim</strong> and <strong>Clean</strong>.</p>
+<p>When writing code, it is necessary to distinguish textual values from the software command term. Always surround string values with quotes.</p>
+<p>To avoid text values being interpreted as a command or other software keyword, it is necessary to <strong>surround string values with quotes</strong>.</p>
+<p>To specify a missing value in a text variable, In SPSS, Stata, and SAS, specify an empty (missing or null) string value by typing two quotes together <code>&quot;&quot;</code> with nothing in between.</p>
+<table>
+<thead>
+<tr>
+<th>Software</th>
+<th>Missing <br />Numeric Value</th>
+<th>Missing <br />String Value</th>
+<th>Missing &gt; #</th>
+<th>Missing &lt; #</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SPSS</td>
+<td><code>$Sysmis</code></td>
+<td><code>&quot;&quot;</code></td>
+<td><code>.</code></td>
+<td><code>.</code></td>
+</tr>
+<tr>
+<td>Stata</td>
+<td><code>.</code></td>
+<td><code>&quot;&quot;</code></td>
+<td><code>TRUE</code></td>
+<td><code>FALSE</code></td>
+</tr>
+<tr>
+<td>SAS</td>
+<td><code>.</code></td>
+<td><code>&quot;&quot;</code></td>
+<td><code>FALSE</code></td>
+<td><code>TRUE</code></td>
+</tr>
+<tr>
+<td>R</td>
+<td><code>NA</code></td>
+<td><code>NA</code></td>
+<td><code>NA</code></td>
+<td><code>NA</code></td>
+</tr>
+<tr>
+<td><a href="https://pandas.pydata.org/pandas-docs/dev/user_guide/missing_data.html#missing-data-na">Pandas</a></td>
+<td><code>NaN</code></td>
+<td><code>NaN</code></td>
+<td><code>FALSE</code></td>
+<td><code>FALSE</code></td>
+</tr>
+</tbody>
+</table>
+<p>To specify an empty numeric value, use the convention for your software.</p>
+<h4 id="numbers--text">Numbers + Text</h4>
+<p>All statistical software also has a way of combining the usefulness of text and numbers for variables with a defined set of values. This is particularly important for <a href="http://homes.chass.utoronto.ca/~josephf/pol242/4LevelsofMeasurement.htm">Ordinal variables</a>: categorical variables that have a specific natural order. Each value does have a non-numeric meaning, but numbers are important to control ordering.</p>
+<p>Changing text values into numeri is one of the best ways to <strong>increase the speed</strong> of your data analysis because it can drastically reduce the amount of information (bytes) that the computer must process and store.</p>
+<p>Advantages over text variables:</p>
+<ul>
+<li>the text label needs only to be <strong>stored once</strong> for a variable</li>
+<li>the stored number value is just 1 byte (for up to 255 possible values)</li>
+<li>Allows control over the order of values for Ordinal varaibles</li>
+</ul>
+<p>for you to more easily remember what it means</p>
+<p><strong>SPSS</strong>, <strong>Stata</strong>, and <strong>SAS</strong> all allow numeric variables to have <strong>labels</strong> for each value. Thus, you would assign each possible text value a number and make those text values into labels. Those labels are displayed in output either alone or alongside the number value. But, for data management and calculation purposes, the variable is treated the same as other numeric variables. Thus, it is necessary to refer to the number value when grouping or recoding and ensure it is treated as categorical in analyses.  In Stata and SAS, the label is  named and can be applied to multiple variables.</p>
+<p><strong>R</strong> has a data type called <strong>factor</strong>. Although there is an underlying numeric value, it is relevant only for ordering and regression contrasts. For data management purposes, the value is  specified using its textual label. Factors are treated appropriately as categorical for statistics and visualizations.</p>
+<p><strong>Pandas</strong> in <strong>Python</strong> has the <strong>category</strong> data type. It is treated much like the Text/object variable type even though it also has an underlying numeric representation. It treats the variable similar to other objects in analyses (e.g.,you must still dummy code).</p>
+<h4 id="codes-and-coding">Codes and Coding</h4>
+<p>The concept of <strong>Codes</strong> and <strong>Coding</strong> is a huge part of any data work. Just like representing the letter &ldquo;A&rdquo; with the number 65, it is common to represent groups of observations with numbers (as in the previous section). Those numbers also also referred to as codes.  Words like <strong>en</strong>code, <strong>de</strong>code, and <strong>re</strong>code all refer to this, both with files and variables.</p>
+<table>
+<thead>
+<tr>
+<th>What</th>
+<th>Definition</th>
+<th>For Files</th>
+<th>For Variables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Encode</td>
+<td>replace text with a code</td>
+<td>save; turns what we see into bits</td>
+<td>assign each text value a number and add the text as labels</td>
+</tr>
+<tr>
+<td>Decode</td>
+<td>replace a code with it&rsquo;s meaning</td>
+<td>open; allow us to read it</td>
+<td>turn the labels to numbers back into a text value</td>
+</tr>
+<tr>
+<td>Recode</td>
+<td>change the assigned codes</td>
+<td>called &ldquo;convert&rdquo;</td>
+<td>combine or re-order groups</td>
+</tr>
+</tbody>
+</table>
+
   </main>
 
           <footer role="contentinfo">

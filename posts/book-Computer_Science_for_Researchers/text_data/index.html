@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <meta name="generator" content="Hugo 0.74.3" />
-  <link rel="canonical" href="https://dkermer.github.io/tutorials/posts/prob_vs_stats/">
+  <link rel="canonical" href="https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/text_data/">
 
   
 
@@ -32,7 +32,7 @@
 
   
   
-  <title>Probability vs Statistics | Debby&#39;s Posts</title>
+  <title> | Debby&#39;s Posts</title>
 </head>
 
   <body>
@@ -223,12 +223,79 @@
         <div>
           
   <main id="main">
-    <h1>Probability vs Statistics</h1>
-    <p>This is the best description I&rsquo;ve ever seen about the difference between Probability and Statistics:</p>
-<p>​	<strong>Probability:</strong> Given the information in <strong>the pail</strong>, what is in <strong>your hand</strong>?</p>
-<p>​	<strong>Statistics:</strong>    Given the information in <strong>your hand</strong>, what is in <strong>the pail</strong>?</p>
-<p><img src="image-20200422183046586.png" alt="image-20200422183046586"></p>
-<p>Adapted from James Orlin, Network Optimization, Spring 2003. (Massachusetts Institute of Technology: MIT OpenCouseWare), <a href="http://ocw.mit.edu">http://ocw.mit.edu</a> (Accessed 2016-07-13). License: Creative Commons BY-NC-SA. <a href="http://dspace.mit.edu/bitstream/handle/1721.1/74617/15-082j-spring-2003/contents/chp_probability_stat.jpg">http://dspace.mit.edu/bitstream/handle/1721.1/74617/15-082j-spring-2003/contents/chp_probability_stat.jpg</a></p>
+    <h1></h1>
+    <h2 id="data-files">Data Files</h2>
+<p>Text data files cannot store &ldquo;metadata&rdquo; like the proprietary software&rsquo;s binary data files. Metadata includes labels for data, variables, and values as well as identifying complex data types. Text data files contain data, and may also distinguish between string and numeric/logical.</p>
+<p>Data <strong>serialization</strong> is a programming term for writing arbitrary data structures to a file. Such files can be text or binary, but there are several standard text formats. In Python, <code>pickle</code> is the standard library to do so.</p>
+<h3 id="tabular-data">Tabular Data</h3>
+<p>Tabular data is organized into rows and columns, as in spreadsheets (ex. Excel) or statistical software (e.g., &ldquo;data table&rdquo;).  Each row represents an <em>observation</em>, like a person, place, or action. In research data, columns are called <em>variables</em> and contain <em>values</em> representing characteristics of the observation. In programming languages, the word variable refers to any word or character that represents another value. The column&rsquo;s descriptor (<em>aka</em> variable name) is in the first row. Below is an example of the same data stored in different formats, as viewed in a text editor. All data software can parse each of these formats if given the relevant details.</p>
+<p><img src="text_data.png" alt="The 3 most common text data formats as viewed in a text editor: Fixed Format, Comma Delimited, and Tab Delimited"></p>
+<p><strong>Fixed format</strong> (<em>aka</em> <strong>Fixed width</strong> or <strong>Fixed length</strong>) files actually have no markup. Indeed, they often look like big blocks of numbers and <em>do not have variable names</em> in the first row. Instead, each variable was allocated a specific number of characters (called columns) and can be identified by position. In the above graphic, for example, the variable &ldquo;zip&rdquo; is columns 13-17 (5 characters). If a value does not use all the characters allotted, spaces are used.</p>
+<p>Data labeled as <strong>ASCII</strong> or <strong>flat file</strong>, both generic terms for data in text files, are also typically fixed format&mdash;other types are much more likely to be labeled accordingly. But, data repositories almost always have instructions about how to make use of their files.</p>
+<p><a href="https://www.icpsr.umich.edu/web/ICPSR/cms/1976"><img src="image-20200713174221710.png" alt="Setup File instructions https://www.icpsr.umich.edu/web/ICPSR/cms/1976"><em>Excerpt from Setup File Instructions</em></a></p>
+<p>It is common for older data files to be in fixed format because hard drive space was scare and/or expensive and this format has no non-data characters. With drive space now relatively inexpensive, there is no longer any good reason to save data in fixed format. Indeed, fixed format files require instructions in order to read the data, which can too easily get separated and/or lost.</p>
+<p>Repositories that provide data in fixed format will almost always <a href="https://www.icpsr.umich.edu/web/ICPSR/cms/1976">include a <strong>setup file</strong></a> that must be run to read in the data. That is a script file for a particular statistical software that gives the needed information. Open the file in the script window of the appropriate software or in any text editor and read the instructions at the top. It may be necessary to edit the script file to specify the location of the data itself.t does contain all the necessary information to specify according to the software of your choice.  If there is no setup file, you will have to use the codebook to determine the necessary information.</p>
+<p><strong>Delimited data files</strong> separate columns with a character (to delimit means to mark the boundaries of something). Any character can be used, but the table below lists the delimiters you should know about. Spreadsheet software will typically handle this type of file easily, but may need to be told what the delimiter is. Comma-delimited files are the most common and typically have the extension .csv, which stands for <strong>c</strong>omma-<strong>s</strong>eparated <strong>v</strong>alues.</p>
+<table>
+<thead>
+<tr>
+<th>Delimiter</th>
+<th>Possible Extensions</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Comma <kbd>,</kbd></td>
+<td>.csv</td>
+<td>Most common format by far; computers typically open this in Excel.</td>
+</tr>
+<tr>
+<td>Tab  <kbd>Tab</kbd><br /> <kbd>\</kbd> + <kbd>t</kbd></td>
+<td>.tab, .tsv, .txt</td>
+<td>The character is used less in text fields of a spreadsheet, so there are fewer conflicts. But, since tabs are less visible, can confuse.</td>
+</tr>
+<tr>
+<td>Pipe <kbd>|</kbd><br /><kbd>Shift</kbd>+<kbd>\</kbd></td>
+<td>.dat, <br />.txt</td>
+<td>Rarely used in any text and looks like a column break. But, must be specified in every software.</td>
+</tr>
+</tbody>
+</table>
+<p>Errors in parsing delimited files are typically quite obvious, with values in the wrong column or split across multiple rows. If there are only a few errors, identify the very first indication of an error and look to at the previous columns for special characters.  If a text a as well as the <strong>text qualifier</strong> (usually double quotes), which helps define each cell. If values in a column contain line breaks (\n) or the delimiter, the text qualifier will help it distinguish.. If the data has quotes, software will typically <em>escape</em> (see below) them for you.</p>
+<h3 id="non-tabular-data">Non-Tabular Data</h3>
+<p>For <strong>non-tabular</strong> data, JSON or XML can be used. These formats are more versatile as they allow for nested information, which can be visualized as a tree structure.  Unlike tabular data, in which the field name is given once as the column header, the field name is specified for each value. Thus, the information can be in any order within a record and  a field need not be specified unless there is a value.  Thus, if there are many missing values,</p>
+<p>e<strong>X</strong>tensiible <strong>M</strong>arkup <strong>L</strong>anguage (<strong>XML</strong>) grew out of HTML/SGML (see previous) as a general type of markup for any data content and structure. XML treats all values as string, and therefore does not use quotes. Like HTML, tag elements can have attributes, but they are <a href="https://www.w3schools.com/xml/xml_dtd_el_vs_attr.asp">unneeded</a>.</p>
+<p>XML allows you to define a specific set of tag words for particular purposes.  XML document formats can be specified with a <a href="https://www.w3schools.com/xml/xml_dtd_intro.asp"><strong>Document Type Definition</strong></a> (DTD), written in EBNF, or an <a href="https://www.w3schools.com/xml/schema_intro.asp"><strong>XML Schema</strong></a> Definition (XSD), which is written in XML. Many common formats utilize the XML structure, like RSS (for web feeds), and SVG (for vector images). XML is also used for specific purposes like <a href="http://projects.oucs.ox.ac.uk/teiweb/Activities/PERS/persw02.xml?splitLevel=-1">biographical data</a>.</p>
+<pre><code class="language-xml">&lt;students&gt;
+  &lt;student&gt;
+    &lt;name&gt;Ahmad&lt;/name&gt;
+    &lt;age&gt;22&lt;/age&gt;
+    &lt;classes&gt;
+        &lt;one&gt;STAT 420&lt;/one&gt;
+        &lt;two&gt;ENGH 302&lt;/two&gt;
+    &lt;/classes&gt;
+  &lt;/student&gt;
+&lt;/students&gt;
+</code></pre>
+<p><strong>J</strong>ava<strong>S</strong>cript <strong>O</strong>bject <strong>N</strong>otation (<strong>JSON</strong>; &ldquo;<a href="https://www.youtube.com/watch?v=zhVdWQWKRqM">JAY-sun</a>&quot;) integrates well with it&rsquo;s namesake programming language JavaScript, because it matches the internal representation of data. However, it can be used with any language, and most have built-in support for it. JSON was not named until 2001, even though JavaScript itself was created in 1995.</p>
+<p>Like Markdown, JSON is considered &ldquo;lightweight&rdquo; (few markup characters), generally leading to smaller files than XML. The field identifiers (ex. &ldquo;age&rdquo;) are called <strong>keys</strong> or sometimes <strong>names</strong>, and must be in quotes. Values (after the colon) can be strings (in quotes) or numbers/logical/null (not in quotes).</p>
+<pre><code class="language-json">{&quot;students&quot;:[ { 
+  &quot;name&quot;:&quot;Ahmad&quot;, 
+  &quot;age&quot;: 22, 
+  &quot;classes&quot;: {
+     &quot;one&quot;: &quot;STAT 420&quot;, 
+     &quot;two&quot;: &quot;ENGH 302&quot;
+  }
+} ]}
+</code></pre>
+<p><strong>YAML</strong> (&quot;<a href="https://yaml.org/spec/history/2001-05-26.html">yaamel</a>&quot;) is currently used for configuration files and not traditional datafiles, but has similar abilities. Indeed, YAML is structured to allow <a href="https://en.wikipedia.org/wiki/YAML#Comparison_with_JSON">JSON as a subset</a> (e.g., it can parse JSON). Because YAML was designed to used alongside document markup in order to create web pages (like with <a href="https://gohugo.io/">Hugo</a>, which was used for this article) it is even more &ldquo;lightweight&rdquo;. But it is more difficult to see the data structure, especially when additional features are included, like internal comments.</p>
+<pre><code class="language-yaml">students:
+	- name: Ahmad
+      age: 22
+      classes: [STAT 420, ENGH 302]
+</code></pre>
+
   </main>
 
           <footer role="contentinfo">

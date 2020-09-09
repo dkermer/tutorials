@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <meta name="generator" content="Hugo 0.74.3" />
-  <link rel="canonical" href="https://dkermer.github.io/tutorials/posts/prob_vs_stats/">
+  <link rel="canonical" href="https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/statistical_programming/">
 
   
 
@@ -32,7 +32,7 @@
 
   
   
-  <title>Probability vs Statistics | Debby&#39;s Posts</title>
+  <title> | Debby&#39;s Posts</title>
 </head>
 
   <body>
@@ -223,12 +223,88 @@
         <div>
           
   <main id="main">
-    <h1>Probability vs Statistics</h1>
-    <p>This is the best description I&rsquo;ve ever seen about the difference between Probability and Statistics:</p>
-<p>​	<strong>Probability:</strong> Given the information in <strong>the pail</strong>, what is in <strong>your hand</strong>?</p>
-<p>​	<strong>Statistics:</strong>    Given the information in <strong>your hand</strong>, what is in <strong>the pail</strong>?</p>
-<p><img src="image-20200422183046586.png" alt="image-20200422183046586"></p>
-<p>Adapted from James Orlin, Network Optimization, Spring 2003. (Massachusetts Institute of Technology: MIT OpenCouseWare), <a href="http://ocw.mit.edu">http://ocw.mit.edu</a> (Accessed 2016-07-13). License: Creative Commons BY-NC-SA. <a href="http://dspace.mit.edu/bitstream/handle/1721.1/74617/15-082j-spring-2003/contents/chp_probability_stat.jpg">http://dspace.mit.edu/bitstream/handle/1721.1/74617/15-082j-spring-2003/contents/chp_probability_stat.jpg</a></p>
+    <h1></h1>
+    <h3 id="programming">Programming</h3>
+<p>Most researchers will never be required to create their own functions or use traditional programming techniques. But, it is useful to know what it is possible, so you can learn more about them when it would be useful.</p>
+<p>With data, we use the word &ldquo;variable&rdquo; to refer to characteristics of our observation. However, that word can also freqeu</p>
+<ul>
+<li>Variable</li>
+<li>Function: All statistical software has built-in functions or commands, but you can create your own.</li>
+<li>Loop: A loop is sometimes used in</li>
+</ul>
+<p>For example, if you have a list of covariates, you can store them as the word &ldquo;covariates&rdquo; and then never have to write the whole list again.</p>
+<p>A big difference between data-focused and general languages is the use of loops. Researchers may need to loop through files in a directory, or a list of dependent variables, both of which can be done without actually lopping through apply functions (R) or list comprehension (Python). But, there will never be a need to loop through the rows of a dataset.</p>
+<p><a href="https://towardsdatascience.com/10-not-so-intuitive-things-about-programming-with-r-a4d9d120c42c">https://towardsdatascience.com/10-not-so-intuitive-things-about-programming-with-r-a4d9d120c42c</a></p>
+<p><a href="https://blog.revolutionanalytics.com/2015/06/why-has-r-been-so-successful.html">https://blog.revolutionanalytics.com/2015/06/why-has-r-been-so-successful.html</a></p>
+<p><a href="https://www.computerworld.com/article/2497319/business-intelligence-beginner-s-guide-to-r-syntax-quirks-you-ll-want-to-know.html">https://www.computerworld.com/article/2497319/business-intelligence-beginner-s-guide-to-r-syntax-quirks-you-ll-want-to-know.html</a></p>
+<p><a href="https://codeandculture.wordpress.com/2010/08/06/some-ways-stata-is-an-unusual-language/">https://codeandculture.wordpress.com/2010/08/06/some-ways-stata-is-an-unusual-language/</a></p>
+<h2 id="automation">Automation</h2>
+<p>Programming is about being able to automate actions.</p>
+<ol>
+<li>Make something happen</li>
+<li>Save the written instructions to record and more easily re-run</li>
+<li>Compile those instructions into a script file to easily re-run</li>
+<li>Create a master file to run multiple scripts and redo everything</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Language Type</th>
+<th>Storage</th>
+<th>Function</th>
+<th>Iteration</th>
+<th>Script File</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SPSS</td>
+<td>Procedural</td>
+<td><code>!macro</code></td>
+<td><code>!macro</code></td>
+<td>LOOP, DO IF</td>
+<td>syntax file</td>
+</tr>
+<tr>
+<td>STATA</td>
+<td>Procedural</td>
+<td>``local_macro'<code> /</code>$global_macro<code>|</code>program`        | foreach, forvalues | do file     |</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>SAS</td>
+<td><a href="http://support.sas.com/documentation/cdl/en/stsstat/62258/HTML/default/viewer.htm#statintro_sect5.htm">Procedural</a></td>
+<td><code>&amp;macro_variable</code></td>
+<td><code>!macro_program</code></td>
+<td>DO</td>
+<td>program</td>
+</tr>
+<tr>
+<td>R</td>
+<td><a href="https://adv-r.hadley.nz/fp.html">Functional</a></td>
+<td><code>object</code></td>
+<td><code>function</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Python</td>
+<td>Object-Oriented</td>
+<td><code>variable</code></td>
+<td><code>function</code></td>
+<td></td>
+<td>script</td>
+</tr>
+</tbody>
+</table>
+<h3 id="functions-vs-commands">Functions vs Commands</h3>
+<p>Function-based vs command-based langauges</p>
+<p>There is disagreement over whether the syntax most people use with their statistical software are programming languges.</p>
+<p>Just like when learning a language, knowing the words is not good enough&ndash;indeed, that is what dictionaries can do. It is important to understand the grammar, how the words fit together. For example, as a consultant, it is useful for me to be able to say &ldquo;Use the collapse command&rdquo; or &ldquo;add the detail option&rdquo; h</p>
+
   </main>
 
           <footer role="contentinfo">

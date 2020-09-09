@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <meta name="generator" content="Hugo 0.74.3" />
-  <link rel="canonical" href="https://dkermer.github.io/tutorials/posts/prob_vs_stats/">
+  <link rel="canonical" href="https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/document_files/">
 
   
 
@@ -32,7 +32,7 @@
 
   
   
-  <title>Probability vs Statistics | Debby&#39;s Posts</title>
+  <title> | Debby&#39;s Posts</title>
 </head>
 
   <body>
@@ -223,12 +223,64 @@
         <div>
           
   <main id="main">
-    <h1>Probability vs Statistics</h1>
-    <p>This is the best description I&rsquo;ve ever seen about the difference between Probability and Statistics:</p>
-<p>​	<strong>Probability:</strong> Given the information in <strong>the pail</strong>, what is in <strong>your hand</strong>?</p>
-<p>​	<strong>Statistics:</strong>    Given the information in <strong>your hand</strong>, what is in <strong>the pail</strong>?</p>
-<p><img src="image-20200422183046586.png" alt="image-20200422183046586"></p>
-<p>Adapted from James Orlin, Network Optimization, Spring 2003. (Massachusetts Institute of Technology: MIT OpenCouseWare), <a href="http://ocw.mit.edu">http://ocw.mit.edu</a> (Accessed 2016-07-13). License: Creative Commons BY-NC-SA. <a href="http://dspace.mit.edu/bitstream/handle/1721.1/74617/15-082j-spring-2003/contents/chp_probability_stat.jpg">http://dspace.mit.edu/bitstream/handle/1721.1/74617/15-082j-spring-2003/contents/chp_probability_stat.jpg</a></p>
+    <h1></h1>
+    <h2 id="document-files">Document Files</h2>
+<p><a href="https://pandoc.org/">Pandoc</a> is software that can convert between <a href="https://pandoc.org/">different document markup formats</a>, including HTML and LaTeX. It can also convert from and to Microsoft Word documents (see this <a href="https://programminghistorian.org/en/lessons/sustainable-authorship-in-plain-text-using-pandoc-and-markdown">tutorial</a>) and create PDF files. Consequently, it is used by R Markdown, Zotero, and many text editors. To convert markup formats to PDF files pandoc utilizes some extensions built to work with TeX. To use RMakdown/Knitr,  MiKTeX, TinyTeX or another TeX/LaTeX implementation must be installed.</p>
+<p>Learning curve. <em>Source:</em> <a href="http://blog.kdheepak.com/writing-papers-with-markdown.html">Dheepak Krishnamurthy</a>, licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>.</p>
+<p><img src="https://hamwaves.com/markdown/images/learning_curve.png" alt="Learning curve. Source: Dheepak Krishnamurthy, licensed under CC BY-NC-SA 4.0." style="zoom: 67%;" /></p>
+<table>
+<thead>
+<tr>
+<th align="right">Type</th>
+<th>File Extensions</th>
+<th>Put &ldquo;bold&rdquo; in Bold</th>
+<th>Term for Markup</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">HTML</td>
+<td>.html, .htm</td>
+<td><code>&lt;strong&gt;bold&lt;/strong&gt;</code></td>
+<td>tag</td>
+</tr>
+<tr>
+<td align="right">Rich Text Format</td>
+<td>.rtf , .doc</td>
+<td><code>{\b bold}</code></td>
+<td>control word</td>
+</tr>
+<tr>
+<td align="right">TeX / LaTeX</td>
+<td>.tex , .sty</td>
+<td><code>\textbf{bold}</code></td>
+<td>command name</td>
+</tr>
+<tr>
+<td align="right">Lightweight Markup Languages <br />(ex. Markdown)</td>
+<td>.md , .rst , .txt , .Rmd</td>
+<td><code>**bold**</code></td>
+<td>syntax</td>
+</tr>
+</tbody>
+</table>
+<h3 id="html-xml-and-xhtml">HTML, XML, and XHTML</h3>
+<p>This family of markup languages are used both for documents and data (XML only). They are easy to identify from the <strong>tags</strong> surrounded by &lt;&gt;'s. HTML (<strong>H</strong>yper<strong>t</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage) was created in 1990 to control the display of documents on the internet (&ldquo;hypertext&rdquo; means text that links to other information). It has a defined set of tags (words) for that purpose.  As shown In the table, the tag &ldquo;strong&rdquo; makes a word bold. Learn more about <a href="https://www.w3schools.com/html/">HTML</a>.</p>
+<p>XML (e<strong>X</strong>tensible <strong>M</strong>arkup <strong>L</strong>anguage) is extensible, which means that it can use any set of tags. <a href="https://www.w3schools.com/html/html_xhtml.asp">XHTML</a> (e<strong>X</strong>tensible <strong>H</strong>yper<strong>t</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage) is XHTML based on XML instead of SGML, an older and more complex markup language that HTML also came from. See more about XML data formats under Data.</p>
+<h3 id="rtf--rich-text-format">RTF / Rich Text Format</h3>
+<p><a href="https://en.wikipedia.org/wiki/Rich_Text_Format">Rich Text format</a> (RTF), was developed by Microsoft in 1987 as an text-based alternative for Microsoft&rsquo;s standard binary document format. just text helps it transfer to other operating systems easier, but the standard was not initially shared with others and is not open. But, it is still  Other fis now more popular due to its [relative] simplicity, but RTF is grandfathered in to many software (ex. Stata&rsquo;s estout). It&rsquo;s use is not always obvious&ndash;SPSS puts a .doc extension on its RTF-formatted exported output (though accurately labeled &ldquo;Word/RTF&rdquo;).</p>
+<h3 id="tex--latex">TeX / LaTeX</h3>
+<p>LaTeX (pronounced <a href="https://www.latex-project.org/about/">&ldquo;LAH-tech&rdquo;</a>) is the oldest document markup scheme still in wide use, having been around since 1984. It provides a more comprehensive and user-friendly way of using TeX, which actually implements the formatting. Researchers in the sciences use it to write papers with complex mathematical expressions as well as to make books and slides. LaTeX files are most often Learn more about <a href="https://www.andy-roberts.net/writing/latex">LaTeX</a>.</p>
+<p>Some people distinguish between a <em>typesetting</em> language, which specifies formatting, and a <em>markup</em> language, which identifies the structure of the document. TeX, having been originally created to correctly format mathematical equations, is specified as a typesetting language, whereas LaTeX adds the identification of document structure.</p>
+<h3 id="lightweight-markup-languages">Lightweight Markup Languages</h3>
+<p><a href="https://en.wikipedia.org/wiki/Lightweight_markup_language">Lightweight markup languages</a> (LML), which use fewer extra characters, were initially developed to help create easier-to-read content for the internet. So, they were (and still are) typically intended to be converted to HTML. In the early days of the internet, contributors to Wiki&rsquo;s (collaborative web pages) and forums could not use HTML itself for security reasons, so application developers came up with various systems for simplified formatting. For example, Wikipedia developed the wiki engine <a href="https://en.wikipedia.org/wiki/MediaWiki">MediaWiki</a> with a specialized markup language that allows easy linking to other articles with <code>[[Article Title]]</code> . There was a lot of similarity in the various schemes; for example, in <a href="https://en.wikipedia.org/wiki/Lightweight_markup_language#Comparison_of_lightweight_markup_language_syntax">many implementations</a>, one put would asterisks around a word to add emphasis.</p>
+<p>The original <strong>Markdown</strong> was created in 2004 and is sometimes mistakenly used to refer to all lightweight markup languages. Like ASCII, the <a href="https://www.markdownguide.org/cheat-sheet/">original implementation</a> is not used as much directly, and instead has been incorporated into many different &ldquo;<a href="https://github.com/commonmark/commonmark-spec/wiki/markdown-flavors">flavors</a>&rdquo; with additional features (types of formatting). Popular flavors include <a href="https://github.github.com/gfm/">GitHub Flavored Markdown</a> (GFM) and <a href="https://rmarkdown.rstudio.com/">RMarkdown</a>.</p>
+<p>Popular alternatives to Markdown include <a href="https://docutils.sourceforge.io/rst.html"><strong>reS</strong>tructured<strong>T</strong>ext</a> (<em>aka</em> reST, written in Python) and <a href="http://asciidoc.org/">AsciiDoc</a>.</p>
+<h3 id="microsofts-x-file-formats">Microsoft&rsquo;s &ldquo;x&rdquo; File Formats</h3>
+<p>Microsoft&rsquo;s modern &ldquo;x&rdquo; formats (<a href="https://www.toptal.com/xml/an-informal-introduction-to-docx">.doc<strong>x</strong></a>, xls<strong>x</strong>, etc) are actually zipped XML files.  Consequently, this format is more acceptable for long-term preservation than the previous binary versions.  Recall that a zip file itself is binary, though the standard is well supported. So, depending on the context, .docx may be considered both a binary file and a markup text file.</p>
+<p>To see the XML for yourself, you will need to unzip the file. If you do not have a standalone unzipper software (like <a href="https://www.7-zip.org/">7-zip</a> for Windows), just add/change the extension to .zip and use your normal process to unzip it. In a docx file, there will be about a dozen files in different directories, but one is called &ldquo;document.xml&rdquo;. The image below is an example of that file opened in a a text editor; notice the carets (&lt;&gt;) surrounding the tags indicating it is XML.</p>
+<img src="image-20200504145301410.png" alt="Image of .docx Content in XML" style="zoom: 50%;"/>
+
   </main>
 
           <footer role="contentinfo">

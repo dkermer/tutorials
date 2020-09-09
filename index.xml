@@ -6,7 +6,7 @@
     <description>Recent content on Debby&#39;s Posts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 03 Mar 2020 13:50:49 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 21 Apr 2020 18:59:41 -0400</lastBuildDate>
     
 	<atom:link href="https://dkermer.github.io/tutorials/index.xml" rel="self" type="application/rss+xml" />
     
@@ -70,10 +70,10 @@
     
     <item>
       <title>What Researchers need to know about Text Files and Markup</title>
-      <link>https://dkermer.github.io/tutorials/posts/text_and_markup/</link>
+      <link>https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/text_and_markup/</link>
       <pubDate>Mon, 20 Apr 2020 21:34:54 -0400</pubDate>
       
-      <guid>https://dkermer.github.io/tutorials/posts/text_and_markup/</guid>
+      <guid>https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/text_and_markup/</guid>
       <description>&lt;p&gt;This series is meant for non-programmer researchers who are beginning to use text-based tools and syntax.&lt;/p&gt;
 &lt;p&gt;tldr:&lt;/p&gt;
 &lt;ul&gt;
@@ -95,17 +95,190 @@
     
     <item>
       <title>Character Encoding</title>
-      <link>https://dkermer.github.io/tutorials/posts/character_endoding/</link>
+      <link>https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/1_character_encoding/</link>
       <pubDate>Mon, 20 Apr 2020 12:34:54 -0400</pubDate>
       
-      <guid>https://dkermer.github.io/tutorials/posts/character_endoding/</guid>
+      <guid>https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/1_character_encoding/</guid>
       <description>&lt;p&gt;tldr:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Computers process and store everything as &lt;strong&gt;binary&lt;/strong&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Codes&lt;/strong&gt; are used to represent one thing (e.g., a character) as something else (e.g., a number)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;ASCII&lt;/strong&gt; and &lt;strong&gt;Unicode&lt;/strong&gt; (UTF-8) are two common ways of coding text as numbers. Unicode includes ASCII as well as nearly all other languages known to exist.&lt;/li&gt;
-&lt;li&gt;Both files and variables within data files have &lt;strong&gt;types&lt;/strong&gt; that specify how to interpret the binary.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ASCII&lt;/strong&gt; and &lt;strong&gt;Unicode&lt;/strong&gt; (ex. UTF-8) are two common ways of coding characters as numbers. Unicode includes ASCII as well as nearly all other languages known to exist.&lt;/li&gt;
 &lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/character_endoding/untitled/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/character_endoding/untitled/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/document_files/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/document_files/</guid>
+      <description>Document Files Pandoc is software that can convert between different document markup formats, including HTML and LaTeX. It can also convert from and to Microsoft Word documents (see this tutorial) and create PDF files. Consequently, it is used by R Markdown, Zotero, and many text editors. To convert markup formats to PDF files pandoc utilizes some extensions built to work with TeX. To use RMakdown/Knitr, MiKTeX, TinyTeX or another TeX/LaTeX implementation must be installed.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/getting_started/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/getting_started/</guid>
+      <description>See http://rex-analytics.com/wp-content/uploads/2016/05/career-timeline-2.jpg
+ Where do you come from? What is inside you? What are you?  Integers, continuous numbers, strings, of information, dates   How Dirty are you?  Do the values fit expectations Do the values fit the documentation What is the missing value code What is the proportion of missing data Are there other forms of missing or dirty data (e.g., blanks)   How am I going to manage you?</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/http/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/http/</guid>
+      <description>Get and Post, mostly Get and API
+Difference between an app and a web app.
+A web application runs within an internet browser. It can look very similar to desktop applications.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/non-english/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/non-english/</guid>
+      <description>Working with Non-English Languages
+Normalization A diacritic or diacritical mark is an accent or other sign added above or below a base character to change it&amp;rsquo;s pronunciation: e + ́ = é . In Unicode, these can be represented as a single character (composed) or as multiple characters (decomposed). Further, the Unicode system groups characters by language and not-infrequently gives different codes to seemingly-identical characters.
+Unicode makes the important distinction between characters that are canonically equivalent (look the same) and compatible (mean the same).</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/statistical_programming/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/statistical_programming/</guid>
+      <description>Programming Most researchers will never be required to create their own functions or use traditional programming techniques. But, it is useful to know what it is possible, so you can learn more about them when it would be useful.
+With data, we use the word &amp;ldquo;variable&amp;rdquo; to refer to characteristics of our observation. However, that word can also freqeu
+ Variable Function: All statistical software has built-in functions or commands, but you can create your own.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/text_data/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/text_data/</guid>
+      <description>Data Files Text data files cannot store &amp;ldquo;metadata&amp;rdquo; like the proprietary software&amp;rsquo;s binary data files. Metadata includes labels for data, variables, and values as well as identifying complex data types. Text data files contain data, and may also distinguish between string and numeric/logical.
+Data serialization is a programming term for writing arbitrary data structures to a file. Such files can be text or binary, but there are several standard text formats.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/text_vs_binary_files/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/text_vs_binary_files/</guid>
+      <description>File Types The makers of a software decide whether the files it produces should be saved and interpreted according to ASCII/Unicode rules or not. If so, 11001000 will be &amp;ldquo;A&amp;rdquo; and so on. But, that same byte could represent anything the programmer desires. That leads to the two types of files:
+ Text files are intended to be decoded into readable characters using one of the standardized text coding schemes (aka human-readable) Binary files are not.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/troubleshooting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/troubleshooting/</guid>
+      <description>Where problems occur:
+  submitting the proper command
+ Not executing Line endings, closed parentheses Wrong term, wrong spelling    structure of your syntax for that command
+ the ordering is wrong forgot symbols put too many or not enough variables    your data
+ it&amp;rsquo;s eliminating too many rows/observations your values are different from what it expects the variable types are wrong you referred to a variable that doesn&amp;rsquo;t exist (misspelled it?</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/variable_types/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/variable_types/</guid>
+      <description>Variable Types Just as each file is either Text or Binary, every variable in statistical software has a type (aka class or encoding), which specifies whether the stored binary values for that variable are interpreted as numbers or treated as codes for their ASCII/Unicode text characters.
+Here are the terms each software gives to the types:
+   Software Number Variables Text Variables Number + Text     SPSS numeric string numeric + label attribute   Stata byte, int, long, float, double str / string byte + value label   SAS numeric character numeric + label format   R int, num / numeric chr / character factor   Pandas int64, float64, bool object category    For software that has multiple number types, they differ in the number of bytes used and whether it stores decimals or just integers.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://dkermer.github.io/tutorials/posts/markdown_editors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dkermer.github.io/tutorials/posts/markdown_editors/</guid>
+      <description>    Platform Can you Hide Markup in Editor Formatting Toolbar (icons) Formatting Menu (words) Keyboard Shortcuts FOSS?     Writage Windows Only Yes Yes No Formatting, Header No. Requires MS Word. Free while in development.   Typora All 3 Yes Right Click Dropdown Formatting, Header No. Free while in Beta   Abricotine Many No No Dropdown Formatting, Header Yes   StackEdit Any / Web No, Has Preview Yes No Formatting, Header Yes   Mark Text All 3 Yes Context Popup Dropdown Formatting, Header Yes   Zettlr Many No Dropdown Right Click Formatting Yes    </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://dkermer.github.io/tutorials/posts/r_symbol_glossary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dkermer.github.io/tutorials/posts/r_symbol_glossary/</guid>
+      <description>Functions &amp;amp; Packages :
+::
+$
+~
+^
+!
+_
+\
+/
+,
+&amp;gt;
+-
+(.) &amp;ndash; in tidyverse and otherwise
+&amp;hellip;
+```
+-&amp;ndash;
+*
+ + console
++ code
+?
+??
+=
+==
+:=
+&amp;lt;-
+&amp;laquo;-
+-&amp;gt;
+%&amp;gt;%
+%x%
+%o%
+%%
+%/%
+%in%
+word.word
+word(&amp;hellip;)
+word[&amp;hellip;]
+word{ &amp;hellip; }
+[[&amp;hellip;]]
+r&amp;rdquo;(&amp;hellip;)&amp;rdquo;
+&amp;ldquo;&amp;hellip;&amp;rdquo;
+&amp;lsquo;&amp;hellip;&amp;rsquo;
+&amp;lt;&amp;hellip;&amp;gt;
+See markdown</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://dkermer.github.io/tutorials/posts/untitled-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dkermer.github.io/tutorials/posts/untitled-1/</guid>
+      <description></description>
     </item>
     
     <item>

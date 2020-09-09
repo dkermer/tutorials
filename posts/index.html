@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <meta name="generator" content="Hugo 0.69.0" />
+  <meta name="generator" content="Hugo 0.74.3" />
   <link rel="canonical" href="https://dkermer.github.io/tutorials/posts/">
 
   
@@ -254,7 +254,7 @@
     
       <li>
         <h2>
-          <a href="https://dkermer.github.io/tutorials/posts/text_and_markup/">
+          <a href="https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/text_and_markup/">
             <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
               <use xlink:href="#bookmark"></use>
             </svg>
@@ -321,7 +321,7 @@
     
       <li>
         <h2>
-          <a href="https://dkermer.github.io/tutorials/posts/character_endoding/">
+          <a href="https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/1_character_encoding/">
             <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
               <use xlink:href="#bookmark"></use>
             </svg>
@@ -332,8 +332,7 @@
 <ul>
 <li>Computers process and store everything as <strong>binary</strong>.</li>
 <li><strong>Codes</strong> are used to represent one thing (e.g., a character) as something else (e.g., a number)</li>
-<li><strong>ASCII</strong> and <strong>Unicode</strong> (UTF-8) are two common ways of coding text as numbers. Unicode includes ASCII as well as nearly all other languages known to exist.</li>
-<li>Both files and variables within data files have <strong>types</strong> that specify how to interpret the binary.</li>
+<li><strong>ASCII</strong> and <strong>Unicode</strong> (ex. UTF-8) are two common ways of coding characters as numbers. Unicode includes ASCII as well as nearly all other languages known to exist.</li>
 </ul> </div>
       </li>        
     
@@ -350,6 +349,219 @@
 Stata command varlist qualifiers, options
 R R is a completely function-based language. The end of the line is interpreted.
 Python Line breaks are assumed to be the end of the command unless they occur within parentheses. For loops, subsequent lines must be indented. </div>
+      </li>        
+    
+      <li>
+        <h2>
+          <a href="https://dkermer.github.io/tutorials/posts/untitled-1/">
+            <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+              <use xlink:href="#bookmark"></use>
+            </svg>
+            
+          </a>
+        </h2>
+		 <div class="summary">      </div>
+      </li>        
+    
+      <li>
+        <h2>
+          <a href="https://dkermer.github.io/tutorials/posts/r_symbol_glossary/">
+            <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+              <use xlink:href="#bookmark"></use>
+            </svg>
+            
+          </a>
+        </h2>
+		 <div class="summary">     Functions &amp; Packages :
+::
+$
+~
+^
+!
+_
+\
+/
+,
+&gt;
+-
+(.) &ndash; in tidyverse and otherwise
+&hellip;
+```
+-&ndash;
+*
+ + console
++ code
+?
+??
+=
+==
+:=
+&lt;-
+&laquo;-
+-&gt;
+%&gt;%
+%x%
+%o%
+%%
+%/%
+%in%
+word.word
+word(&hellip;)
+word[&hellip;]
+word{ &hellip; }
+[[&hellip;]]
+r&rdquo;(&hellip;)&rdquo;
+&ldquo;&hellip;&rdquo;
+&lsquo;&hellip;&rsquo;
+&lt;&hellip;&gt;
+See markdown </div>
+      </li>        
+    
+      <li>
+        <h2>
+          <a href="https://dkermer.github.io/tutorials/posts/markdown_editors/">
+            <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+              <use xlink:href="#bookmark"></use>
+            </svg>
+            
+          </a>
+        </h2>
+		 <div class="summary">         Platform Can you Hide Markup in Editor Formatting Toolbar (icons) Formatting Menu (words) Keyboard Shortcuts FOSS?     Writage Windows Only Yes Yes No Formatting, Header No. Requires MS Word. Free while in development.   Typora All 3 Yes Right Click Dropdown Formatting, Header No. Free while in Beta   Abricotine Many No No Dropdown Formatting, Header Yes   StackEdit Any / Web No, Has Preview Yes No Formatting, Header Yes   Mark Text All 3 Yes Context Popup Dropdown Formatting, Header Yes   Zettlr Many No Dropdown Right Click Formatting Yes     </div>
+      </li>        
+    
+      <li>
+        <h2>
+          <a href="https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/variable_types/">
+            <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+              <use xlink:href="#bookmark"></use>
+            </svg>
+            
+          </a>
+        </h2>
+		 <div class="summary">     Variable Types Just as each file is either Text or Binary, every variable in statistical software has a type (aka class or encoding), which specifies whether the stored binary values for that variable are interpreted as numbers or treated as codes for their ASCII/Unicode text characters.
+Here are the terms each software gives to the types:
+   Software Number Variables Text Variables Number + Text     SPSS numeric string numeric + label attribute   Stata byte, int, long, float, double str / string byte + value label   SAS numeric character numeric + label format   R int, num / numeric chr / character factor   Pandas int64, float64, bool object category    For software that has multiple number types, they differ in the number of bytes used and whether it stores decimals or just integers. </div>
+      </li>        
+    
+      <li>
+        <h2>
+          <a href="https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/troubleshooting/">
+            <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+              <use xlink:href="#bookmark"></use>
+            </svg>
+            
+          </a>
+        </h2>
+		 <div class="summary">     Where problems occur:
+  submitting the proper command
+ Not executing Line endings, closed parentheses Wrong term, wrong spelling    structure of your syntax for that command
+ the ordering is wrong forgot symbols put too many or not enough variables    your data
+ it&rsquo;s eliminating too many rows/observations your values are different from what it expects the variable types are wrong you referred to a variable that doesn&rsquo;t exist (misspelled it? </div>
+      </li>        
+    
+      <li>
+        <h2>
+          <a href="https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/text_vs_binary_files/">
+            <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+              <use xlink:href="#bookmark"></use>
+            </svg>
+            
+          </a>
+        </h2>
+		 <div class="summary">     File Types The makers of a software decide whether the files it produces should be saved and interpreted according to ASCII/Unicode rules or not. If so, 11001000 will be &ldquo;A&rdquo; and so on. But, that same byte could represent anything the programmer desires. That leads to the two types of files:
+ Text files are intended to be decoded into readable characters using one of the standardized text coding schemes (aka human-readable) Binary files are not. </div>
+      </li>        
+    
+      <li>
+        <h2>
+          <a href="https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/text_data/">
+            <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+              <use xlink:href="#bookmark"></use>
+            </svg>
+            
+          </a>
+        </h2>
+		 <div class="summary">     Data Files Text data files cannot store &ldquo;metadata&rdquo; like the proprietary software&rsquo;s binary data files. Metadata includes labels for data, variables, and values as well as identifying complex data types. Text data files contain data, and may also distinguish between string and numeric/logical.
+Data serialization is a programming term for writing arbitrary data structures to a file. Such files can be text or binary, but there are several standard text formats. </div>
+      </li>        
+    
+      <li>
+        <h2>
+          <a href="https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/statistical_programming/">
+            <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+              <use xlink:href="#bookmark"></use>
+            </svg>
+            
+          </a>
+        </h2>
+		 <div class="summary">     Programming Most researchers will never be required to create their own functions or use traditional programming techniques. But, it is useful to know what it is possible, so you can learn more about them when it would be useful.
+With data, we use the word &ldquo;variable&rdquo; to refer to characteristics of our observation. However, that word can also freqeu
+ Variable Function: All statistical software has built-in functions or commands, but you can create your own. </div>
+      </li>        
+    
+      <li>
+        <h2>
+          <a href="https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/non-english/">
+            <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+              <use xlink:href="#bookmark"></use>
+            </svg>
+            
+          </a>
+        </h2>
+		 <div class="summary">     Working with Non-English Languages
+Normalization A diacritic or diacritical mark is an accent or other sign added above or below a base character to change it&rsquo;s pronunciation: e + ́ = é . In Unicode, these can be represented as a single character (composed) or as multiple characters (decomposed). Further, the Unicode system groups characters by language and not-infrequently gives different codes to seemingly-identical characters.
+Unicode makes the important distinction between characters that are canonically equivalent (look the same) and compatible (mean the same). </div>
+      </li>        
+    
+      <li>
+        <h2>
+          <a href="https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/http/">
+            <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+              <use xlink:href="#bookmark"></use>
+            </svg>
+            
+          </a>
+        </h2>
+		 <div class="summary">     Get and Post, mostly Get and API
+Difference between an app and a web app.
+A web application runs within an internet browser. It can look very similar to desktop applications. </div>
+      </li>        
+    
+      <li>
+        <h2>
+          <a href="https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/getting_started/">
+            <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+              <use xlink:href="#bookmark"></use>
+            </svg>
+            
+          </a>
+        </h2>
+		 <div class="summary">     See http://rex-analytics.com/wp-content/uploads/2016/05/career-timeline-2.jpg
+ Where do you come from? What is inside you? What are you?  Integers, continuous numbers, strings, of information, dates   How Dirty are you?  Do the values fit expectations Do the values fit the documentation What is the missing value code What is the proportion of missing data Are there other forms of missing or dirty data (e.g., blanks)   How am I going to manage you? </div>
+      </li>        
+    
+      <li>
+        <h2>
+          <a href="https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/document_files/">
+            <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+              <use xlink:href="#bookmark"></use>
+            </svg>
+            
+          </a>
+        </h2>
+		 <div class="summary">     Document Files Pandoc is software that can convert between different document markup formats, including HTML and LaTeX. It can also convert from and to Microsoft Word documents (see this tutorial) and create PDF files. Consequently, it is used by R Markdown, Zotero, and many text editors. To convert markup formats to PDF files pandoc utilizes some extensions built to work with TeX. To use RMakdown/Knitr, MiKTeX, TinyTeX or another TeX/LaTeX implementation must be installed. </div>
+      </li>        
+    
+      <li>
+        <h2>
+          <a href="https://dkermer.github.io/tutorials/posts/book-computer_science_for_researchers/character_endoding/untitled/">
+            <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+              <use xlink:href="#bookmark"></use>
+            </svg>
+            
+          </a>
+        </h2>
+		 <div class="summary">      </div>
       </li>        
     
     </ul>
