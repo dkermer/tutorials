@@ -10,7 +10,7 @@ Data Science vs Science
 
 <!--more-->
 
-## The Situation
+The Situation
 
 **Data Scientists** often work with or expect to have the **same data** over and over again. Their goal is to **make predictions**.   
 

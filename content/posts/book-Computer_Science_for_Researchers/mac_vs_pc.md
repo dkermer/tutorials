@@ -4,6 +4,12 @@ date: 2020-04-21T14:42:01-04:00
 draft: true
 ---
 
+An operating system is a software that facilitates other software on a computer. 
+
+https://infoguides.gmu.edu/data-work/computers
+
+
+
 PCs have **drive letters** (the main drive is typically C). Macs do not. 
 
 To **separate the folder names** on a Mac or Unix-based system use a /, to separate them on a PC, use a \. Most programming languages (such as R), use the Unix-based system. To use a \, you can “escape” it with a \, and write \\. 
@@ -28,3 +34,4 @@ paired :  "" '' ( )  [ ]  { }  < >
 
 
 Windows users can save Microsoft Word documents in Markdown with an [add-on](http://www.writage.com/). There are also many online markdown editors, such as [Dillinger](https://dillinger.io/). 
+

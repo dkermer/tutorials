@@ -11,9 +11,9 @@ Measure Type or Measurment Level . Even though it seems weird to "measure" a per
 
 ## Qualitative
 
-​	About a thing's Qualities.  
+​    About a thing's **Qualities**.  
 
-### Categorical & Grouping
+## Categorical & Grouping
 
 Both these words are often used to describe these types of values. In part, this is beacuse the word Qualitative is also used to describe unstructured textual data that is not specifying categories. 
 
